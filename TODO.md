@@ -1,3 +1,5 @@
 - add `timer`
 - add `tasks`
+- use `localStorage`
+- show timer and current task in title
 - add notification
