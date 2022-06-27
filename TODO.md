@@ -2,7 +2,7 @@
 
 - improve font
 
-- `PomodoroHeader`
+- `PomodoroHeader` -- title and menu
 
 - `useConfig` -- with `lang`
 
