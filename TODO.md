@@ -1,4 +1,3 @@
-- rename `Home` to `Pomodoro`
 - add `timer`
 - add `tasks`
 - use `localStorage`
