@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PomodoroState as State } from "./PomodoroState"
+import type { PomodoroState as State } from "./PomodoroState"
 import { onMounted } from "vue"
 
 const props = defineProps<{ state: State }>()
