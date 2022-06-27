@@ -5,6 +5,7 @@ import HelloWorld from "@/components/HelloWorld.vue"
 
 <template>
   <header>
+    <div class="text-red-300">123</div>
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
