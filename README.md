@@ -1,6 +1,7 @@
 # Pomodoro
 
 [ [VISIT](https://pomodoro.xieyuheng.com)
+| [DICTIONARY](https://en.wiktionary.org/wiki/pomodoro)
 | [WIKIPEDIA](https://en.wikipedia.org/wiki/Pomodoro_Technique) ]
 
 A Pomodoro timer.
