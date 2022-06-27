@@ -6,6 +6,7 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
+    "format": "prettier src --write",
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
