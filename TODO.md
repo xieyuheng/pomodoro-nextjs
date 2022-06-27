@@ -1,5 +1,7 @@
-- `PomodoroTimer` -- `formatTime`
+- `PomodoroTimer` -- `formatMinutes` and `formatSeconds`
 - `PomodoroTimer` -- `START` and `STOP` button
+
+- improve font
 
 - `PomodoroHeader`
 
