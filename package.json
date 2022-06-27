@@ -3,11 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview --port 4173",
+    "check": "vue-tsc --noEmit",
+    "watch": "vue-tsc --noEmit --watch",
+    "build": "run-p check build-only",
     "build-only": "vite build",
-    "format": "prettier src --write",
-    "type-check": "vue-tsc --noEmit"
+    "preview": "vite preview --port 4173",
+    "format": "prettier src --write"
   },
   "dependencies": {
     "vue": "^3.2.37",
