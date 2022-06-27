@@ -1,7 +1,9 @@
-const defaultTime = 25 * 60 * 1000
+import { leftPad } from "../../ut/left-pad"
+
+const pomodoroTime = 25 * 60 * 1000
 
 export class PomodoroState {
-  constructor(public time: number = defaultTime) {}
+  constructor(public time: number = pomodoroTime) {}
 
   start(): void {
     setInterval(() => {
@@ -19,10 +21,10 @@ export class PomodoroState {
   }
 
   formatMinutes(): string {
-    return this.minutes.toString()
+    return leftPad(this.minutes.toString(), 2, "0")
   }
 
   formatSeconds(): string {
-    return this.seconds.toString()
+    return leftPad(this.seconds.toString(), 2, "0")
   }
 }

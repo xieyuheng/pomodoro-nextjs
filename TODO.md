@@ -1,4 +1,3 @@
-- `PomodoroTimer` -- `formatMinutes` and `formatSeconds`
 - `PomodoroTimer` -- `START` and `STOP` button
 
 - improve font
@@ -8,6 +7,8 @@
 - `useConfig` -- with `lang`
 
 - `PomodoroTasks`
+
+- be able to config `pomodoroTime`
 
 - use `localStorage`
 

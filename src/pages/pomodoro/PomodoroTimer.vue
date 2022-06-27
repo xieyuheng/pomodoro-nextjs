@@ -12,6 +12,6 @@ onMounted(() => {
 
 <template>
   <div class="text-9xl">
-    {{ state.formatMinutes() }}:{{ state.formatMinutes() }}
+    {{ state.formatMinutes() }}:{{ state.formatSeconds() }}
   </div>
 </template>
