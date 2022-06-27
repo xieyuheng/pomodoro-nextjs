@@ -1,5 +1,5 @@
-- add `timer`
-- add `tasks`
+- `PomodoroTimer`
+- `PomodoroTasks`
 - use `localStorage`
 - show timer and current task in title
 - add notification
