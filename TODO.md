@@ -1,3 +1,5 @@
+- switch to react and nextjs (to be closer to work stack)
+
 - `PomodoroTimer` -- `START` and `STOP` button
 
 - improve font
