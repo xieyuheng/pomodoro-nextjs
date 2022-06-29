@@ -1,5 +1,5 @@
-import { GetStaticProps } from "next"
 import Head from "next/head"
+import { GetStaticProps } from "next"
 import { Pomodoro } from "../components/pomodoro/Pomodoro"
 import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
 
