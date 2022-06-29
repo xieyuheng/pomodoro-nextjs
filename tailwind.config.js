@@ -26,8 +26,8 @@ module.exports = {
       colors: {
         gray: colors.stone,
         focus: colors.red,
-        'short-break': colors.sky,
-        'long-break': colors.purple,
+        break: colors.sky,
+        recess: colors.purple,
       },
     },
   },

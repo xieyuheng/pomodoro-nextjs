@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
+import { tailwind } from "../../config/tailwind"
 
 export type ModeKind = "Focus" | "Break" | "Recess"
 
@@ -18,6 +19,10 @@ export class PomodoroState {
   constructor(public interval: number = 25 * 60) {
     this.time = interval
     makeAutoObservable(this)
+  }
+
+  get themeColor(): string {
+    return `#${tailwind.theme.colors.focus[400]}`
   }
 
   start(): void {

@@ -10,7 +10,7 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
   <div className="flex h-screen w-screen flex-col items-center bg-focus-400 text-focus-100">
     <Head>
       {state.isStarted && <title>{`🍅 ${state.formatTime()}`}</title>}
-      <meta name="theme-color" content="#f87171" />
+      <meta name="theme-color" content={state.themeColor} />
     </Head>
 
     <PomodoroHeader state={state} />
