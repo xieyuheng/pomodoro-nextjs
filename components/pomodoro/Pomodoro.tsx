@@ -15,7 +15,7 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
 
     <PomodoroHeader state={state} />
 
-    <div className="h-full w-full px-10 py-10 sm:max-w-lg md:max-w-xl">
+    <div className="h-full w-full px-10 py-14 sm:max-w-lg md:max-w-xl">
       <PomodoroTimer state={state} />
     </div>
 
