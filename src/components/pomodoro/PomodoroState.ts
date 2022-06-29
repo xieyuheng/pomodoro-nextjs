@@ -22,7 +22,7 @@ export class PomodoroState {
   }
 
   get themeColor(): string {
-    return `#${tailwind.theme.colors.focus[400]}`
+    return tailwind.theme.colors.focus[400]
   }
 
   start(): void {
