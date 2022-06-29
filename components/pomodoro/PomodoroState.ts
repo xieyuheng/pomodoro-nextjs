@@ -3,28 +3,30 @@ import { leftPad } from "../../ut/left-pad"
 
 const pomodoroTime = 25 * 60 * 1000
 
+type Timer = ReturnType<typeof setInterval>
+
 export class PomodoroState {
-  runner?: number = undefined
+  timer?: Timer = undefined
 
   constructor(public time: number = pomodoroTime) {
     makeAutoObservable(this)
   }
 
   start(): void {
-    this.runner = setInterval(() => {
+    this.timer = setInterval(() => {
       this.time -= 1000
     }, 1000)
   }
 
   isRunning(): boolean {
-    return this.runner !== undefined
+    return this.timer !== undefined
   }
 
   stop(): void {
-    if (this.runner === undefined) return
+    if (this.timer === undefined) return
 
-    clearInterval(this.runner)
-    this.runner = undefined
+    clearInterval(this.timer)
+    this.timer = undefined
   }
 
   get minutes(): number {
