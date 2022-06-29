@@ -18,8 +18,12 @@ export class PomodoroState {
     }, 1000)
   }
 
-  isRunning(): boolean {
+  get isRunning(): boolean {
     return this.timer !== undefined
+  }
+
+  get isStarted(): boolean {
+    return this.time !== pomodoroTime
   }
 
   stop(): void {
@@ -29,20 +33,30 @@ export class PomodoroState {
     this.timer = undefined
   }
 
-  get minutes(): number {
+  reset(): void {
+    clearInterval(this.timer)
+    this.timer = undefined
+    this.time = pomodoroTime
+  }
+
+  private get minutes(): number {
     return Math.floor(this.time / (60 * 1000))
   }
 
-  get seconds(): number {
+  private get seconds(): number {
     const total = this.time / 1000
     return total % 60
   }
 
-  formatMinutes(): string {
+  private formatMinutes(): string {
     return leftPad(this.minutes.toString(), 2, "0")
   }
 
-  formatSeconds(): string {
+  private formatSeconds(): string {
     return leftPad(this.seconds.toString(), 2, "0")
+  }
+
+  formatTime(): string {
+    return `${this.formatMinutes()}:${this.formatSeconds()}`
   }
 }

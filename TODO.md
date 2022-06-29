@@ -1,4 +1,5 @@
 - `PomodoroTimerControl` -- `RESET`
+
 - `PomodoroHeader` -- title
 - `PomodoroHeader` -- link to github icon
 - `PomodoroFooter` -- empty footer for now
