@@ -5,16 +5,14 @@ import { PomodoroTimer } from "./PomodoroTimer"
 import Head from "next/head"
 
 export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
-  <>
+  <div className="h-screen w-screen bg-red-400 flex flex-col items-center text-red-50">
     <Head>
       <title>🍅 {state.formatTime()}</title>
       <meta name="theme-color" content="#f87171" />
     </Head>
 
-    <div className="h-screen w-screen bg-red-400 text-red-50">
-      <div className="flex h-full flex-col items-center py-10">
-        <PomodoroTimer state={state} />
-      </div>
+    <div className="md:max-w-xl sm:max-w-lg w-full border px-10 py-10">
+      <PomodoroTimer state={state} />
     </div>
-  </>
+  </div>
 ))
