@@ -1,7 +1,8 @@
-- when the `Notification.permission` is "denied", show a button to ask again.
-- be able to `ModesSetting`
+- `PomodoroHeader` ask for `Notification.permission`
+  - when the `Notification.permission` is "denied",
+    we can not ask again?
+- be able to config `settings.modes`
 - use `localStorage` to store `settings`
 - `useLang` -- with `lang` -- to suppurt both English and Chinese
-
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
