@@ -1,5 +1,3 @@
-- improve font -- maybe just use user's font
-
 - `PomodoroHeader` -- title
 - `PomodoroHeader` -- link to github icon
 - `PomodoroFooter` -- empty footer for now
