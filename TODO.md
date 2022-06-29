@@ -1,4 +1,4 @@
-- `PomodoroModebar` be able to change mode
+- `PomodoroModebar` be able to change `mode`
 
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
