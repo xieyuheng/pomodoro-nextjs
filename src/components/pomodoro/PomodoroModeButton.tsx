@@ -31,10 +31,18 @@ export const PomodoroModeButton: FC<{
       }
     )}
     onClick={() => {
-      setTimeout(() => {
-        alert(`Change mode to ${kind}?`)
-        state.changeMode(kind)
-      }, 1000)
+      if (!state.isStarted) {
+        setTimeout(() => state.changeMode(kind), 1000)
+      } else {
+        const message = [
+          `A timer has been started in ${state.kind} mode,`,
+          `are you sure to change to ${kind} mode?`,
+        ].join("\n")
+
+        if (window.confirm(message)) {
+          setTimeout(() => state.changeMode(kind), 1000)
+        }
+      }
     }}
   >
     {kind}
