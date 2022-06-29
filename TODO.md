@@ -1,4 +1,3 @@
-- `Settings` should be a class
 - `PomodoroState` -- `settings.modes`
 
 - `PomodoroModebar` -- be able to change `mode`
