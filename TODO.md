@@ -1,4 +1,3 @@
-- one mode one theme
 - `PomodoroModebar` be able to change mode
 
 - `PomodoroTasks`
