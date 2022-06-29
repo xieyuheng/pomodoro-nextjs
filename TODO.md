@@ -1,5 +1,3 @@
-- `PomodoroTimer` -- `START` and `STOP` button
-
 - improve font -- maybe just use user's font
 
 - `PomodoroHeader` -- title
