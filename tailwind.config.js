@@ -27,7 +27,7 @@ module.exports = {
         gray: colors.stone,
         focus: colors.red,
         break: colors.sky,
-        recess: colors.purple,
+        recess: colors.violet,
       },
     },
   },
