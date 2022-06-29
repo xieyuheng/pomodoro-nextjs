@@ -1,4 +1,10 @@
-- switch to react and nextjs (to be closer to work stack)
+- migrate home routes -- use index to route to pomodoro
+- migrate `ut`
+- migrate `pomodoro`
+
+- migrate `PomodoroState.ts`
+- migrate `Pomodoro`
+- migrate `PomodoroTimer`
 
 - `PomodoroTimer` -- `START` and `STOP` button
 
@@ -17,3 +23,5 @@
 - show timer and current task in title
 
 - add notification
+
+- nextjs SSR
