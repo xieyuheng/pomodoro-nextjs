@@ -1,7 +1,3 @@
-- migrate `ut`
-- migrate `pomodoro`
-
-- migrate `PomodoroState.ts`
 - migrate `Pomodoro`
 - migrate `PomodoroTimer`
 
