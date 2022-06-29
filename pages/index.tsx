@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { GetStaticProps } from "next"
+import { GetStaticProps, GetServerSideProps } from "next"
 import { Pomodoro } from "../components/pomodoro/Pomodoro"
 import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
 
@@ -9,10 +9,6 @@ type User = {
 
 export default function Home({ user }: { user: User }) {
   const state = new State()
-
-  state.start()
-
-  console.log(user)
 
   return (
     <div>
@@ -27,8 +23,6 @@ export default function Home({ user }: { user: User }) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  console.log(context)
-
   const response = await fetch("http://localhost:3000/api/hello")
   const user = await response.json()
 
