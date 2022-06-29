@@ -1,2 +1,6 @@
 @import url("https://fonts.readonly.link/index.css");
 @import "./tailwind.css";
+
+:root {
+  --mode: focus;
+}
