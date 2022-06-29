@@ -9,6 +9,7 @@ export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
   <div
     className={classNames(
       "flex flex-col items-center rounded-lg border-2 py-2 px-2 md:px-6",
+      "transition delay-300 duration-1000",
       {
         "border-focus-600 bg-focus-500 bg-focus-400":
           state.mode.kind === "Focus",
