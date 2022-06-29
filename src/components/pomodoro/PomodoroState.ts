@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx"
-import { leftPad } from "../../ut/left-pad"
+import { leftPad } from "../../utils/left-pad"
 
 export type ModeKind = "Focus" | "Break" | "Recess"
 

@@ -1,7 +1,3 @@
-- one mode one theme
-
-- rename ut to utils
-
 - use `tailwindConfig` to set meta `theme-color`
 
   ```
@@ -10,6 +6,8 @@
 
   const fullConfig = resolveConfig(tailwindConfig)
   ```
+
+- one mode one theme
 
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
