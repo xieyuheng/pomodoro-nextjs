@@ -2,7 +2,7 @@ import { FC } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import IconGithub from "../../icons/IconGithub"
+import IconGithub from "../../components/icons/IconGithub"
 
 export const PomodoroFooter: FC<{ state: State }> = observer(({ state }) => (
   <div

@@ -1,5 +1,5 @@
-- when the `Notification.permission` is "denied",
-  show a button to ask again.
+- add IconBell.tsx
+- when the `Notification.permission` is "denied", show a button to ask again.
 
 - `alert` on `changeMode`
 
