@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { PomodoroTimer } from "./PomodoroTimer"
 import { PomodoroHeader } from "./PomodoroHeader"
+import { PomodoroFooter } from "./PomodoroFooter"
 import Head from "next/head"
 
 export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
@@ -17,5 +18,7 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
     <div className="md:max-w-xl sm:max-w-lg w-full px-10 py-10">
       <PomodoroTimer state={state} />
     </div>
+
+    <PomodoroFooter state={state} />
   </div>
 ))

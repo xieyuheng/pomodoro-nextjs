@@ -1,5 +1,3 @@
-- `PomodoroFooter` -- empty footer for now
-
 - `useConfig` -- with `lang`
 
 - `PomodoroTasks`
