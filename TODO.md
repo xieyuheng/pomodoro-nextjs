@@ -1,5 +1,5 @@
-- use src dir
 - one mode one theme
+
 - rename ut to utils
 
 - use `tailwindConfig` to set meta `theme-color`
