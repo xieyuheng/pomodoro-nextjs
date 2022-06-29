@@ -1,5 +1,3 @@
-- mode: focus, break, recess
-
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
 
