@@ -5,7 +5,7 @@ import { PomodoroTimerControl } from "./PomodoroTimerControl"
 
 export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
   <div className="flex w-full flex-col items-center rounded border-2 border-red-600 bg-red-500 bg-red-400 py-6 px-2 md:py-10 md:px-6">
-    <div className="font-mono text-8xl font-semibold md:text-9xl md:text-9xl">
+    <div className="font-mono text-7xl font-semibold sm:text-8xl md:text-9xl">
       {state.formatTime()}
     </div>
 
