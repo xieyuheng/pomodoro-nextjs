@@ -1,14 +1,11 @@
-- use `localStorage`
+- when the `Notification.permission` is "denied",
+  show a button to ask again.
 
-- be able to config
+- `alert` on `changeMode`
 
-  - focus
-  - break
-  - recess
-
-- `useConfig` -- with `lang`
+- be able to `ModesSetting`
+- use `localStorage` to store `settings`
+- `useLang` -- with `lang` -- to suppurt both English and Chinese
 
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
-
-- add notification

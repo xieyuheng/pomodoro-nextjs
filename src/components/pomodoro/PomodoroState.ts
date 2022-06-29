@@ -11,14 +11,42 @@ export class PomodoroState {
   time: number
   timer: Timer | null = null
   settings: Settings = Settings.defaultSettings()
+  notificationPermission = "default"
+
   classes = {
-    transition: "transition duration-500 ease-in",
+    transition: "transition delay-0 duration-500 ease-out",
   }
 
   constructor() {
     this.mode = this.settings.modes.Focus
     this.time = this.mode.interval
     makeAutoObservable(this)
+  }
+
+  async setupNotification(): Promise<void> {
+    switch (Notification.permission) {
+      case "default": {
+        await this.requestNotificationPermission()
+        return
+      }
+      case "granted": {
+        return
+      }
+      case "denied": {
+        return
+      }
+    }
+  }
+
+  async requestNotificationPermission(): Promise<void> {
+    this.notificationPermission = await Notification.requestPermission()
+  }
+
+  notify(): void {
+    new Notification("Pomodoro", {
+      body: `${this.mode.kind} finished.`,
+      vibrate: [300, 100, 300, 100, 300],
+    })
   }
 
   changeMode(kind: ModeKind): void {
@@ -38,6 +66,9 @@ export class PomodoroState {
     this.timer = setInterval(() => {
       if (this.time > 0) {
         this.time--
+      } else {
+        this.stop()
+        this.notify()
       }
     }, 1000)
   }
