@@ -1,21 +1,8 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
 import { tailwind } from "../../config/tailwind"
-import { Mode, ModeKind, Focus, Break, Recess } from "./Mode"
-
-type Settings = {
-  modes: {
-    focus: Focus
-    break: Break
-    recess: Recess
-  }
-}
-
-const defaultModes = {
-  focus: new Focus(25 * 60),
-  break: new Break(10 * 60),
-  recess: new Recess(20 * 60),
-}
+import { Mode, ModeKind } from "./Mode"
+import { Settings } from "./Settings"
 
 type Timer = ReturnType<typeof setInterval>
 
@@ -23,40 +10,20 @@ export class PomodoroState {
   mode: Mode
   time: number
   timer?: Timer = undefined
-
-  settings: Settings = { modes: defaultModes }
-
+  settings: Settings = Settings.defaultSettings()
   classes = {
     transition: "transition duration-500 ease-in",
   }
 
   constructor() {
-    this.mode = this.settings.modes.focus
+    this.mode = this.settings.modes.Focus
     this.time = this.mode.interval
-
     makeAutoObservable(this)
   }
 
   changeMode(kind: ModeKind): void {
-    switch (kind) {
-      case "Focus": {
-        this.mode = this.settings.modes.focus
-        this.reset()
-        return
-      }
-
-      case "Break": {
-        this.mode = this.settings.modes.break
-        this.reset()
-        return
-      }
-
-      case "Recess": {
-        this.mode = this.settings.modes.recess
-        this.reset()
-        return
-      }
-    }
+    this.mode = this.settings.modes[kind]
+    this.reset()
   }
 
   get kind(): ModeKind {
