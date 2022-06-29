@@ -9,7 +9,7 @@ import Head from "next/head"
 export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
   <div className="flex h-screen w-screen flex-col items-center bg-red-400 text-red-50">
     <Head>
-      <title>🍅 {state.formatTime()}</title>
+      {state.isStarted && <title>{`🍅 ${state.formatTime()}`}</title>}
       <meta name="theme-color" content="#f87171" />
     </Head>
 
