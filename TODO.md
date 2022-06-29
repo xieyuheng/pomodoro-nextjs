@@ -1,5 +1,3 @@
-- `PomodoroTimer` -- run `start`
-
 - `PomodoroTimer` -- `START` and `STOP` button
 
 - improve font

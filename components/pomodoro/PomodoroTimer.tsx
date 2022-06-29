@@ -1,9 +1,10 @@
 import { PomodoroState as State } from "./PomodoroState"
+import { observer } from "mobx-react-lite"
 
-export default function PomodoroTimer({ state }) {
+export const PomodoroTimer = observer(({ state }) => {
   return (
     <div className="text-9xl">
       {state.formatMinutes()}:{state.formatSeconds()}
     </div>
   )
-}
+})

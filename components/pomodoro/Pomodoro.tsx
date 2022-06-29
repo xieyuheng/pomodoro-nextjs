@@ -1,8 +1,11 @@
 import { PomodoroState as State } from "./PomodoroState"
-import PomodoroTimer from "./PomodoroTimer"
+import { PomodoroTimer } from "./PomodoroTimer"
+import { observer } from "mobx-react-lite"
 
-export default function Pomodoro() {
+export const Pomodoro = observer(() => {
   const state = new State()
+
+  state.start()
 
   return (
     <div>
@@ -13,4 +16,4 @@ export default function Pomodoro() {
       </div>
     </div>
   )
-}
+})
