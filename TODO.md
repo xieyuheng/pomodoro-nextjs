@@ -1,11 +1,10 @@
-- `useConfig` -- with `lang`
-
 - `PomodoroTasks`
-
-- be able to config `pomodoroTime`
+- `PomodoroTasks` -- show current task name in page title
 
 - use `localStorage`
 
-- show timer and current task in title
+- be able to config `pomodoroTime`
+
+- `useConfig` -- with `lang`
 
 - add notification
