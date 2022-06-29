@@ -1,11 +1,18 @@
+import { GetStaticProps } from "next"
 import Head from "next/head"
 import { Pomodoro } from "../components/pomodoro/Pomodoro"
 import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
 
-export default function Home() {
+type User = {
+  name: string
+}
+
+export default function Home({ user }: { user: User }) {
   const state = new State()
 
   state.start()
+
+  console.log(user)
 
   return (
     <div>
@@ -17,4 +24,15 @@ export default function Home() {
       <Pomodoro state={state} />
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  console.log(context)
+
+  const response = await fetch("http://localhost:3000/api/hello")
+  const user = await response.json()
+
+  return {
+    props: { user },
+  }
 }
