@@ -9,15 +9,18 @@ export type Mode = {
   interval: number
 }
 
+export const defaultModes = {
+  focus: { kind: "Focus", interval: 25 * 60 },
+}
+
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
-  mode: ModeKind = "Focus"
   timer?: Timer = undefined
   time: number
 
-  constructor(public interval: number = 25 * 60) {
-    this.time = interval
+  constructor(public mode: Mode = defaultModes.focus) {
+    this.time = mode.interval
     makeAutoObservable(this)
   }
 
@@ -38,7 +41,7 @@ export class PomodoroState {
   }
 
   get isStarted(): boolean {
-    return this.time !== this.interval
+    return this.time !== this.mode.interval
   }
 
   stop(): void {
@@ -51,7 +54,7 @@ export class PomodoroState {
   reset(): void {
     clearInterval(this.timer)
     this.timer = undefined
-    this.time = this.interval
+    this.time = this.mode.interval
   }
 
   private get minutes(): number {
