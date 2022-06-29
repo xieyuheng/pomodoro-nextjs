@@ -1,3 +1,5 @@
+- extract code about mobx from `_app.tsx`
+
 - `PomodoroTimer` -- `START` and `STOP` button
 
 - improve font
