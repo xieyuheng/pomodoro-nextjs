@@ -11,7 +11,7 @@ export type Mode = {
 
 export const defaultModes = {
   focus: { kind: "Focus", interval: 25 * 60 },
-}
+} as const
 
 type Timer = ReturnType<typeof setInterval>
 

@@ -1,4 +1,5 @@
 import { FC } from "react"
+import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { PomodoroTimer } from "./PomodoroTimer"
@@ -7,7 +8,13 @@ import { PomodoroFooter } from "./PomodoroFooter"
 import Head from "next/head"
 
 export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
-  <div className="flex h-screen w-screen flex-col items-center bg-focus-400 text-focus-100">
+  <div
+    className={classNames("flex h-screen w-screen flex-col items-center", {
+      "bg-focus-400 text-focus-100": state.mode.kind === "Focus",
+      "bg-break-400 text-break-100": state.mode.kind === "Break",
+      "bg-recess-400 text-recess-100": state.mode.kind === "Recess",
+    })}
+  >
     <Head>
       {state.isStarted && <title>{`🍅 ${state.formatTime()}`}</title>}
       <meta name="theme-color" content={state.themeColor} />
