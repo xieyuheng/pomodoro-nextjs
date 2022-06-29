@@ -1,14 +1,14 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../ut/left-pad"
 
-const pomodoroTime = 25 * 60 * 1000
-
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
   timer?: Timer = undefined
+  time: number
 
-  constructor(public time: number = pomodoroTime) {
+  constructor(public interval: number = 25 * 60 * 1000) {
+    this.time = interval
     makeAutoObservable(this)
   }
 
@@ -25,7 +25,7 @@ export class PomodoroState {
   }
 
   get isStarted(): boolean {
-    return this.time !== pomodoroTime
+    return this.time !== this.interval
   }
 
   stop(): void {
@@ -38,7 +38,7 @@ export class PomodoroState {
   reset(): void {
     clearInterval(this.timer)
     this.timer = undefined
-    this.time = pomodoroTime
+    this.time = this.interval
   }
 
   private get minutes(): number {

@@ -1,9 +1,17 @@
+- mode: focus, break, recess
+
+- `PomodoroModeButton`
+
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
 
 - use `localStorage`
 
-- be able to config `pomodoroTime`
+- be able to config
+
+  - focus
+  - break
+  - recess
 
 - `useConfig` -- with `lang`
 

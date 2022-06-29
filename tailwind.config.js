@@ -25,6 +25,9 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.stone,
+        focus: colors.red,
+        'short-break': colors.sky,
+        'long-break': colors.purple,
       },
     },
   },
