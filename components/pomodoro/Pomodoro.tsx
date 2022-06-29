@@ -7,7 +7,7 @@ import { PomodoroFooter } from "./PomodoroFooter"
 import Head from "next/head"
 
 export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
-  <div className="h-screen w-screen bg-red-400 flex flex-col items-center text-red-50">
+  <div className="flex h-screen w-screen flex-col items-center bg-red-400 text-red-50">
     <Head>
       <title>🍅 {state.formatTime()}</title>
       <meta name="theme-color" content="#f87171" />
@@ -15,7 +15,7 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
 
     <PomodoroHeader state={state} />
 
-    <div className="md:max-w-xl sm:max-w-lg w-full px-10 py-10">
+    <div className="h-full w-full px-10 py-10 sm:max-w-lg md:max-w-xl">
       <PomodoroTimer state={state} />
     </div>
 
