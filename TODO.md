@@ -1,4 +1,4 @@
-- migrate `PomodoroTimer`
+- `PomodoroTimer` -- run `start`
 
 - `PomodoroTimer` -- `START` and `STOP` button
 
