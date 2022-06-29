@@ -1,7 +1,8 @@
 import { FC } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
-import { PomodoroState as State, ModeKind } from "./PomodoroState"
+import { PomodoroState as State } from "./PomodoroState"
+import { ModeKind } from "./Mode"
 
 export const PomodoroModeButton: FC<{
   state: State

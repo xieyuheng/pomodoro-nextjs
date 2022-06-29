@@ -1,27 +1,21 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
 import { tailwind } from "../../config/tailwind"
-
-export type ModeKind = "Focus" | "Break" | "Recess"
-
-export type Mode = {
-  kind: ModeKind
-  interval: number
-}
+import { Mode, ModeKind, Focus, Break, Recess } from "./Mode"
 
 type Settings = {
   modes: {
-    focus: { kind: "Focus"; interval: number }
-    break: { kind: "Break"; interval: number }
-    recess: { kind: "Recess"; interval: number }
+    focus: Focus
+    break: Break
+    recess: Recess
   }
 }
 
-export const defaultModes = {
-  focus: { kind: "Focus", interval: 25 * 60 },
-  break: { kind: "Break", interval: 5 * 60 },
-  recess: { kind: "Recess", interval: 20 * 60 },
-} as const
+const defaultModes = {
+  focus: new Focus(25 * 60),
+  break: new Break(10 * 60),
+  recess: new Recess(20 * 60),
+}
 
 type Timer = ReturnType<typeof setInterval>
 
@@ -30,12 +24,14 @@ export class PomodoroState {
   time: number
   timer?: Timer = undefined
 
+  settings: Settings = { modes: defaultModes }
+
   classes = {
-    transition: "transition duration-700 delay-75 ease-in",
+    transition: "transition duration-500 ease-in",
   }
 
-  constructor(mode: Mode = defaultModes.focus) {
-    this.mode = mode
+  constructor() {
+    this.mode = this.settings.modes.focus
     this.time = this.mode.interval
 
     makeAutoObservable(this)
@@ -44,19 +40,19 @@ export class PomodoroState {
   changeMode(kind: ModeKind): void {
     switch (kind) {
       case "Focus": {
-        this.mode = defaultModes.focus
+        this.mode = this.settings.modes.focus
         this.reset()
         return
       }
 
       case "Break": {
-        this.mode = defaultModes.break
+        this.mode = this.settings.modes.break
         this.reset()
         return
       }
 
       case "Recess": {
-        this.mode = defaultModes.recess
+        this.mode = this.settings.modes.recess
         this.reset()
         return
       }
