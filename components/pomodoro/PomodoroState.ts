@@ -3,6 +3,11 @@ import { leftPad } from "../../ut/left-pad"
 
 export type ModeKind = "Focus" | "Break" | "Recess"
 
+export type Mode = {
+  kind: ModeKind
+  interval: number
+}
+
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
@@ -10,7 +15,7 @@ export class PomodoroState {
   timer?: Timer = undefined
   time: number
 
-  constructor(public interval: number = 25 * 60 * 1000) {
+  constructor(public interval: number = 25 * 60) {
     this.time = interval
     makeAutoObservable(this)
   }
@@ -18,7 +23,7 @@ export class PomodoroState {
   start(): void {
     this.timer = setInterval(() => {
       if (this.time > 0) {
-        this.time -= 1000
+        this.time--
       }
     }, 1000)
   }
@@ -45,11 +50,11 @@ export class PomodoroState {
   }
 
   private get minutes(): number {
-    return Math.floor(this.time / (60 * 1000))
+    return Math.floor(this.time / 60)
   }
 
   private get seconds(): number {
-    const total = this.time / 1000
+    const total = this.time
     return total % 60
   }
 
