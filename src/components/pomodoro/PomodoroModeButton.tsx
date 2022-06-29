@@ -4,13 +4,13 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State, ModeKind } from "./PomodoroState"
 
 export const PomodoroModeButton: FC<{
-  state: ModeKind
+  state: State
   kind: ModeKind
 }> = observer(({ state, kind }) => (
   <button
     className={classNames(
       "rounded-lg border-2 py-1 px-3",
-      "transition delay-300 duration-1000",
+      state.classes.transition,
       {
         "border-focus-400 bg-focus-600 text-focus-200":
           state.kind === "Focus" && kind === "Focus",
@@ -28,7 +28,11 @@ export const PomodoroModeButton: FC<{
           state.kind === "Recess" && kind !== "Recess",
       }
     )}
-    onClick={() => (state.kind = kind)}
+    onClick={() => {
+      setTimeout(() => {
+        state.changeMode(kind)
+      }, 1000)
+    }}
   >
     {kind}
   </button>

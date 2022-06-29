@@ -9,7 +9,7 @@ export const PomodoroFooter: FC<{ state: State }> = observer(({ state }) => (
     className={classNames(
       "flex w-full items-center border-t px-4 py-4 font-sans text-3xl font-semibold",
       "justify-center",
-      "transition delay-300 duration-1000",
+      state.classes.transition,
       {
         "border-focus-500": state.kind === "Focus",
         "border-break-500": state.kind === "Break",

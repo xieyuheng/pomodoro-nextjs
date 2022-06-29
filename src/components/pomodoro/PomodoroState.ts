@@ -9,6 +9,14 @@ export type Mode = {
   interval: number
 }
 
+type Settings = {
+  modes: {
+    focus: { kind: "Focus"; interval: number }
+    break: { kind: "Break"; interval: number }
+    recess: { kind: "Recess"; interval: number }
+  }
+}
+
 export const defaultModes = {
   focus: { kind: "Focus", interval: 25 * 60 },
   break: { kind: "Break", interval: 5 * 60 },
@@ -18,13 +26,41 @@ export const defaultModes = {
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
-  timer?: Timer = undefined
+  mode: Mode
   time: number
+  timer?: Timer = undefined
 
-  constructor(public mode: Mode = defaultModes.focus) {
-    this.time = mode.interval
+  classes = {
+    transition: "transition duration-700 delay-75 ease-in",
+  }
+
+  constructor(mode: Mode = defaultModes.focus) {
+    this.mode = mode
+    this.time = this.mode.interval
 
     makeAutoObservable(this)
+  }
+
+  changeMode(kind: ModeKind): void {
+    switch (kind) {
+      case "Focus": {
+        this.mode = defaultModes.focus
+        this.reset()
+        return
+      }
+
+      case "Break": {
+        this.mode = defaultModes.break
+        this.reset()
+        return
+      }
+
+      case "Recess": {
+        this.mode = defaultModes.recess
+        this.reset()
+        return
+      }
+    }
   }
 
   get kind(): ModeKind {

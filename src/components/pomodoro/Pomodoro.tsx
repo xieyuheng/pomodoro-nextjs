@@ -11,7 +11,7 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
   <div
     className={classNames(
       "flex h-screen w-screen flex-col items-center",
-      "transition delay-300 duration-1000",
+      state.classes.transition,
       {
         "bg-focus-400 text-focus-100": state.kind === "Focus",
         "bg-break-400 text-break-100": state.kind === "Break",

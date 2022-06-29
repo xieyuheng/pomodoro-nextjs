@@ -11,7 +11,7 @@ export const PomodoroTimerButton: FC<{
   <button
     className={classNames(
       "rounded-md border-2 px-4 py-2 text-2xl md:text-3xl",
-      "transition delay-300 duration-1000",
+      state.classes.transition,
       {
         "border-focus-300 bg-focus-200 text-focus-600": state.kind === "Focus",
         "border-break-300 bg-break-200 text-break-600": state.kind === "Break",
