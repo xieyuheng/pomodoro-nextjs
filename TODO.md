@@ -1,10 +1,3 @@
-- `PomodoroState` -- `settings.modes`
-
-- `PomodoroModebar` -- be able to change `mode`
-
-- `PomodoroTasks`
-- `PomodoroTasks` -- show current task name in page title
-
 - use `localStorage`
 
 - be able to config
@@ -14,5 +7,8 @@
   - recess
 
 - `useConfig` -- with `lang`
+
+- `PomodoroTasks`
+- `PomodoroTasks` -- show current task name in page title
 
 - add notification
