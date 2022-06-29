@@ -4,7 +4,6 @@ import { leftPad } from "../../ut/left-pad"
 const pomodoroTime = 25 * 60 * 1000
 
 export class PomodoroState {
-  time: number
   runner?: number = undefined
 
   constructor(public time: number = pomodoroTime) {
