@@ -14,7 +14,9 @@ export class PomodoroState {
 
   start(): void {
     this.timer = setInterval(() => {
-      this.time -= 1000
+      if (this.time > 0) {
+        this.time -= 1000
+      }
     }, 1000)
   }
 
