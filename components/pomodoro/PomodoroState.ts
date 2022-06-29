@@ -1,12 +1,12 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../ut/left-pad"
 
-export type Mode = "Focus" | "Break" | "Recess"
+export type ModeKind = "Focus" | "Break" | "Recess"
 
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
-  mode: Mode = "Focus"
+  mode: ModeKind = "Focus"
   timer?: Timer = undefined
   time: number
 

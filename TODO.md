@@ -1,3 +1,5 @@
+- one mode one theme
+
 - `PomodoroTasks`
 - `PomodoroTasks` -- show current task name in page title
 

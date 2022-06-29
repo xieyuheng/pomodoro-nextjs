@@ -6,9 +6,9 @@ import { PomodoroModeButton } from "./PomodoroModeButton"
 export const PomodoroModebar: FC<{ state: State }> = observer(({ state }) => (
   <div className="flex w-full px-6">
     <div className="flex w-full justify-center space-x-4 px-2 py-4 text-xl font-semibold md:text-2xl">
-      <PomodoroModeButton name="Focus" active />
-      <PomodoroModeButton name="Break" />
-      <PomodoroModeButton name="Recess" />
+      <PomodoroModeButton kind="Focus" active />
+      <PomodoroModeButton kind="Break" />
+      <PomodoroModeButton kind="Recess" />
     </div>
   </div>
 ))

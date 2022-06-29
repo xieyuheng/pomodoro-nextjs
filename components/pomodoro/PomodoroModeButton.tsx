@@ -1,12 +1,12 @@
 import { FC } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
-import { PomodoroState as State, Mode } from "./PomodoroState"
+import { PomodoroState as State, ModeKind } from "./PomodoroState"
 
 export const PomodoroModeButton: FC<{
-  name: Mode
-  active: boolean
-}> = observer(({ name, active }) => (
+  kind: ModeKind
+  active?: boolean
+}> = observer(({ kind: name, active }) => (
   <button
     className={classNames("rounded border-2 py-1 px-3", {
       "border-focus-400 bg-focus-600 text-focus-200": active,
