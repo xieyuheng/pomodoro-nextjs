@@ -13,9 +13,9 @@ export const Pomodoro: FC<{ state: State }> = observer(({ state }) => (
       "flex h-screen w-screen flex-col items-center",
       "transition delay-300 duration-1000",
       {
-        "bg-focus-400 text-focus-100": state.mode.kind === "Focus",
-        "bg-break-400 text-break-100": state.mode.kind === "Break",
-        "bg-recess-400 text-recess-100": state.mode.kind === "Recess",
+        "bg-focus-400 text-focus-100": state.kind === "Focus",
+        "bg-break-400 text-break-100": state.kind === "Break",
+        "bg-recess-400 text-recess-100": state.kind === "Recess",
       }
     )}
   >

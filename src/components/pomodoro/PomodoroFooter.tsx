@@ -11,9 +11,9 @@ export const PomodoroFooter: FC<{ state: State }> = observer(({ state }) => (
       "justify-center",
       "transition delay-300 duration-1000",
       {
-        "border-focus-500": state.mode.kind === "Focus",
-        "border-break-500": state.mode.kind === "Break",
-        "border-recess-500": state.mode.kind === "Recess",
+        "border-focus-500": state.kind === "Focus",
+        "border-break-500": state.kind === "Break",
+        "border-recess-500": state.kind === "Recess",
       }
     )}
   >

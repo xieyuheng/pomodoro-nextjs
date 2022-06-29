@@ -11,6 +11,8 @@ export type Mode = {
 
 export const defaultModes = {
   focus: { kind: "Focus", interval: 25 * 60 },
+  break: { kind: "Break", interval: 5 * 60 },
+  recess: { kind: "Recess", interval: 20 * 60 },
 } as const
 
 type Timer = ReturnType<typeof setInterval>
@@ -21,7 +23,12 @@ export class PomodoroState {
 
   constructor(public mode: Mode = defaultModes.focus) {
     this.time = mode.interval
+
     makeAutoObservable(this)
+  }
+
+  get kind(): ModeKind {
+    return this.mode.kind
   }
 
   get themeColor(): string {
