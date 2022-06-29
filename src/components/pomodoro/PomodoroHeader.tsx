@@ -6,7 +6,7 @@ import { PomodoroState as State } from "./PomodoroState"
 export const PomodoroHeader: FC<{ state: State }> = observer(({ state }) => (
   <div
     className={classNames(
-      "flex w-full items-center border-b  px-4 py-4 font-sans text-3xl font-semibold",
+      "flex w-full items-center border-b px-4 py-4 font-sans text-3xl font-semibold",
       {
         "border-focus-500": state.mode.kind === "Focus",
         "border-break-500": state.mode.kind === "Break",
