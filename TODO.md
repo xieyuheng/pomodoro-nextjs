@@ -1,4 +1,3 @@
-- migrate home routes -- use index to route to pomodoro
 - migrate `ut`
 - migrate `pomodoro`
 
