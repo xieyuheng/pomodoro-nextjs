@@ -19,7 +19,9 @@ export const PomodoroHeader: FC<{ state: State }> = observer(({ state }) => (
   >
     <div>Pomodoro</div>
 
-    {!state.canNotify && (
+    {/* TODO */}
+
+    {false && !state.canNotify && (
       <button
         title="Enable notification."
         className="h-6 w-6"
