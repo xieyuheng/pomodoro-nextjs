@@ -5,11 +5,9 @@ const pomodoroTime = 25 * 60 * 1000
 
 export class PomodoroState {
   time: number
-  runner: number | null
+  runner?: number = undefined
 
   constructor(public time: number = pomodoroTime) {
-    this.runner = null
-
     makeAutoObservable(this)
   }
 
@@ -20,16 +18,14 @@ export class PomodoroState {
   }
 
   isRunning(): boolean {
-    return this.runner !== null
+    return this.runner !== undefined
   }
 
   stop(): void {
-    console.log(this)
+    if (this.runner === undefined) return
 
-    if (this.runner !== null) {
-      clearInterval(this.runner)
-      this.runner = null
-    }
+    clearInterval(this.runner)
+    this.runner = undefined
   }
 
   get minutes(): number {
