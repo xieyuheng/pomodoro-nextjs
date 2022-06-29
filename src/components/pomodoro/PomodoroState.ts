@@ -11,7 +11,7 @@ export class PomodoroState {
   time: number
   timer: Timer | null = null
   settings: Settings = Settings.defaultSettings()
-  notificationPermission = "default"
+  notificationPermission: NotificationPermission | null = null
 
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
@@ -26,7 +26,7 @@ export class PomodoroState {
   async setupNotification(): Promise<void> {
     switch (Notification.permission) {
       case "default": {
-        await this.requestNotificationPermission()
+        await this.enableNotification()
         return
       }
       case "granted": {
@@ -38,8 +38,12 @@ export class PomodoroState {
     }
   }
 
-  async requestNotificationPermission(): Promise<void> {
+  async enableNotification(): Promise<void> {
     this.notificationPermission = await Notification.requestPermission()
+  }
+
+  get canNotify(): boolean {
+    return this.notificationPermission === "granted"
   }
 
   notify(): void {
