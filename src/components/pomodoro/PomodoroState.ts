@@ -9,7 +9,7 @@ type Timer = ReturnType<typeof setInterval>
 export class PomodoroState {
   mode: Mode
   time: number
-  timer?: Timer = undefined
+  timer: Timer | null = null
   settings: Settings = Settings.defaultSettings()
   classes = {
     transition: "transition duration-500 ease-in",
@@ -43,7 +43,7 @@ export class PomodoroState {
   }
 
   get isRunning(): boolean {
-    return this.timer !== undefined
+    return this.timer !== null
   }
 
   get isStarted(): boolean {
@@ -51,16 +51,19 @@ export class PomodoroState {
   }
 
   stop(): void {
-    if (this.timer === undefined) return
+    if (this.timer === null) return
 
     clearInterval(this.timer)
-    this.timer = undefined
+    this.timer = null
   }
 
   reset(): void {
-    clearInterval(this.timer)
-    this.timer = undefined
     this.time = this.mode.interval
+    this.stop()
+  }
+
+  formatTime(): string {
+    return `${this.formatMinutes()}:${this.formatSeconds()}`
   }
 
   private get minutes(): number {
@@ -78,9 +81,5 @@ export class PomodoroState {
 
   private formatSeconds(): string {
     return leftPad(this.seconds.toString(), 2, "0")
-  }
-
-  formatTime(): string {
-    return `${this.formatMinutes()}:${this.formatSeconds()}`
   }
 }
