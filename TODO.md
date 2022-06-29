@@ -1,4 +1,5 @@
-- migrate `Pomodoro`
+- `Pomodoro` use mobx and init `state`
+
 - migrate `PomodoroTimer`
 
 - `PomodoroTimer` -- `START` and `STOP` button
