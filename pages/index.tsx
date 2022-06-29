@@ -1,8 +1,7 @@
-import type { NextPage } from "next"
 import Head from "next/head"
 import Pomodoro from "../components/pomodoro/Pomodoro"
 
-export default function Home(): NextPage {
+export default function Home() {
   return (
     <div>
       <Head>
