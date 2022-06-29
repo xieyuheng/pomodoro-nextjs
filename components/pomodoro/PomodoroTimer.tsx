@@ -9,7 +9,7 @@ export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
       {state.formatTime()}
     </div>
 
-    <div className="mt-4 font-sans font-bold md:mt-6">
+    <div className="pt-4 font-sans font-bold md:pt-6">
       <PomodoroTimerControl state={state} />
     </div>
   </div>

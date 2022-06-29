@@ -1,6 +1,3 @@
-- `PomodoroTimer` -- fix width`
-
-- `PomodoroHeader` -- title
 - `PomodoroHeader` -- link to github icon
 - `PomodoroFooter` -- empty footer for now
 
