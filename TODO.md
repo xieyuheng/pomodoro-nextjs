@@ -1,8 +1,10 @@
 - `PomodoroTimer` -- `START` and `STOP` button
 
-- improve font
+- improve font -- maybe just use user's font
 
-- `PomodoroHeader` -- title and menu
+- `PomodoroHeader` -- title
+- `PomodoroHeader` -- link to github icon
+- `PomodoroFooter` -- empty footer for now
 
 - `useConfig` -- with `lang`
 
@@ -15,5 +17,3 @@
 - show timer and current task in title
 
 - add notification
-
-- nextjs SSR
