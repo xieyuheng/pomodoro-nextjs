@@ -1,4 +1,3 @@
-- `PomodoroHeader` -- link to github icon
 - `PomodoroFooter` -- empty footer for now
 
 - `useConfig` -- with `lang`
