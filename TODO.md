@@ -1,3 +1,4 @@
+- disable delay in transition
 - a finish screen for each mode
 - `PomodoroHeader` ask for `Notification.permission`
   - when the `Notification.permission` is "denied",
