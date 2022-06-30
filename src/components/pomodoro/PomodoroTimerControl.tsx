@@ -3,6 +3,7 @@ import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { PomodoroTimerButton } from "./PomodoroTimerButton"
+import { callWithConfirm } from "../../utils/call-with-confirm"
 
 export const PomodoroTimerControl: FC<{ state: State }> = observer(
   ({ state }) => (
@@ -38,15 +39,13 @@ const ResetButton: FC<{ state: State }> = observer(({ state }) => (
   <PomodoroTimerButton
     state={state}
     name="RESET"
-    onClick={() => {
-      const message = [
-        `A timer has been started in ${state.kind} mode,`,
-        `are you sure to reset it?`,
-      ].join("\n")
-
-      if (window.confirm(message)) {
-        state.reset()
-      }
-    }}
+    onClick={() =>
+      callWithConfirm(() => state.reset(), {
+        message: [
+          `A timer has been started in ${state.kind} mode,`,
+          `are you sure to reset it?`,
+        ].join("\n"),
+      })
+    }
   />
 ))

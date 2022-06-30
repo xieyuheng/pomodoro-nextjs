@@ -1,4 +1,3 @@
-- use `callWithConfirm`
 - use dynamic theme (runtime tailwind)
 - a finish screen for each mode
 - `PomodoroHeader` ask for `Notification.permission`
