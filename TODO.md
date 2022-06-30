@@ -1,3 +1,4 @@
+- a finish screen for each mode
 - `PomodoroHeader` ask for `Notification.permission`
   - when the `Notification.permission` is "denied",
     we can not ask again?

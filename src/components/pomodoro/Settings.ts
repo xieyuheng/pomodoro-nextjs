@@ -14,15 +14,6 @@ export class Settings {
   }
 
   static defaultSettings(): Settings {
-
-    return new Settings({
-      modes: {
-        Focus: new Focus(5),
-        Break: new Break(5),
-        Recess: new Recess(5),
-      },
-    })
-
     return new Settings({
       modes: {
         Focus: new Focus(25 * 60),
