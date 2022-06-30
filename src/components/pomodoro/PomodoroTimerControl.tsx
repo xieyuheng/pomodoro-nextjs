@@ -15,13 +15,7 @@ export const PomodoroTimerControl: FC<{ state: State }> = observer(
             onClick={() => state.start()}
           />
 
-          {state.isStarted && (
-            <PomodoroTimerButton
-              state={state}
-              name="RESET"
-              onClick={() => state.reset()}
-            />
-          )}
+          {state.isStarted && <ResetButton state={state} />}
         </div>
       )}
 
@@ -33,15 +27,26 @@ export const PomodoroTimerControl: FC<{ state: State }> = observer(
             onClick={() => state.stop()}
           />
 
-          {state.isStarted && (
-            <PomodoroTimerButton
-              state={state}
-              name="RESET"
-              onClick={() => state.reset()}
-            />
-          )}
+          {state.isStarted && <ResetButton state={state} />}
         </div>
       )}
     </div>
   )
 )
+
+const ResetButton: FC<{ state: State }> = observer(({ state }) => (
+  <PomodoroTimerButton
+    state={state}
+    name="RESET"
+    onClick={() => {
+      const message = [
+        `A timer has been started in ${state.kind} mode,`,
+        `are you sure to reset it?`,
+      ].join("\n")
+
+      if (window.confirm(message)) {
+        state.reset()
+      }
+    }}
+  />
+))
