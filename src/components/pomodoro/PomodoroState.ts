@@ -10,8 +10,8 @@ export class PomodoroState {
   mode: Mode
   time: number
   timer: Timer | null = null
-  // settings: Settings = Settings.defaultSettings()
-  settings: Settings = Settings.testingSettings()
+  settings: Settings = Settings.defaultSettings()
+  // settings: Settings = Settings.testingSettings()
   notificationPermission: NotificationPermission | null = null
 
   classes = {
