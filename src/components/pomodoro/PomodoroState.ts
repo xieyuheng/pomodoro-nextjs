@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
 import { tailwind } from "../../config/tailwind"
+import { next } from "../../config/next"
 import { Mode, ModeKind } from "./Mode"
 import { Settings } from "./Settings"
 
@@ -10,9 +11,12 @@ export class PomodoroState {
   mode: Mode
   time: number
   timer: Timer | null = null
-  settings: Settings = Settings.defaultSettings()
-  // settings: Settings = Settings.testingSettings()
+
   notificationPermission: NotificationPermission | null = null
+
+  settings: Settings = next.dev
+    ? Settings.testingSettings()
+    : Settings.defaultSettings()
 
   classes = {
     transition: "transition delay-0 duration-500 ease-out",

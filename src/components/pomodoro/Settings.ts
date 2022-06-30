@@ -27,8 +27,8 @@ export class Settings {
     return new Settings({
       modes: {
         Focus: new Focus(5),
-        Break: new Break(3),
-        Recess: new Recess(7),
+        Break: new Break(2),
+        Recess: new Recess(3),
       },
     })
   }
