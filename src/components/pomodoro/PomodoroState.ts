@@ -63,7 +63,8 @@ export class PomodoroState {
   }
 
   get themeColor(): string {
-    return tailwind.theme.colors.focus[400]
+    const kind = this.kind.toLowerCase()
+    return tailwind.theme.colors[kind][400]
   }
 
   start(): void {
