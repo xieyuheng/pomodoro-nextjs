@@ -3,7 +3,7 @@ export async function registerServiceWorker(): Promise<void> {
   if (!navigator.serviceWorker) return
 
   try {
-    const file = "/service-workers/play.js"
+    const file = "/service-workers/notifier.js"
     const registration = await navigator.serviceWorker.register(file)
 
     if (registration.installing) {
