@@ -2,16 +2,16 @@ import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 
-export const PomodoroTimerButton = observer(
-  ({
-    state,
-    name,
-    onClick,
-  }: {
-    state: State
-    name: string
-    onClick: () => void
-  }) => (
+export default observer(function PomodoroTimerButton({
+  state,
+  name,
+  onClick,
+}: {
+  state: State
+  name: string
+  onClick: () => void
+}) {
+  return (
     <button
       className={classNames(
         "rounded-md border-2 px-4 py-2 text-2xl md:text-3xl",
@@ -30,4 +30,4 @@ export const PomodoroTimerButton = observer(
       {name}
     </button>
   )
-)
+})

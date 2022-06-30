@@ -1,13 +1,13 @@
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import { PomodoroTimer } from "./PomodoroTimer"
-import { PomodoroHeader } from "./PomodoroHeader"
-import { PomodoroFooter } from "./PomodoroFooter"
+import PomodoroTimer from "./PomodoroTimer"
+import PomodoroHeader from "./PomodoroHeader"
+import PomodoroFooter from "./PomodoroFooter"
 import Head from "next/head"
 import { useMount } from "ahooks"
 
-export const Pomodoro = observer(({ state }: { state: State }) => {
+export default observer(function Pomodoro({ state }: { state: State }) {
   useMount(() => {
     state.setupNotification()
   })

@@ -4,8 +4,14 @@ import { PomodoroState as State } from "./PomodoroState"
 import { ModeKind } from "./Mode"
 import { callWithConfirm } from "../../utils/call-with-confirm"
 
-export const PomodoroModeButton = observer(
-  ({ state, kind }: { state: State; kind: ModeKind }) => (
+export default observer(function PomodoroModeButton({
+  state,
+  kind,
+}: {
+  state: State
+  kind: ModeKind
+}) {
+  return (
     <button
       disabled={state.kind === kind}
       className={classNames(
@@ -41,4 +47,4 @@ export const PomodoroModeButton = observer(
       {kind}
     </button>
   )
-)
+})

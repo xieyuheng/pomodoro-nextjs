@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Pomodoro } from "../components/pomodoro/Pomodoro"
+import Pomodoro from "../components/pomodoro/Pomodoro"
 import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
 
 export default function Home() {
