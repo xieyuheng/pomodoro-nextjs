@@ -8,7 +8,8 @@ import { PomodoroTimerControl } from "./PomodoroTimerControl"
 export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
   <div
     className={classNames(
-      "flex flex-col items-center rounded-lg border-2 py-2 px-2 md:px-6",
+      "flex flex-col items-center justify-center rounded-lg border-2 py-2 px-2 md:px-6",
+      "h-64 md:h-80",
       state.classes.transition,
       {
         "border-focus-600 bg-focus-500 bg-focus-400": state.kind === "Focus",
@@ -21,15 +22,13 @@ export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
     <PomodoroModebar state={state} />
 
     {!state.isFinished ? (
-      <div className="font-mono text-7xl font-semibold sm:text-8xl md:text-9xl">
+      <div className="font-mono  text-8xl font-semibold md:text-9xl">
         {state.formatTime()}
       </div>
     ) : (
       <div className="flex flex-col items-center">
-        <div className="text-3xl sm:text-4xl md:text-5xl">
-          {state.kind} finished
-        </div>
-        <div className="py-1 font-mono font-semibold text-2xl sm:text-3xl md:text-4xl">
+        <div className="text-4xl md:text-5xl">{state.kind} finished</div>
+        <div className="py-1 font-mono text-3xl font-semibold md:text-4xl">
           {state.formatInterval()}
         </div>
       </div>

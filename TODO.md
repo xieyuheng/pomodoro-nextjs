@@ -1,5 +1,3 @@
-- `PomodoroTimer` -- fix height
-
 - `PomodoroTasks`
 
 - `PomodoroTasks` -- show current task name in page title
