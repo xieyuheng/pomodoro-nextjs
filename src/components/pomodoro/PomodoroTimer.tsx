@@ -1,11 +1,10 @@
-import { FC } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { PomodoroModebar } from "./PomodoroModebar"
 import { PomodoroTimerControl } from "./PomodoroTimerControl"
 
-export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
+export const PomodoroTimer = observer(({ state }: { state: State }) => (
   <div
     className={classNames(
       "flex flex-col items-center justify-between rounded-lg border-2 py-2 px-2 md:px-6",

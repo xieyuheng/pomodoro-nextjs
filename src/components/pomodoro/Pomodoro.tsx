@@ -1,4 +1,3 @@
-import { FC } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
@@ -8,7 +7,7 @@ import { PomodoroFooter } from "./PomodoroFooter"
 import Head from "next/head"
 import { useMount } from "ahooks"
 
-export const Pomodoro: FC<{ state: State }> = observer(({ state }) => {
+export const Pomodoro = observer(({ state }: { state: State }) => {
   useMount(() => {
     state.setupNotification()
   })
