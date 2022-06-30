@@ -1,3 +1,5 @@
+- use service worker
+
 - use `Notification` by service worker -- for mobile
 
 - `PomodoroHeader` ask for `Notification.permission`
