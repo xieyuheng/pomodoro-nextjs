@@ -12,8 +12,6 @@ export class PomodoroState {
   time: number
   timer: Timer | null = null
 
-  notificationPermission: NotificationPermission | null = null
-
   settings: Settings = next.dev
     ? Settings.testingSettings()
     : Settings.defaultSettings()
@@ -31,7 +29,7 @@ export class PomodoroState {
   async setupNotification(): Promise<void> {
     switch (Notification.permission) {
       case "default": {
-        await this.enableNotification()
+        await Notification.requestPermission()
         return
       }
       case "granted": {
@@ -43,19 +41,21 @@ export class PomodoroState {
     }
   }
 
-  async enableNotification(): Promise<void> {
-    this.notificationPermission = await Notification.requestPermission()
-  }
-
   get canNotify(): boolean {
-    return this.notificationPermission === "granted"
+    return Notification.permission === "granted"
   }
 
-  notify(): void {
-    new Notification("Pomodoro", {
-      body: `${this.mode.kind} finished.`,
-      vibrate: [300, 100, 300, 100, 300],
-    })
+  async notify(): Promise<void> {
+    if (this.canNotify) {
+      // new Notification("Pomodoro", {
+      //   body: `${this.mode.kind} finished.`,
+      // })
+
+      const registration = await navigator.serviceWorker.ready
+      registration.showNotification("Pomodoro Notifier", {
+        body: `${this.mode.kind} finished.`,
+      })
+    }
   }
 
   changeMode(kind: ModeKind): void {
