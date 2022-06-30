@@ -3,6 +3,7 @@ import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { ModeKind } from "./Mode"
+import { callWithConfirm } from "../../utils/call-with-confirm"
 
 export const PomodoroModeButton: FC<{
   state: State
@@ -31,18 +32,13 @@ export const PomodoroModeButton: FC<{
       }
     )}
     onClick={() => {
-      if (!state.isStarted) {
-        setTimeout(() => state.changeMode(kind), 1000)
-      } else {
-        const message = [
+      callWithConfirm(() => state.changeMode(kind), {
+        when: state.isStarted,
+        message: [
           `A timer has been started in ${state.kind} mode,`,
           `are you sure to change to ${kind} mode?`,
-        ].join("\n")
-
-        if (window.confirm(message)) {
-          setTimeout(() => state.changeMode(kind), 1000)
-        }
-      }
+        ].join("\n"),
+      })
     }}
   >
     {kind}
