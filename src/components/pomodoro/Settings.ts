@@ -22,4 +22,14 @@ export class Settings {
       },
     })
   }
+
+  static testingSettings(): Settings {
+    return new Settings({
+      modes: {
+        Focus: new Focus(5),
+        Break: new Break(3),
+        Recess: new Recess(7),
+      },
+    })
+  }
 }

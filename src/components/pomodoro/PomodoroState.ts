@@ -10,7 +10,8 @@ export class PomodoroState {
   mode: Mode
   time: number
   timer: Timer | null = null
-  settings: Settings = Settings.defaultSettings()
+  // settings: Settings = Settings.defaultSettings()
+  settings: Settings = Settings.testingSettings()
   notificationPermission: NotificationPermission | null = null
 
   classes = {
@@ -86,6 +87,10 @@ export class PomodoroState {
     return this.time !== this.mode.interval
   }
 
+  get isFinished(): boolean {
+    return this.time === 0
+  }
+
   stop(): void {
     if (this.timer === null) return
 
@@ -99,23 +104,20 @@ export class PomodoroState {
   }
 
   formatTime(): string {
-    return `${this.formatMinutes()}:${this.formatSeconds()}`
+    return formatTime(this.time)
   }
 
-  private get minutes(): number {
-    return Math.floor(this.time / 60)
+  formatInterval(): string {
+    return formatTime(this.mode.interval)
   }
+}
 
-  private get seconds(): number {
-    const total = this.time
-    return total % 60
-  }
+function formatTime(time: number): string {
+  const minutes = Math.floor(time / 60)
+  const seconds = time % 60
 
-  private formatMinutes(): string {
-    return leftPad(this.minutes.toString(), 2, "0")
-  }
+  const mm = leftPad(minutes.toString(), 2, "0")
+  const ss = leftPad(seconds.toString(), 2, "0")
 
-  private formatSeconds(): string {
-    return leftPad(this.seconds.toString(), 2, "0")
-  }
+  return `${mm}:${ss}`
 }

@@ -20,9 +20,20 @@ export const PomodoroTimer: FC<{ state: State }> = observer(({ state }) => (
   >
     <PomodoroModebar state={state} />
 
-    <div className="font-mono text-7xl font-semibold sm:text-8xl md:text-9xl">
-      {state.formatTime()}
-    </div>
+    {!state.isFinished ? (
+      <div className="font-mono text-7xl font-semibold sm:text-8xl md:text-9xl">
+        {state.formatTime()}
+      </div>
+    ) : (
+      <div className="flex flex-col items-center">
+        <div className="text-3xl sm:text-4xl md:text-5xl">
+          {state.kind} finished
+        </div>
+        <div className="py-1 font-mono font-semibold text-2xl sm:text-3xl md:text-4xl">
+          {state.formatInterval()}
+        </div>
+      </div>
+    )}
 
     <PomodoroTimerControl state={state} />
   </div>
