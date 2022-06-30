@@ -49,7 +49,7 @@ export class PomodoroState {
   notify(): void {
     new Notification("Pomodoro", {
       body: `${this.mode.kind} finished.`,
-      vibrate: [300, 100, 300, 100, 300],
+      // vibrate: [300, 100, 300, 100, 300],
     })
   }
 
