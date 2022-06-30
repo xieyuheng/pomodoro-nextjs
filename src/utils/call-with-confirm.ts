@@ -8,7 +8,7 @@ type Options = {
 export function callWithConfirm(action: Action, options: Options): void {
   const { message, when } = options
 
-  if (when) {
+  if (when === true || when === undefined) {
     if (window.confirm(message)) {
       action()
     }

@@ -1,9 +1,15 @@
-- use dynamic theme (runtime tailwind)
 - a finish screen for each mode
+
 - `PomodoroHeader` ask for `Notification.permission`
   - when the `Notification.permission` is "denied",
     we can not ask again?
+
 - be able to config `settings.modes`
+
+- use dynamic theme (runtime tailwind)
+
+- use `Notification` by service worker -- for mobile
+
 - use `localStorage` to store `settings`
 - `useLang` -- with `lang` -- to suppurt both English and Chinese
 - `PomodoroTasks`
