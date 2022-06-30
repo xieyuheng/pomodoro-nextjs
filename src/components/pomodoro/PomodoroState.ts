@@ -42,6 +42,8 @@ export class PomodoroState {
   }
 
   get canNotify(): boolean {
+    // if (typeof Notification === "undefined") return false
+
     return Notification.permission === "granted"
   }
 
