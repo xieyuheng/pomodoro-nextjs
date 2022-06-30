@@ -3,17 +3,17 @@ export async function registerServiceWorker(): Promise<void> {
   if (!navigator.serviceWorker) return
 
   try {
-    const file = "/service-workers/notifier.js"
-    const registration = await navigator.serviceWorker.register(file)
+    const worker = "/service-workers/notifier.js"
+    const registration = await navigator.serviceWorker.register(worker)
 
     if (registration.installing) {
-      console.log("Service worker installing")
+      console.log({ message: "Service worker installing", worker })
     } else if (registration.waiting) {
-      console.log("Service worker installed")
+      console.log({ message: "Service worker installed", worker })
     } else if (registration.active) {
-      console.log("Service worker active")
+      console.log({ message: "Service worker active", worker })
     }
   } catch (error) {
-    console.error(`Registration failed with ${error}`)
+    console.error({ message: `Registration failed with ${error}`, worker })
   }
 }
