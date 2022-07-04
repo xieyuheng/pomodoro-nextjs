@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
-import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { Mode, ModeKind } from "./Mode"
 import { Settings } from "./Settings"
@@ -17,7 +16,7 @@ export class PomodoroState {
     : Settings.defaultSettings()
 
   classes = {
-    transition: "transition delay-0 duration-500 ease-out",
+    transition: "transition duration-500 ease-out",
   }
 
   constructor() {
@@ -69,13 +68,24 @@ export class PomodoroState {
     this.reset()
   }
 
+  get theme(): string {
+    switch (this.mode.kind) {
+      case "Focus":
+        return "red"
+      case "Break":
+        return "sky"
+      case "Recess":
+        return "violet"
+    }
+  }
+
   get kind(): ModeKind {
     return this.mode.kind
   }
 
   get themeColor(): string {
-    const kind = this.kind.toLowerCase()
-    return tailwind.theme.colors[kind][400]
+    const colors = require("tailwindcss/colors")
+    return colors[this.theme][400]
   }
 
   start(): void {

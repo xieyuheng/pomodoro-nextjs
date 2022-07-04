@@ -17,11 +17,7 @@ export default observer(function Pomodoro({ state }: { state: State }) {
       className={classNames(
         "flex h-screen w-screen flex-col items-center",
         state.classes.transition,
-        {
-          "bg-focus-400 text-focus-100": state.kind === "Focus",
-          "bg-break-400 text-break-100": state.kind === "Break",
-          "bg-recess-400 text-recess-100": state.kind === "Recess",
-        }
+        `bg-${state.theme}-400 text-${state.theme}-100`
       )}
     >
       <Head>

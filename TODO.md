@@ -12,6 +12,4 @@
 
 - use `localStorage` to store `settings`
 
-- use dynamic theme (runtime tailwind)
-
 - `useLang` -- with `lang` -- to suppurt both English and Chinese
