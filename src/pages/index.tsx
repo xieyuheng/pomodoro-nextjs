@@ -24,10 +24,8 @@ export default function Home() {
           in={loaded}
           timeout={500}
           classNames={{
-            enter: "transform opacity-30",
-            enterActive: "transform opacity-100",
-            exit: "transform opacity-30",
-            exitActive: "transform opacity-100",
+            exit: "transition opacity-30",
+            exitActive: "transition opacity-100",
           }}
         >
           {loaded ? (
