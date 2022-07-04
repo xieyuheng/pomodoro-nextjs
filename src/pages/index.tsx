@@ -22,11 +22,12 @@ export default function Home() {
       <SwitchTransition>
         <CSSTransition
           in={loaded}
+          timeout={500}
           classNames={{
-            enter: "transition opacity-100",
-            enterActive: "transition opacity-0",
-            exit: "transition opacity-0",
-            exitActive: "transition opacity-100",
+            enter: "transform opacity-0",
+            enterActive: "transform opacity-100",
+            exit: "transform opacity-0",
+            exitActive: "transform opacity-100",
           }}
         >
           {loaded ? (
