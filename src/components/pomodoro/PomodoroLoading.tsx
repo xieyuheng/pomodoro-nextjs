@@ -15,7 +15,10 @@ export default observer(function PomodoroLoading({ state }: { state: State }) {
         <meta name="theme-color" content={state.themeColor} />
       </Head>
 
-      <div className="font-bold text-2xl">Loading...</div>
+      <div className="flex flex-col items-center">
+        <div className="font-bold text-2xl">Pomodoro</div>
+        <div className="font-bold text-lg">Loading...</div>
+      </div>
     </div>
   )
 })
