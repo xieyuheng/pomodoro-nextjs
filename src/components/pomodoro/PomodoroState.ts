@@ -12,9 +12,11 @@ export class PomodoroState {
   time: number
   timer: Timer | null = null
 
-  settings: Settings = next.dev
-    ? Settings.testingSettings()
-    : Settings.defaultSettings()
+  // settings: Settings = next.dev
+  //   ? Settings.testingSettings()
+  //   : Settings.defaultSettings()
+
+  settings: Settings = Settings.testingSettings()
 
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
