@@ -29,11 +29,6 @@ module.exports = {
         break: colors.sky,
         recess: colors.violet,
       },
-      transitionDelay: {
-        0: "0ms",
-        2000: "2000ms",
-      },
     },
   },
-  plugins: [],
 }
