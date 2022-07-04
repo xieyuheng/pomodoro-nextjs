@@ -19,15 +19,8 @@ export default function Home() {
         <title>🍅 Pomodoro</title>
         <meta name="description" content="🍅 A Pomodoro timer." />
       </Head>
-      <SwitchTransition>
-        <CSSTransition in={loaded} timeout={500}>
-          {loaded ? (
-            <Pomodoro state={state} />
-          ) : (
-            <PomodoroLoading state={state} />
-          )}
-        </CSSTransition>
-      </SwitchTransition>
+
+      <Pomodoro state={state} />
     </div>
   )
 }
