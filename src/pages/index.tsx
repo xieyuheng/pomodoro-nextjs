@@ -2,9 +2,9 @@ import Head from "next/head"
 import Pomodoro from "../components/pomodoro/Pomodoro"
 import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
 
-const state = new State()
-
 export default function Home() {
+  const state = new State()
+
   return (
     <div>
       <Head>

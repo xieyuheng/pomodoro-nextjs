@@ -41,6 +41,10 @@ export class PomodoroState {
     }
   }
 
+  enableNotification() {
+    // TODO
+  }
+
   get canNotify(): boolean {
     // if (typeof Notification === "undefined") return false
 

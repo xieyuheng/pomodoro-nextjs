@@ -1,3 +1,5 @@
+- avoid init color transition
+
 - `PomodoroHeader` ask for `Notification.permission`
 
   - when the `Notification.permission` is "denied",
