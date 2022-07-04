@@ -15,7 +15,7 @@ export default observer(function PomodoroLoading({ state }: { state: State }) {
         <meta name="theme-color" content={state.themeColor} />
       </Head>
 
-      <div className="font-bold">Loading...</div>
+      <div className="font-bold text-2xl">Loading...</div>
     </div>
   )
 })
