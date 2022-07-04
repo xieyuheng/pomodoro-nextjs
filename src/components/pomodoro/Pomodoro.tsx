@@ -1,4 +1,3 @@
-import { useState } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
@@ -13,17 +12,16 @@ export default observer(function Pomodoro({ state }: { state: State }) {
     state.setupNotification()
   })
 
-  const [transitionReady, setTransitionReady] = useState(false)
-  setTimeout(() => {
-    setTransitionReady(true)
-  }, 500)
-
   return (
     <div
       className={classNames(
         "flex h-screen w-screen flex-col items-center",
-        transitionReady && state.classes.transition,
-        `bg-${state.theme}-400 text-${state.theme}-100`
+        state.classes.transition,
+        {
+          "bg-focus-400 text-focus-100": state.kind === "Focus",
+          "bg-break-400 text-break-100": state.kind === "Break",
+          "bg-recess-400 text-recess-100": state.kind === "Recess",
+        }
       )}
     >
       <Head>
