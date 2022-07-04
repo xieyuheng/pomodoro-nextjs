@@ -17,7 +17,7 @@ export class PomodoroState {
     : Settings.defaultSettings()
 
   classes = {
-    transition: "transition duration-500 ease-out",
+    transition: "transition delay-0 duration-500 ease-out",
   }
 
   constructor() {
