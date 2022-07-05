@@ -1,8 +1,3 @@
-- `PomodoroHeader` ask for `Notification.permission`
-
-  - when the `Notification.permission` is "denied",
-    we can not ask again?
-
 - `PomodoroTasks`
 
 - `PomodoroTasks` -- show current task name in page title

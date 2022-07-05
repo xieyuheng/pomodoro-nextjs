@@ -18,18 +18,6 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
       )}
     >
       <div>Pomodoro</div>
-
-      {/* TODO */}
-
-      {false && !state.canNotify && (
-        <button
-          title="Enable notification."
-          className="h-6 w-6"
-          onClick={() => state.enableNotification()}
-        >
-          <IconBell />
-        </button>
-      )}
     </div>
   )
 })

@@ -41,22 +41,8 @@ export class PomodoroState {
     }
   }
 
-  enableNotification() {
-    // TODO
-  }
-
-  get canNotify(): boolean {
-    // if (typeof Notification === "undefined") return false
-
-    return Notification.permission === "granted"
-  }
-
   async notify(): Promise<void> {
-    if (this.canNotify) {
-      // new Notification("Pomodoro", {
-      //   body: `${this.mode.kind} finished.`,
-      // })
-
+    if (Notification.permission === "granted") {
       const registration = await navigator.serviceWorker.ready
       registration.showNotification("Pomodoro Notifier", {
         body: `${this.mode.kind} finished.`,
