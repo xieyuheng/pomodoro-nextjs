@@ -14,7 +14,7 @@ export default observer(function PomodoroTimerButton({
   return (
     <button
       className={classNames(
-        "rounded-md border-2 px-4 py-2 text-2xl md:text-3xl",
+        "border-2 px-4 py-2 text-2xl md:text-3xl",
         state.classes.transition,
         {
           "border-focus-300 bg-focus-200 text-focus-600":

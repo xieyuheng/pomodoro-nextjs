@@ -1,25 +1,18 @@
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
+import PomodoroTaskItem from "./PomodoroTaskItem"
 
-export default observer(function PomodoroState({ state }: { state: State }) {
+export default observer(function PomodoroTasks({ state }: { state: State }) {
   return (
-    <div
-      className={classNames(
-        "flex flex-col md:py-4 py-2",
-        "justify-between",
-        state.classes.transition,
-        {
-          "border-focus-500": state.kind === "Focus",
-          "border-break-500": state.kind === "Break",
-          "border-recess-500": state.kind === "Recess",
-        }
-      )}
-    >
-      <div className="text-3xl font-semibold">Tasks</div>
+    <div className="flex flex-col py-2">
+      <div className="py-2 text-3xl font-semibold">Tasks</div>
       <ul>
-        <li>Task 1</li>
-        <li>Task 2</li>
+        {state.tasks.map((task, index) => (
+          <div className="py-2">
+            <PomodoroTaskItem state={state} task={task} key={index} />
+          </div>
+        ))}
       </ul>
     </div>
   )

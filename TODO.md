@@ -1,5 +1,4 @@
 - `state.tasks`
-- `PomodoroTaskItem`
 
 - `PomodoroTasks` -- show current task name in page title
 

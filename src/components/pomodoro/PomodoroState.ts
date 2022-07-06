@@ -5,14 +5,23 @@ import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Settings } from "./Settings"
+import { Task } from "./Task"
 
 type Timer = ReturnType<typeof setInterval>
 
 export class PomodoroState {
   mode: Mode
+
   time: number
   timer: Timer | null = null
+
   playing = false
+
+  tasks: Array<Task> = [
+    new Task("task 1"),
+    new Task("task 2"),
+    new Task("task 3"),
+  ]
 
   settings: Settings = next.dev
     ? Settings.testingSettings()

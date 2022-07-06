@@ -32,9 +32,9 @@ export default observer(function Pomodoro({ state }: { state: State }) {
 
       <PomodoroHeader state={state} />
 
-      <main className="h-full w-full px-4 mt-6 md:max-w-xl space-y-2">
+      <main className="mt-6 h-full w-full space-y-2 px-4 md:max-w-xl">
         <PomodoroTimer state={state} />
-
+        <PomodoroTasks state={state} />
       </main>
 
       <PomodoroFooter state={state} />

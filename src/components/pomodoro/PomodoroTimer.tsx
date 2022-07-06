@@ -8,7 +8,7 @@ export default observer(function PomodoroTimer({ state }: { state: State }) {
   return (
     <div
       className={classNames(
-        "flex flex-col items-center justify-between rounded-lg border-2 py-2 px-2 md:px-6",
+        "flex flex-col items-center justify-between border-4 py-2 px-2 md:px-6",
         "h-64 md:h-80",
         state.classes.transition,
         {
