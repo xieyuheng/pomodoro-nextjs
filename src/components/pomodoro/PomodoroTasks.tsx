@@ -9,9 +9,11 @@ export default observer(function PomodoroTasks({ state }: { state: State }) {
     <div className="flex h-full flex-col overflow-y-auto py-2">
       <div className="py-2 text-3xl font-semibold">Tasks</div>
 
-      <div className="py-2">
-        <PomodoroTaskCurrent state={state} task={state.currentTesk} />
-      </div>
+      {state.currentTesk && (
+        <div className="py-2">
+          <PomodoroTaskCurrent state={state} task={state.currentTesk} />
+        </div>
+      )}
 
       <ul className="h-full overflow-y-auto">
         {state.tasks.map((task) => (

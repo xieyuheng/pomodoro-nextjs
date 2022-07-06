@@ -5,35 +5,10 @@ import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
+import { Task, testingTasks, testingCurrentTask } from "./Task"
 import { Settings } from "./Settings"
 
 type Timer = ReturnType<typeof setInterval>
-
-interface Task {
-  id: number
-  title: string
-}
-
-const testingTasks = [
-  { id: 1, title: "Lorem ipsum dolor sit amet" },
-  { id: 2, title: "consectetur adipiscing elit" },
-  { id: 3, title: "Ut enim ad minim veniam" },
-  {
-    id: 4,
-    title:
-      "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-  },
-  {
-    id: 5,
-    title:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
-  },
-]
-
-const testingCurrentTask = {
-  id: 6,
-  title: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-}
 
 export class PomodoroState {
   mode: Mode
@@ -148,9 +123,8 @@ export class PomodoroState {
   selectTask(id: number): void {
     const task = this.tasks.find((task) => task.id === id)
     if (task === undefined) return
-
     removeFirst(this.tasks, (task) => task.id === id)
-    this.tasks.push(this.currentTesk)
+    if (this.currentTesk) this.tasks.push(this.currentTesk)
     this.currentTesk = task
   }
 
