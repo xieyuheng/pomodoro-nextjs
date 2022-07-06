@@ -1,7 +1,7 @@
-- `PomodoroTaskCurrent` -- be click to edit
 - `PomodoroTaskForm`
 - `PomodoroTask` -- show `PomodoroTaskForm` when no `currentTesk`
 - `PomodoroTaskForm` -- be able to `addTask`
+- `PomodoroTaskCurrent` -- be click to edit
 
 - `PomodoroTaskItem` -- `selectTask` transition
 
