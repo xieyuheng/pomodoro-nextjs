@@ -5,9 +5,30 @@ import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Settings } from "./Settings"
-import { Task } from "./Task"
 
 type Timer = ReturnType<typeof setInterval>
+
+interface Task {
+  title: string
+}
+
+const testingTasks = [
+  { title: "Lorem ipsum dolor sit amet" },
+  { title: "consectetur adipiscing elit" },
+  { title: "Ut enim ad minim veniam" },
+  {
+    title:
+      "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+  },
+  {
+    title:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+  },
+]
+
+const testingCurrentTask = {
+  title: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+}
 
 export class PomodoroState {
   mode: Mode
@@ -17,14 +38,8 @@ export class PomodoroState {
 
   playing = false
 
-  tasks: Array<Task> = [
-    new Task("task 1"),
-    new Task("task 2"),
-    new Task("task 3"),
-    new Task("task 1"),
-    new Task("task 2"),
-    new Task("task 3"),
-  ]
+  currentTesk: Task | null = testingCurrentTask
+  tasks: Array<Task> = testingTasks
 
   settings: Settings = next.dev
     ? Settings.testingSettings()
