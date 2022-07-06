@@ -14,7 +14,7 @@ export default observer(function PomodoroTaskItem({
   return (
     <div
       className={classNames(
-        "flex justify-between items-start border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
+        "flex items-start justify-between border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-100  text-focus-900 hover:text-focus-600":
