@@ -25,7 +25,7 @@ export default observer(function Pomodoro({ state }: { state: State }) {
       )}
     >
       <Head>
-        {state.isStarted && <title>{`🍅 ${state.formatTime()}`}</title>}
+        {state.formatTitle() && <title>{state.formatTitle()}</title>}
         <meta name="theme-color" content={state.themeColor} />
       </Head>
 

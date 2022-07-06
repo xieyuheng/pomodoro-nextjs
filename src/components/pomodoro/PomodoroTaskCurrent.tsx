@@ -13,15 +13,12 @@ export default observer(function PomodoroTaskCurrent({
   return (
     <div
       className={classNames(
-        "flex flex-col border-8 p-3 text-2xl font-semibold md:py-4",
+        "flex flex-col border-4 bg-white p-3 text-2xl font-semibold md:py-4",
         state.classes.transition,
         {
-          "border-focus-300  bg-focus-100  text-focus-900":
-            state.kind === "Focus",
-          "border-break-300  bg-break-100  text-break-900":
-            state.kind === "Break",
-          "border-recess-300 bg-recess-100 text-recess-900":
-            state.kind === "Recess",
+          "border-focus-300 text-focus-900": state.kind === "Focus",
+          "border-break-300 text-break-900": state.kind === "Break",
+          "border-recess-300 text-recess-900": state.kind === "Recess",
         }
       )}
     >

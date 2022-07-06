@@ -153,6 +153,20 @@ export class PomodoroState {
     this.tasks.push(this.currentTesk)
     this.currentTesk = task
   }
+
+  formatTitle(): string | null {
+    let title = "🍅"
+
+    if (this.isStarted) {
+      title += ` ${this.formatTime()}`
+    }
+
+    if (this.currentTesk) {
+      title += ` ${this.currentTesk.title}`
+    }
+
+    return title
+  }
 }
 
 function formatTime(time: number): string {
