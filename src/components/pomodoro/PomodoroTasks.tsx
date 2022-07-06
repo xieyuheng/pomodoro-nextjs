@@ -6,7 +6,7 @@ import PomodoroTaskCurrent from "./PomodoroTaskCurrent"
 
 export default observer(function PomodoroTasks({ state }: { state: State }) {
   return (
-    <div className="flex h-full flex-col overflow-y-auto py-2">
+    <div className="flex flex-col py-2">
       <div className="py-2 text-3xl font-semibold">Tasks</div>
 
       {state.currentTesk && (
@@ -15,7 +15,7 @@ export default observer(function PomodoroTasks({ state }: { state: State }) {
         </div>
       )}
 
-      <ul className="h-full overflow-y-auto">
+      <ul>
         {state.tasks.map((task) => (
           <li className="py-2">
             <PomodoroTaskItem state={state} task={task} key={task.id} />
