@@ -14,7 +14,7 @@ export default observer(function PomodoroTaskItem({
   return (
     <div
       className={classNames(
-        "flex justify-between border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
+        "flex justify-between items-start border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-100  text-focus-900 hover:text-focus-600":
@@ -27,9 +27,9 @@ export default observer(function PomodoroTaskItem({
       )}
     >
       <div onClick={() => state.selectTask(task.id)}>{task.title}</div>
-      <div className="shrink-0">
+      <button className="shrink-0 pl-2">
         <IconDotsVertical />
-      </div>
+      </button>
     </div>
   )
 })
