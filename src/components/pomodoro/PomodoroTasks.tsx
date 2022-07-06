@@ -14,9 +14,9 @@ export default observer(function PomodoroTasks({ state }: { state: State }) {
       </div>
 
       <ul className="h-full overflow-y-auto">
-        {state.tasks.map((task, index) => (
+        {state.tasks.map((task) => (
           <li className="py-2">
-            <PomodoroTaskItem state={state} task={task} key={index} />
+            <PomodoroTaskItem state={state} task={task} key={task.id} />
           </li>
         ))}
       </ul>

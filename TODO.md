@@ -1,9 +1,9 @@
-- `PomodoroState` -- `selectTask`
-- `PomodoroTaskItem` -- click to switch current task
-
+- `PomodoroTaskCurrent` -- be click to edit
 - `PomodoroTaskForm`
+- `PomodoroTask` -- show `PomodoroTaskForm` when no `currentTesk`
+- `PomodoroTaskForm` -- be able to `addTask`
 
-- `PomodoroState` handle current task
+- `PomodoroTaskItem` -- `selectTask` transition
 
 - `PomodoroTasks` -- show current task name in page title
 

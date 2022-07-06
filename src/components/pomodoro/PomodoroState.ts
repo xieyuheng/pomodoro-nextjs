@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
+import { removeFirst } from "../../utils/remove-first"
 import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
@@ -142,6 +143,15 @@ export class PomodoroState {
 
   formatInterval(): string {
     return formatTime(this.mode.interval)
+  }
+
+  selectTask(id: number): void {
+    const task = this.tasks.find((task) => task.id === id)
+    if (task === undefined) return
+
+    removeFirst(this.tasks, (task) => task.id === id)
+    this.tasks.push(this.currentTesk)
+    this.currentTesk = task
   }
 }
 

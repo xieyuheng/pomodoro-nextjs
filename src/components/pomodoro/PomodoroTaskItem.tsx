@@ -24,6 +24,7 @@ export default observer(function PomodoroTaskItem({
             state.kind === "Recess",
         }
       )}
+      onClick={() => state.selectTask(task.id)}
     >
       {task.title}
     </div>
