@@ -4,6 +4,7 @@ import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimer from "./PomodoroTimer"
 import PomodoroHeader from "./PomodoroHeader"
 import PomodoroFooter from "./PomodoroFooter"
+import PomodoroTasks from "./PomodoroTasks"
 import Head from "next/head"
 import { useMount } from "ahooks"
 
@@ -31,9 +32,10 @@ export default observer(function Pomodoro({ state }: { state: State }) {
 
       <PomodoroHeader state={state} />
 
-      <div className="h-full w-full px-4 py-8 md:max-w-xl">
+      <main className="h-full w-full px-4 mt-6 md:max-w-xl space-y-2">
         <PomodoroTimer state={state} />
-      </div>
+
+      </main>
 
       <PomodoroFooter state={state} />
     </div>

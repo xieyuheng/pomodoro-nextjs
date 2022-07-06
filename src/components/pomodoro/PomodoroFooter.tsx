@@ -7,7 +7,7 @@ export default observer(function PomodoroFooter({ state }: { state: State }) {
   return (
     <div
       className={classNames(
-        "flex w-full items-center border-t px-4 py-4 font-sans text-3xl font-semibold",
+        "flex w-full items-center border-t px-4 py-4",
         "justify-center",
         state.classes.transition,
         {

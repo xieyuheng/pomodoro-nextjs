@@ -2,11 +2,11 @@ import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 
-export default observer(function PomodoroHeader({ state }: { state: State }) {
+export default observer(function PomodoroState({ state }: { state: State }) {
   return (
     <div
       className={classNames(
-        "flex w-full items-center border-b px-4 md:py-4 py-2",
+        "flex flex-col md:py-4 py-2",
         "justify-between",
         state.classes.transition,
         {
@@ -16,7 +16,11 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         }
       )}
     >
-      <div className="text-3xl font-semibold">Pomodoro</div>
+      <div className="text-3xl font-semibold">Tasks</div>
+      <ul>
+        <li>Task 1</li>
+        <li>Task 2</li>
+      </ul>
     </div>
   )
 })
