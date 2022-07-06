@@ -21,6 +21,9 @@ export class PomodoroState {
     new Task("task 1"),
     new Task("task 2"),
     new Task("task 3"),
+    new Task("task 1"),
+    new Task("task 2"),
+    new Task("task 3"),
   ]
 
   settings: Settings = next.dev

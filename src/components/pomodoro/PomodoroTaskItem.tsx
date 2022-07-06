@@ -11,9 +11,9 @@ export default observer(function PomodoroTaskItem({
   task: Task
 }) {
   return (
-    <li
+    <div
       className={classNames(
-        "flex flex-col border-4 p-3 text-2xl md:py-4",
+        "flex flex-col border-4 p-3 text-2xl font-semibold md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-50  text-focus-900":
@@ -26,6 +26,6 @@ export default observer(function PomodoroTaskItem({
       )}
     >
       {task.title}
-    </li>
+    </div>
   )
 })
