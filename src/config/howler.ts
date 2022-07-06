@@ -1,7 +1,7 @@
-import { Howl, Howler } from "howler"
+import { Howl } from "howler"
 
-function performanceTrick() {
-  const empty = new Howl({
+export function emptySoundLoop() {
+  return new Howl({
     src: [
       // "/sounds/japanese/kojonotsuki.ogg",
       "/sounds/loops/empty-loop-for-js-performance.ogg",
@@ -10,8 +10,4 @@ function performanceTrick() {
     volume: 0.1,
     loop: true,
   })
-
-  empty.play()
 }
-
-performanceTrick()

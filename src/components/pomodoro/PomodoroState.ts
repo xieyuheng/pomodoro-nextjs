@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx"
 import { leftPad } from "../../utils/left-pad"
 import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
+import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Settings } from "./Settings"
 
@@ -11,6 +12,7 @@ export class PomodoroState {
   mode: Mode
   time: number
   timer: Timer | null = null
+  playing = false
 
   settings: Settings = next.dev
     ? Settings.testingSettings()
@@ -65,6 +67,10 @@ export class PomodoroState {
   }
 
   start(): void {
+    if (!this.playing) {
+      emptySoundLoop().play()
+    }
+
     this.timer = setInterval(() => {
       if (this.time > 0) {
         this.time--
