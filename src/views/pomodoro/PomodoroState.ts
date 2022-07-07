@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx"
-import { leftPad } from "../../utils/left-pad"
 import { removeFirst } from "../../utils/remove-first"
 import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
@@ -7,15 +6,11 @@ import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Task, testingTasks, testingCurrentTask } from "./Task"
 import { Settings } from "./Settings"
-
-type Timer = ReturnType<typeof setInterval>
+import { Timer } from "./Timer"
 
 export class PomodoroState {
   mode: Mode
-
-  time: number
-  timer: Timer | null = null
-
+  timer: Timer
   playing = false
 
   currentTesk: Task | null = testingCurrentTask
@@ -31,8 +26,12 @@ export class PomodoroState {
 
   constructor() {
     this.mode = this.settings.modes.Focus
-    this.time = this.mode.interval
+    this.timer = new Timer(this.mode.interval)
     makeAutoObservable(this)
+  }
+
+  get time(): number {
+    return this.timer.time
   }
 
   async setupNotification(): Promise<void> {
@@ -59,13 +58,13 @@ export class PomodoroState {
     }
   }
 
-  changeMode(kind: ModeKind): void {
-    this.mode = this.settings.modes[kind]
-    this.reset()
-  }
-
   get kind(): ModeKind {
     return this.mode.kind
+  }
+
+  changeMode(kind: ModeKind): void {
+    this.mode = this.settings.modes[kind]
+    this.timer.reset(this.mode.interval)
   }
 
   get themeColor(): string {
@@ -78,46 +77,9 @@ export class PomodoroState {
       emptySoundLoop().play()
     }
 
-    this.timer = setInterval(() => {
-      if (this.time > 0) {
-        this.time--
-      } else {
-        this.stop()
-        this.notify()
-      }
-    }, 1000)
-  }
-
-  get isRunning(): boolean {
-    return this.timer !== null
-  }
-
-  get isStarted(): boolean {
-    return this.time !== this.mode.interval
-  }
-
-  get isFinished(): boolean {
-    return this.time === 0
-  }
-
-  stop(): void {
-    if (this.timer === null) return
-
-    clearInterval(this.timer)
-    this.timer = null
-  }
-
-  reset(): void {
-    this.time = this.mode.interval
-    this.stop()
-  }
-
-  formatTime(): string {
-    return formatTime(this.time)
-  }
-
-  formatInterval(): string {
-    return formatTime(this.mode.interval)
+    this.timer.start({
+      onStopped: () => this.notify(),
+    })
   }
 
   selectTask(id: number): void {
@@ -131,8 +93,8 @@ export class PomodoroState {
   formatTitle(): string | null {
     let title = "🍅"
 
-    if (this.isStarted) {
-      title += ` ${this.formatTime()}`
+    if (this.timer.isStarted) {
+      title += ` ${this.timer.formatTime()}`
     }
 
     if (this.currentTesk) {
@@ -141,14 +103,4 @@ export class PomodoroState {
 
     return title
   }
-}
-
-function formatTime(time: number): string {
-  const minutes = Math.floor(time / 60)
-  const seconds = time % 60
-
-  const mm = leftPad(minutes.toString(), 2, "0")
-  const ss = leftPad(seconds.toString(), 2, "0")
-
-  return `${mm}:${ss}`
 }

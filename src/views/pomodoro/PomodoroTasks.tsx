@@ -18,7 +18,7 @@ export default observer(function PomodoroTasks({ state }: { state: State }) {
       <ul>
         {state.tasks.map((task) => (
           <li className="py-2" key={task.id}>
-            <PomodoroTaskItem state={state} task={task}  />
+            <PomodoroTaskItem state={state} task={task} />
           </li>
         ))}
       </ul>

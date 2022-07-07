@@ -12,7 +12,7 @@ export default observer(function PomodoroTimerControl({
   return (
     <div className="flex justify-between py-2 px-2 font-bold md:py-4 md:px-6">
       <div className="flex space-x-2">
-        {!state.isRunning && !state.isFinished && (
+        {!state.timer.isRunning && !state.timer.isFinished && (
           <PomodoroTimerButton
             state={state}
             name="START"
@@ -20,25 +20,25 @@ export default observer(function PomodoroTimerControl({
           />
         )}
 
-        {state.isRunning && (
+        {state.timer.isRunning && (
           <PomodoroTimerButton
             state={state}
             name="STOP"
-            onClick={() => state.stop()}
+            onClick={() => state.timer.stop()}
           />
         )}
 
-        {state.isStarted && (
+        {state.timer.isStarted && (
           <PomodoroTimerButton
             state={state}
             name="RESET"
             onClick={() =>
-              callWithConfirm(() => state.reset(), {
+              callWithConfirm(() => state.timer.reset(), {
                 message: [
                   `A timer has been started in ${state.kind} mode,`,
                   `are you sure to reset it?`,
                 ].join("\n"),
-                when: !state.isFinished,
+                when: !state.timer.isFinished,
               })
             }
           />

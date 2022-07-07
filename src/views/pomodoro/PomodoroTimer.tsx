@@ -21,15 +21,15 @@ export default observer(function PomodoroTimer({ state }: { state: State }) {
     >
       <PomodoroModebar state={state} />
 
-      {!state.isFinished ? (
+      {!state.timer.isFinished ? (
         <div className="pt-2 font-mono text-8xl font-semibold md:text-9xl">
-          {state.formatTime()}
+          {state.timer.formatTime()}
         </div>
       ) : (
         <div className="flex flex-col items-center pt-2">
           <div className="text-4xl md:text-5xl">{state.kind} finished</div>
           <div className="py-2 font-mono text-3xl font-semibold md:text-4xl">
-            {state.formatInterval()}
+            {state.timer.formatInterval()}
           </div>
         </div>
       )}
