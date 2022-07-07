@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import { observer, Observer } from "mobx-react-lite"
+import { Observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimer from "./PomodoroTimer"
 import PomodoroHeader from "./PomodoroHeader"
