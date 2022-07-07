@@ -13,7 +13,7 @@ export default observer(function PomodoroTaskCurrent({
   return (
     <div
       className={classNames(
-        "flex flex-col border-4 bg-white p-3 text-2xl font-semibold md:py-4",
+        "flex flex-col border-4 bg-white p-3  md:py-4",
         state.classes.transition,
         {
           "border-focus-300 text-focus-900": state.kind === "Focus",
@@ -22,7 +22,8 @@ export default observer(function PomodoroTaskCurrent({
         }
       )}
     >
-      {task.title}
+      <div className="text-2xl font-semibold">{task.title}</div>
+      <div className="text-2xl font-semibold">{task.count}</div>
     </div>
   )
 })

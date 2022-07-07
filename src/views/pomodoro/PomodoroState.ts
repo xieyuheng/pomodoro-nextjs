@@ -78,15 +78,23 @@ export class PomodoroState {
     }
 
     this.timer.start({
-      onStopped: () => this.notify(),
+      onFinished: () => {
+        this.currentTesk.count++
+        this.notify()
+      },
     })
   }
 
   selectTask(id: number): void {
     const task = this.tasks.find((task) => task.id === id)
     if (task === undefined) return
+
     removeFirst(this.tasks, (task) => task.id === id)
-    if (this.currentTesk) this.tasks.push(this.currentTesk)
+
+    if (this.currentTesk) {
+      this.tasks.unshift(this.currentTesk)
+    }
+
     this.currentTesk = task
   }
 

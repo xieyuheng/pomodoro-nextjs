@@ -1,4 +1,4 @@
-- `Task` has a `count`
+- `PomodoroTaskItem` should task count as dots
 
 - `PomodoroTaskForm`
 - `PomodoroTask` -- show `PomodoroTaskForm` when no `currentTesk`

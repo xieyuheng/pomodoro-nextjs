@@ -48,6 +48,7 @@ export default observer(function PomodoroTaskItem({
       >
         {task.title}
       </div>
+      { task.count}
       <button className="shrink-0 pl-2">
         <IconDotsVertical />
       </button>

@@ -12,13 +12,13 @@ export class Timer {
     makeAutoObservable(this)
   }
 
-  start(options: { onStopped: () => void }): void {
+  start(options: { onFinished: () => void }): void {
     this.id = setInterval(() => {
       if (this.time > 0) {
         this.time--
       } else {
         this.stop()
-        options.onStopped()
+        options.onFinished()
       }
     }, 1000)
   }
