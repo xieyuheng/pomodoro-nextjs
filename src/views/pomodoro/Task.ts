@@ -5,7 +5,7 @@ export interface Task {
 }
 
 export const testingTasks = [
-  { id: 1, count: 0, title: "Lorem ipsum dolor sit amet" },
+  { id: 1, count: 3, title: "Lorem ipsum dolor sit amet" },
   { id: 2, count: 0, title: "consectetur adipiscing elit" },
   { id: 3, count: 0, title: "Ut enim ad minim veniam" },
   {

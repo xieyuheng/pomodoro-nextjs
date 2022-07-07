@@ -17,7 +17,7 @@ export default observer(function PomodoroTaskItem({
   return (
     <div
       className={classNames(
-        "flex items-start justify-between border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
+        "flex flex-col border-4 p-3 hover:border-white md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-100  text-focus-900":
@@ -34,24 +34,35 @@ export default observer(function PomodoroTaskItem({
         }
       )}
     >
-      <div
-        onMouseLeave={() => {
-          setActive(false)
-        }}
-        onClick={() => {
-          if (!active) {
-            setActive(true)
-          } else {
-            state.selectTask(task.id)
-          }
-        }}
-      >
-        {task.title}
+      <div className={classNames("flex items-start justify-between")}>
+        <div
+          className="text-2xl font-semibold"
+          onMouseLeave={() => {
+            setActive(false)
+          }}
+          onClick={() => {
+            if (!active) {
+              setActive(true)
+            } else {
+              state.selectTask(task.id)
+            }
+          }}
+        >
+          {task.title}
+        </div>
+
+        <button className="shrink-0 pl-2">
+          <IconDotsVertical />
+        </button>
       </div>
-      { task.count}
-      <button className="shrink-0 pl-2">
-        <IconDotsVertical />
-      </button>
+
+      {task.count > 0 && (
+        <div className="flex space-x-1">
+          {Array.from({ length: task.count }, (_, i) => (
+            <div className={classNames("h-3 w-3 bg-focus-900")} key={i}></div>
+          ))}
+        </div>
+      )}
     </div>
   )
 })

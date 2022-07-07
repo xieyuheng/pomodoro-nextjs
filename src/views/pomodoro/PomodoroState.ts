@@ -79,8 +79,10 @@ export class PomodoroState {
 
     this.timer.start({
       onFinished: () => {
-        this.currentTesk.count++
         this.notify()
+        if (this.currentTesk) {
+          this.currentTesk.count++
+        }
       },
     })
   }
