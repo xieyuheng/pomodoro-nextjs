@@ -1,3 +1,5 @@
+- move `components/` to `views/` for not share-able `components/`
+
 - `PomodoroTaskForm`
 - `PomodoroTask` -- show `PomodoroTaskForm` when no `currentTesk`
 - `PomodoroTaskForm` -- be able to `addTask`

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
@@ -11,22 +12,42 @@ export default observer(function PomodoroTaskItem({
   state: State
   task: Task
 }) {
+  const [active, setActive] = useState(false)
+
   return (
     <div
       className={classNames(
         "flex items-start justify-between border-4 p-3 text-2xl font-semibold hover:border-white md:py-4",
         state.classes.transition,
         {
-          "border-focus-200  bg-focus-100  text-focus-900 hover:text-focus-600":
+          "border-focus-200  bg-focus-100  text-focus-900":
             state.kind === "Focus",
-          "border-break-200  bg-break-100  text-break-900 hover:text-break-600":
+          "border-break-200  bg-break-100  text-break-900":
             state.kind === "Break",
-          "border-recess-200 bg-recess-100 text-recess-900 hover:text-recess-600":
+          "border-recess-200 bg-recess-100 text-recess-900":
             state.kind === "Recess",
+        },
+        {
+          "text-focus-500": state.kind === "Focus" && active,
+          "text-break-500": state.kind === "Break" && active,
+          "text-recess-500": state.kind === "Recess" && active,
         }
       )}
     >
-      <div onClick={() => state.selectTask(task.id)}>{task.title}</div>
+      <div
+        onMouseLeave={() => {
+          setActive(false)
+        }}
+        onClick={() => {
+          if (!active) {
+            setActive(true)
+          } else {
+            state.selectTask(task.id)
+          }
+        }}
+      >
+        {task.title}
+      </div>
       <button className="shrink-0 pl-2">
         <IconDotsVertical />
       </button>
