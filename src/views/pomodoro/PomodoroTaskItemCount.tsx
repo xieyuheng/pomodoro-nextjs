@@ -12,7 +12,7 @@ export default observer(function PomodoroTaskItemCount({
   task: Task
 }) {
   return task.count > 0 ? (
-    <div className="flex space-x-1 pt-2">
+    <div className="flex space-x-px pt-2">
       {Array.from({ length: task.count }, (_, i) => (
         <div
           className={classNames("h-3 w-3 border", state.classes.transition, {
