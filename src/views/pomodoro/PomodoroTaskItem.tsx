@@ -18,7 +18,7 @@ export default observer(function PomodoroTaskItem({
   return (
     <div
       className={classNames(
-        "flex flex-col border-4 p-3 hover:border-white md:py-4",
+        "flex flex-col border-2 p-3 hover:border-white md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-100  text-focus-900":
