@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Pomodoro from "../components/pomodoro/Pomodoro"
-import { PomodoroState as State } from "../components/pomodoro/PomodoroState"
+import Pomodoro from "../views/pomodoro/Pomodoro"
+import { PomodoroState as State } from "../views/pomodoro/PomodoroState"
 
 export default function Home() {
   const state = new State()
