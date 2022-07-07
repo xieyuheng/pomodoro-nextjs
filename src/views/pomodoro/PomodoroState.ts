@@ -80,7 +80,7 @@ export class PomodoroState {
     this.timer.start({
       onFinished: () => {
         this.notify()
-        if (this.currentTesk) {
+        if (this.currentTesk && this.mode.kind === "Focus") {
           this.currentTesk.count++
         }
       },

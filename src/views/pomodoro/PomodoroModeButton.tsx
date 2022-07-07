@@ -32,7 +32,7 @@ export default observer(function PomodoroModeButton({
       })}
       onClick={() => {
         callWithConfirm(() => state.changeMode(kind), {
-          when: state.timer.isStarted,
+          when: state.timer.isStarted && !state.timer.isFinished,
           message: [
             `A timer has been started in ${state.kind} mode,`,
             `are you sure to change to ${kind} mode?`,
