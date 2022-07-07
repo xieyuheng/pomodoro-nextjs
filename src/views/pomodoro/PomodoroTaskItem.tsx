@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { Task } from "./Task"
 import IconDotsVertical from "../../icons/IconDotsVertical"
+import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
 
 export default observer(function PomodoroTaskItem({
   state,
@@ -56,13 +57,7 @@ export default observer(function PomodoroTaskItem({
         </button>
       </div>
 
-      {task.count > 0 && (
-        <div className="flex space-x-1">
-          {Array.from({ length: task.count }, (_, i) => (
-            <div className={classNames("h-3 w-3 bg-focus-900")} key={i}></div>
-          ))}
-        </div>
-      )}
+      <PomodoroTaskItemCount state={state} task={task} />
     </div>
   )
 })

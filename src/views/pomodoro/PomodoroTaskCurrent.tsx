@@ -2,6 +2,7 @@ import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { Task } from "./Task"
+import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
 
 export default observer(function PomodoroTaskCurrent({
   state,
@@ -23,7 +24,8 @@ export default observer(function PomodoroTaskCurrent({
       )}
     >
       <div className="text-2xl font-semibold">{task.title}</div>
-      <div className="text-2xl font-semibold">{task.count}</div>
+
+      <PomodoroTaskItemCount state={state} task={task} />
     </div>
   )
 })
