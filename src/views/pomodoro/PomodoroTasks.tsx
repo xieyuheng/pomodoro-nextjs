@@ -7,10 +7,8 @@ import PomodoroTaskCurrent from "./PomodoroTaskCurrent"
 export default observer(function PomodoroTasks({ state }: { state: State }) {
   return (
     <div className="flex flex-col py-2">
-      <div className="py-2 text-3xl font-semibold">Tasks</div>
-
       {state.currentTesk && (
-        <div className="py-2">
+        <div className="py-4">
           <PomodoroTaskCurrent state={state} task={state.currentTesk} />
         </div>
       )}

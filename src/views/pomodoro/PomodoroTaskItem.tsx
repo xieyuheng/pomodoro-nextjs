@@ -37,7 +37,7 @@ export default observer(function PomodoroTaskItem({
     >
       <div className={classNames("flex items-start justify-between")}>
         <div
-          className="text-2xl font-semibold"
+          className="text-xl font-semibold"
           onMouseLeave={() => {
             setActive(false)
           }}
