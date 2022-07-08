@@ -1,7 +1,6 @@
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import IconGithub from "../../icons/IconGithub"
 
 export default observer(function PomodoroHeader({ state }: { state: State }) {
   return (
@@ -18,9 +17,6 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
       )}
     >
       <div className="text-3xl font-semibold">Pomodoro</div>
-      <a className="h-6 w-6" href="https://github.com/xieyuheng/pomodoro">
-        <IconGithub />
-      </a>
     </div>
   )
 })
