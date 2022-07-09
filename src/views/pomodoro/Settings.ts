@@ -17,8 +17,8 @@ export class Settings {
     return new Settings({
       modes: {
         Focus: new Focus(25 * 60),
-        Break: new Break(10 * 60),
-        Recess: new Recess(20 * 60),
+        Break: new Break(5 * 60),
+        Recess: new Recess(15 * 60),
       },
     })
   }
