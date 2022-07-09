@@ -12,7 +12,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
   return editing ? (
     <div
       className={classNames(
-        "flex flex-col w-full border-2 p-3 md:py-4",
+        "flex w-full flex-col border-2 p-3 md:py-4",
         state.classes.transition,
         {
           "border-focus-200  bg-focus-100  text-focus-900":
@@ -26,16 +26,16 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
     >
       <input
         className={classNames(
-          "flex flex-col w-full border-b-2 p-3",
+          "flex w-full flex-col border-b-2 p-3",
           "text-xl font-semibold",
           "focus:outline-none focus:ring",
           state.classes.transition,
           {
-            "border-focus-200  bg-focus-100 focus:ring-focus-200 text-focus-900":
+            "border-focus-200  bg-focus-100 text-focus-900 focus:ring-focus-200":
               state.kind === "Focus",
-            "border-break-200  bg-break-100 focus:ring-break-200 text-break-900":
+            "border-break-200  bg-break-100 text-break-900 focus:ring-break-200":
               state.kind === "Break",
-            "border-recess-200 bg-recess-100 focus:ring-recess-200 text-recess-900":
+            "border-recess-200 bg-recess-100 text-recess-900 focus:ring-recess-200":
               state.kind === "Recess",
           }
         )}
@@ -49,7 +49,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
       <div className="flex justify-end space-x-2 pt-4">
         <button
           className={classNames(
-            "text-xl font-semibold p-2 border-2",
+            "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
               "border-focus-300  bg-focus-200 text-focus-600":
@@ -68,7 +68,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
         </button>
         <button
           className={classNames(
-            "text-xl font-semibold p-2 border-2",
+            "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
               "border-focus-300  bg-focus-200 text-focus-600":
@@ -92,8 +92,8 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
     <button
       onClick={() => setEditing(true)}
       className={classNames(
-        "w-full flex flex-col border-dashed border-2 p-3 md:py-4",
-        "justify-center items-center",
+        "flex w-full flex-col border-2 border-dashed p-3 md:py-4",
+        "items-center justify-center",
         state.classes.transition,
         {
           "border-focus-300  bg-focus-400  hover:bg-focus-500":
@@ -106,7 +106,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
       )}
     >
       <IconPlus
-        className={classNames("w-10 h-10", state.classes.transition, {
+        className={classNames("h-10 w-10", state.classes.transition, {
           "text-focus-300": state.kind === "Focus",
           "text-break-300": state.kind === "Break",
           "text-recess-300": state.kind === "Recess",
