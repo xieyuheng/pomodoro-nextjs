@@ -13,8 +13,10 @@ export class PomodoroState {
   timer: Timer
   playing = false
 
-  currentTesk: Task | null = testingCurrentTask
-  tasks: Array<Task> = testingTasks
+  currentTesk: Task | null = null
+  tasks: Array<Task> = []
+
+  inputTaskTitle: string | null = null
 
   settings: Settings = next.dev
     ? Settings.testingSettings()
@@ -28,6 +30,26 @@ export class PomodoroState {
     this.mode = this.settings.modes.Focus
     this.timer = new Timer(this.mode.interval)
     makeAutoObservable(this)
+  }
+
+  addTask() {
+    const ids = this.tasks.map((task) => task.id)
+    const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
+    const newTask = {
+      id: newId,
+      title: this.inputTaskTitle,
+      count: 0,
+    }
+
+    if (this.inputTaskTitle) {
+      if (this.currentTesk === null) {
+        this.currentTesk = newTask
+        this.inputTaskTitle = null
+      } else {
+        this.tasks.push(newTask)
+        this.inputTaskTitle = null
+      }
+    }
   }
 
   get time(): number {

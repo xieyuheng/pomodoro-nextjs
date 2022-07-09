@@ -1,10 +1,5 @@
-- `PomodoroTaskForm` -- be able to `addTask`
-
-- `PomodoroTask` -- show `PomodoroTaskForm` when no `currentTesk`
-
-- `PomodoroTaskCurrent` -- be click to edit
-
-- `PomodoroTaskItem` -- `selectTask` transition
+- `PomodoroTaskCurrent` -- be edit edit
+- `PomodoroTaskItem` -- be edit edit
 
 - be able to config `settings.modes`
 - use `localStorage` to store `settings`

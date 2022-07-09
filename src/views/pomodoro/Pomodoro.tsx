@@ -19,7 +19,7 @@ export default function Pomodoro() {
       {() => (
         <div
           className={classNames(
-            "flex flex-col items-center",
+            "flex flex-col items-center min-h-screen",
             state.classes.transition,
             {
               "bg-focus-400 text-focus-100": state.kind === "Focus",
