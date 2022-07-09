@@ -131,6 +131,8 @@ export class PomodoroState {
 
     if (this.currentTesk) {
       title += ` ${this.currentTesk.title}`
+    } else {
+      title += ` Pomodoro`
     }
 
     return title
