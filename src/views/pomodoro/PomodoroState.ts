@@ -37,7 +37,7 @@ export class PomodoroState {
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
     const newTask = {
       id: newId,
-      title: this.inputTaskTitle,
+      title: this.inputTaskTitle || "",
       count: 0,
     }
 
