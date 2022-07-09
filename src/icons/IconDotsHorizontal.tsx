@@ -1,6 +1,6 @@
-export default () => (
+export default ({ className }: { className: string }) => (
   <svg
-    className="h-6 w-6"
+    className={className}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
