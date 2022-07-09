@@ -1,8 +1,10 @@
+import { useState } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import PomodoroTaskItem from "./PomodoroTaskItem"
 import PomodoroTaskCurrent from "./PomodoroTaskCurrent"
+import PomodoroTaskItem from "./PomodoroTaskItem"
+import PomodoroTaskForm from "./PomodoroTaskForm"
 
 export default observer(function PomodoroTasks({ state }: { state: State }) {
   return (
@@ -19,6 +21,9 @@ export default observer(function PomodoroTasks({ state }: { state: State }) {
             <PomodoroTaskItem state={state} task={task} />
           </li>
         ))}
+        <li className="py-2">
+          <PomodoroTaskForm state={state} />
+        </li>
       </ul>
     </div>
   )

@@ -1,4 +1,4 @@
-export default ({ className }: { className: string }) => (
+export default ({ className }: { className?: string }) => (
   <svg
     className={className}
     fill="none"
