@@ -4,7 +4,7 @@ import { tailwind } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
-import { Task, testingTasks, testingCurrentTask } from "./Task"
+import { Task } from "./Task"
 import { Settings } from "./Settings"
 import { Timer } from "./Timer"
 
@@ -12,6 +12,7 @@ export class PomodoroState {
   mode: Mode
   timer: Timer
   playing = false
+  editing = false
 
   currentTesk: Task | null = null
   tasks: Array<Task> = []

@@ -7,9 +7,7 @@ import IconPlus from "../../icons/IconPlus"
 import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
 
 export default observer(function PomodoroTaskForm({ state }: { state: State }) {
-  const [editing, setEditing] = useState(false)
-
-  return editing ? (
+  return state.editing ? (
     <div
       className={classNames(
         "flex w-full flex-col border-2 p-3 md:py-4",
@@ -61,7 +59,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
             }
           )}
           onClick={() => {
-            setEditing(false)
+            state.editing = false
           }}
         >
           CANCEL
@@ -81,7 +79,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           )}
           onClick={(event) => {
             state.addTask()
-            setEditing(false)
+            state.editing = false
           }}
         >
           SAVE
@@ -90,7 +88,9 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
     </div>
   ) : (
     <button
-      onClick={() => setEditing(true)}
+      onClick={() => {
+        state.editing = true
+      }}
       className={classNames(
         "flex w-full flex-col border-2 border-dashed p-3 md:py-4",
         "items-center justify-center",
