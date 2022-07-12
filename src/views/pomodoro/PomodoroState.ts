@@ -64,21 +64,6 @@ export class PomodoroState {
     return state
   }
 
-  save() {
-    if (typeof window === "undefined") return
-
-    localStorage.setItem(PomodoroState.name, JSON.stringify(this.json()))
-  }
-
-  static load(): PomodoroState | null {
-    if (typeof window === "undefined") return null
-
-    const found = localStorage.getItem(PomodoroState.name)
-    if (!found) return null
-
-    return PomodoroState.create(JSON.parse(found))
-  }
-
   addTask() {
     const ids = this.tasks.map((task) => task.id)
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
