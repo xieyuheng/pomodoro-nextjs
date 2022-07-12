@@ -1,1 +1,8 @@
 @import "./fonts.css";
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
