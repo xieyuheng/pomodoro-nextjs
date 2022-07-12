@@ -23,11 +23,11 @@ export default observer(function PomodoroTaskForm({
     <div>
       <input
         className={classes(
-          "flex w-full flex-col border-b-2 p-3",
+          "flex w-full flex-col border-b-2 bg-inherit p-3",
           "text-xl font-semibold",
           "focus:outline-none focus:ring",
           state.classes.transition,
-          `border-${state.theme}-200 bg-${state.theme}-100 text-${state.theme}-900 focus:ring-${state.theme}-200`,
+          `border-${state.theme}-200 text-${state.theme}-900 focus:ring-${state.theme}-200`,
           `placeholder-${state.theme}-400`
         )}
         type="text"

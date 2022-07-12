@@ -15,7 +15,6 @@ export default observer(function PomodoroTaskItem({
   task: Task
 }) {
   const [active, setActive] = useState(false)
-  const [editing, setEditing] = useState(false)
   const [inputTitle, setInputTitle] = useState(task.title)
 
   return (
@@ -27,7 +26,7 @@ export default observer(function PomodoroTaskItem({
         `text-${state.theme}-500`
       )}
     >
-      {editing ? (
+      {task.editing ? (
         <PomodoroTaskForm
           state={state}
           value={inputTitle}
@@ -35,17 +34,16 @@ export default observer(function PomodoroTaskItem({
             setInputTitle(event.target.value)
           }}
           onDelete={() => {
-            //
             state.deleteTask(task.id)
-            setEditing(false)
+            task.editing = false
           }}
           onCancel={() => {
             setInputTitle(task.title)
-            setEditing(false)
+            task.editing = false
           }}
           onSave={() => {
             task.title = inputTitle
-            setEditing(false)
+            task.editing = false
           }}
         />
       ) : (
@@ -69,7 +67,7 @@ export default observer(function PomodoroTaskItem({
           <button
             className="shrink-0"
             onClick={() => {
-              setEditing(true)
+              task.editing = true
             }}
           >
             <IconDotsVertical className="h-6 w-6" />

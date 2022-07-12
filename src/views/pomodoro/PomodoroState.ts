@@ -85,7 +85,14 @@ export class PomodoroState {
   }
 
   deleteTask(id: number) {
-    removeFirst(this.tasks, (task) => task.id === id)
+    if (this.currentTesk?.id === id) {
+      this.currentTesk = null
+      if (this.tasks[0]) {
+        this.selectTask(this.tasks[0].id)
+      }
+    } else {
+      removeFirst(this.tasks, (task) => task.id === id)
+    }
   }
 
   get time(): number {
