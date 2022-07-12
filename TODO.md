@@ -1,6 +1,3 @@
-- `Timer.create`
-- `Timer.json`
-
 - `PomodoroTaskCurrent` -- be edit edit
 - `PomodoroTaskItem` -- be edit edit
 

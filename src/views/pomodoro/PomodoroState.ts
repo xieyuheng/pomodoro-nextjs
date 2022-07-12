@@ -6,9 +6,11 @@ import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Task } from "./Task"
 import { Settings, defaultSettings, testingSettings } from "./Settings"
-import { Timer } from "./Timer"
+import { Timer, TimerJson } from "./Timer"
 
-type PomodoroStateJson = {
+export type PomodoroStateJson = {
+  mode: Mode
+  timer: TimerJson
   playing: boolean
   editing: boolean
   currentTesk: Task | null
@@ -38,6 +40,8 @@ export class PomodoroState {
 
   json(): PomodoroStateJson {
     return {
+      mode: this.mode,
+      timer: this.timer.json(),
       playing: this.playing,
       editing: this.editing,
       currentTesk: this.currentTesk,
@@ -49,6 +53,8 @@ export class PomodoroState {
 
   static create(json: PomodoroStateJson): PomodoroState {
     const state = new PomodoroState()
+    state.mode = json.mode
+    state.timer = Timer.create(json.timer)
     state.playing = json.playing
     state.editing = json.editing
     state.currentTesk = json.currentTesk
@@ -56,6 +62,21 @@ export class PomodoroState {
     state.inputTaskTitle = json.inputTaskTitle
     state.settings = json.settings
     return state
+  }
+
+  save() {
+    if (typeof window === "undefined") return
+
+    localStorage.setItem(PomodoroState.name, JSON.stringify(this.json()))
+  }
+
+  static load(): PomodoroState | null {
+    if (typeof window === "undefined") return null
+
+    const found = localStorage.getItem(PomodoroState.name)
+    if (!found) return null
+
+    return PomodoroState.create(JSON.parse(found))
   }
 
   addTask() {

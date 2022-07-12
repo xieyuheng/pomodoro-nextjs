@@ -3,6 +3,11 @@ import { leftPad } from "../../utils/left-pad"
 
 type TimerId = ReturnType<typeof setInterval>
 
+export type TimerJson = {
+  time: number
+  interval: number
+}
+
 export class Timer {
   time: number
   private id: TimerId | null = null
@@ -10,6 +15,20 @@ export class Timer {
   constructor(public interval: number) {
     this.time = interval
     makeAutoObservable(this)
+  }
+
+  json(): TimerJson {
+    return {
+      time: this.time,
+      interval: this.interval,
+    }
+  }
+
+  static create(json: TimerJson): Timer {
+    const { interval } = json
+    const timer = new Timer(interval)
+    timer.time = json.time
+    return timer
   }
 
   start(options: { onFinished: () => void }): void {
