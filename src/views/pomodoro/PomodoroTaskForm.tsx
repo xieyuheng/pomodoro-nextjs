@@ -22,6 +22,7 @@ export default observer(function PomodoroTaskForm({
   return (
     <div>
       <input
+        autoFocus
         className={classes(
           "flex w-full flex-col border-b-2 bg-inherit p-3",
           "focus:outline-none focus:ring",
