@@ -4,12 +4,12 @@ export class Lang {
   tag: string
 
   constructor() {
-    const tag = window.localStorage.getItem(Lang.name)
+    const tag = window.localStorage.getItem("Lang")
     this.tag = tag || "en"
 
     makeAutoObservable(this)
 
-    autorun(() => localStorage.setItem(Lang.name, this.tag))
+    autorun(() => localStorage.setItem("Lang", this.tag))
   }
 
   get zh(): boolean {

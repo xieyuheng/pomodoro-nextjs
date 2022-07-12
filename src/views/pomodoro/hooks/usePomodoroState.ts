@@ -5,10 +5,10 @@ export function usePomodoroState(): [
   (state: PomodoroState) => void
 ] {
   const saveState = (state: PomodoroState) => {
-    localStorage.setItem(PomodoroState.name, JSON.stringify(state.json()))
+    localStorage.setItem("PomodoroState", JSON.stringify(state.json()))
   }
 
-  const found = window.localStorage.getItem(PomodoroState.name)
+  const found = window.localStorage.getItem("PomodoroState")
 
   const state = found
     ? PomodoroState.create(JSON.parse(found))
