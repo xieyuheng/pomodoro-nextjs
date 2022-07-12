@@ -1,5 +1,5 @@
 import { useState } from "react"
-import classNames from "classnames"
+import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { Task } from "./Task"
@@ -17,7 +17,7 @@ export default observer(function PomodoroTaskItem({
 
   return (
     <div
-      className={classNames(
+      className={classes(
         "flex flex-col border-2 p-3 hover:border-white md:py-4",
         state.classes.transition,
         {
@@ -35,7 +35,7 @@ export default observer(function PomodoroTaskItem({
         }
       )}
     >
-      <div className={classNames("flex items-start justify-between")}>
+      <div className={classes("flex items-start justify-between")}>
         <div
           className="text-xl font-semibold"
           onMouseLeave={() => {

@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { ModeKind } from "./Mode"
@@ -14,7 +14,7 @@ export default observer(function PomodoroModeButton({
   return (
     <button
       disabled={state.kind === kind}
-      className={classNames("border-2 py-1 px-3", state.classes.transition, {
+      className={classes("border-2 py-1 px-3", state.classes.transition, {
         "border-focus-400 bg-focus-600 text-focus-200":
           state.kind === "Focus" && state.kind === kind,
         "border-focus-500 bg-focus-500 text-focus-300":

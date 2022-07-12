@@ -1,11 +1,11 @@
-import classNames from "classnames"
+import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 
 export default observer(function PomodoroHeader({ state }: { state: State }) {
   return (
     <div
-      className={classNames(
+      className={classes(
         "flex w-full items-center border-b px-4 py-2 md:py-4",
         "justify-between",
         state.classes.transition,

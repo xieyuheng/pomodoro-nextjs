@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import classes from "classnames"
 import { Observer } from "mobx-react-lite"
 import PomodoroTimer from "./PomodoroTimer"
 import PomodoroHeader from "./PomodoroHeader"
@@ -18,7 +18,7 @@ export default function Pomodoro() {
     <Observer>
       {() => (
         <div
-          className={classNames(
+          className={classes(
             "flex min-h-screen flex-col items-center",
             state.classes.transition,
             {

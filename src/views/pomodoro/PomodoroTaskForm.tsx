@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import IconPlus from "../../icons/IconPlus"
@@ -6,7 +6,7 @@ import IconPlus from "../../icons/IconPlus"
 export default observer(function PomodoroTaskForm({ state }: { state: State }) {
   return state.editing ? (
     <div
-      className={classNames(
+      className={classes(
         "flex w-full flex-col border-2 p-3 md:py-4",
         state.classes.transition,
         {
@@ -20,7 +20,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
       )}
     >
       <input
-        className={classNames(
+        className={classes(
           "flex w-full flex-col border-b-2 p-3",
           "text-xl font-semibold",
           "focus:outline-none focus:ring",
@@ -43,7 +43,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
 
       <div className="flex justify-end space-x-2 pt-4">
         <button
-          className={classNames(
+          className={classes(
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
@@ -62,7 +62,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           CANCEL
         </button>
         <button
-          className={classNames(
+          className={classes(
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
@@ -88,7 +88,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
       onClick={() => {
         state.editing = true
       }}
-      className={classNames(
+      className={classes(
         "flex w-full flex-col border-2 border-dashed p-3 md:py-4",
         "items-center justify-center",
         state.classes.transition,
@@ -103,7 +103,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
       )}
     >
       <IconPlus
-        className={classNames("h-10 w-10", state.classes.transition, {
+        className={classes("h-10 w-10", state.classes.transition, {
           "text-focus-300": state.kind === "Focus",
           "text-break-300": state.kind === "Break",
           "text-recess-300": state.kind === "Recess",
