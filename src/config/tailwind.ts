@@ -6,26 +6,18 @@ export const tailwindConfig = resolveConfig({
     fontFamily: {
       sans: [
         "Linux Biolinum O",
-        // "LXGW New Clear Gothic",
-        // "LXGW Clear Gothic",
+        "LXGW New Clear Gothic",
+        "LXGW Clear Gothic",
         "sans-serif",
       ],
-      serif: [
-        "Linux Libertine O",
-        // "LXGW WenKai",
-        "serif",
-      ],
+      serif: ["Linux Libertine O", "LXGW WenKai", "serif"],
       mono: [
         "Fira Code",
         // NOTE One Chinese character should equal to two English characters.
-        // "LXGW WenKai Larger",
+        "LXGW WenKai Larger",
         "monospace",
       ],
-      logo: [
-        "Bodoni Moda",
-        // "Source Han Serif SC",
-        "serif",
-      ],
+      logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
     },
     transitionDelay: {
       0: "0ms",
