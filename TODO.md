@@ -1,4 +1,4 @@
-- `PomodoroTaskCurrent` -- be edit edit
-- `PomodoroTaskItem` -- be edit edit
+- `PomodoroTaskCurrent` -- be able to edit
+- `PomodoroTaskItem` -- be able to edit
 - be able to config `settings.modes`
 - `useLang` -- with `lang` -- to suppurt both English and Chinese

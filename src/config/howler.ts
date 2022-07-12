@@ -3,7 +3,6 @@ import { Howl } from "howler"
 export function emptySoundLoop() {
   return new Howl({
     src: [
-      // "/sounds/japanese/kojonotsuki.ogg",
       "/sounds/loops/empty-loop-for-js-performance.ogg",
       "/sounds/loops/empty-loop-for-js-performance.wav",
     ],
