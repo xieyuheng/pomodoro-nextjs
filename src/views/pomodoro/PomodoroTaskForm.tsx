@@ -1,27 +1,26 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import IconPlus from "../../icons/IconPlus"
 
 export default observer(function PomodoroTaskForm({
   state,
+  value,
+  placeholder,
   onChange,
+  onDelete,
   onCancel,
   onSave,
 }: {
   state: State
-  onChange: () => void
-  onCancel: () => void
-  onSave: () => void
+  value?: string
+  placeholder?: string
+  onChange: (event: any) => void
+  onDelete?: (event: any) => void
+  onCancel?: (event: any) => void
+  onSave?: (event: any) => void
 }) {
   return (
-    <div
-      className={classes(
-        "flex w-full flex-col border-2 p-3 md:py-4",
-        state.classes.transition,
-        `border-${state.theme}-200  bg-${state.theme}-100  text-${state.theme}-900`
-      )}
-    >
+    <div>
       <input
         className={classes(
           "flex w-full flex-col border-b-2 p-3",
@@ -32,31 +31,50 @@ export default observer(function PomodoroTaskForm({
           `placeholder-${state.theme}-400`
         )}
         type="text"
-        placeholder="Add a new task ~"
+        value={value}
+        placeholder={placeholder}
         onChange={onChange}
       />
 
       <div className="flex justify-end space-x-2 pt-4">
-        <button
-          className={classes(
-            "border-2 p-2 text-xl font-semibold",
-            state.classes.transition,
-            `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
-          )}
-          onClick={onCancel}
-        >
-          CANCEL
-        </button>
-        <button
-          className={classes(
-            "border-2 p-2 text-xl font-semibold",
-            state.classes.transition,
-            `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
-          )}
-          onClick={onSave}
-        >
-          SAVE
-        </button>
+        {onDelete && (
+          <button
+            className={classes(
+              "border-2 p-2 text-xl font-semibold",
+              state.classes.transition,
+              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+            )}
+            onClick={onDelete}
+          >
+            DELETE
+          </button>
+        )}
+
+        {onCancel && (
+          <button
+            className={classes(
+              "border-2 p-2 text-xl font-semibold",
+              state.classes.transition,
+              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+            )}
+            onClick={onCancel}
+          >
+            CANCEL
+          </button>
+        )}
+
+        {onSave && (
+          <button
+            className={classes(
+              "border-2 p-2 text-xl font-semibold",
+              state.classes.transition,
+              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+            )}
+            onClick={onSave}
+          >
+            SAVE
+          </button>
+        )}
       </div>
     </div>
   )

@@ -10,19 +10,29 @@ export default observer(function PomodoroTaskInput({
   state: State
 }) {
   return state.editing ? (
-    <PomodoroTaskForm
-      state={state}
-      onChange={(event) => {
-        state.inputTaskTitle = event.target.value
-      }}
-      onCancel={() => {
-        state.editing = false
-      }}
-      onSave={() => {
-        state.addTask()
-        state.editing = false
-      }}
-    />
+    <div
+      className={classes(
+        "flex w-full flex-col border-2 p-3 md:py-4",
+        state.classes.transition,
+        `border-${state.theme}-200 bg-${state.theme}-100  text-${state.theme}-900`
+      )}
+    >
+      <PomodoroTaskForm
+        state={state}
+        placeholder="Create a new task ~"
+        onChange={(event) => {
+          state.inputTaskTitle = event.target.value
+        }}
+        onCancel={() => {
+          state.inputTaskTitle = null
+          state.editing = false
+        }}
+        onSave={() => {
+          state.createTask()
+          state.editing = false
+        }}
+      />
+    </div>
   ) : (
     <button
       onClick={() => {

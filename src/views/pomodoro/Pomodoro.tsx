@@ -31,11 +31,11 @@ export default function Pomodoro() {
 
           <PomodoroHeader state={state} />
 
-          <div className="w-full space-y-2 px-4 md:max-w-2xl mt-6">
+          <div className="mt-6 w-full space-y-2 px-4 md:max-w-2xl">
             <PomodoroTimer state={state} />
           </div>
 
-          <div className="w-full space-y-2 px-4 md:max-w-2xl pb-4 ">
+          <div className="w-full space-y-2 px-4 pb-4 md:max-w-2xl ">
             <PomodoroTasks state={state} />
           </div>
         </div>

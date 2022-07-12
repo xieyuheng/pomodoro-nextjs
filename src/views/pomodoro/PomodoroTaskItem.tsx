@@ -5,6 +5,7 @@ import { PomodoroState as State } from "./PomodoroState"
 import { Task } from "./Task"
 import IconDotsVertical from "../../icons/IconDotsVertical"
 import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
+import PomodoroTaskForm from "./PomodoroTaskForm"
 
 export default observer(function PomodoroTaskItem({
   state,
@@ -14,6 +15,8 @@ export default observer(function PomodoroTaskItem({
   task: Task
 }) {
   const [active, setActive] = useState(false)
+  const [editing, setEditing] = useState(false)
+  const [inputTitle, setInputTitle] = useState(task.title)
 
   return (
     <div
@@ -24,27 +27,55 @@ export default observer(function PomodoroTaskItem({
         `text-${state.theme}-500`
       )}
     >
-      <div className={classes("flex items-start justify-between")}>
-        <div
-          className="text-xl font-semibold"
-          onMouseLeave={() => {
-            setActive(false)
+      {editing ? (
+        <PomodoroTaskForm
+          state={state}
+          value={inputTitle}
+          onChange={(event) => {
+            setInputTitle(event.target.value)
           }}
-          onClick={() => {
-            if (!active) {
-              setActive(true)
-            } else {
-              state.selectTask(task.id)
-            }
+          onDelete={() => {
+            //
+            state.deleteTask(task.id)
+            setEditing(false)
           }}
-        >
-          {task.title}
-        </div>
+          onCancel={() => {
+            setInputTitle(task.title)
+            setEditing(false)
+          }}
+          onSave={() => {
+            task.title = inputTitle
+            setEditing(false)
+          }}
+        />
+      ) : (
+        <div className={classes("flex items-start justify-between")}>
+          <div
+            className="text-xl font-semibold"
+            onMouseLeave={() => {
+              setActive(false)
+            }}
+            onClick={() => {
+              if (!active) {
+                setActive(true)
+              } else {
+                state.selectTask(task.id)
+              }
+            }}
+          >
+            {task.title}
+          </div>
 
-        <button className="shrink-0">
-          <IconDotsVertical className="h-6 w-6" />
-        </button>
-      </div>
+          <button
+            className="shrink-0"
+            onClick={() => {
+              setEditing(true)
+            }}
+          >
+            <IconDotsVertical className="h-6 w-6" />
+          </button>
+        </div>
+      )}
 
       <PomodoroTaskItemCount state={state} task={task} />
     </div>

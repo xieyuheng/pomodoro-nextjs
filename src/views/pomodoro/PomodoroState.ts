@@ -64,16 +64,16 @@ export class PomodoroState {
     return state
   }
 
-  createTask(title: string = ""): Task {
+  private createTaskFromTitle(title: string = ""): Task {
     const ids = this.tasks.map((task) => task.id)
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
     return { id: newId, title, count: 0 }
   }
 
-  addTask() {
+  createTask() {
     if (!this.inputTaskTitle) return
 
-    const newTask = this.createTask(this.inputTaskTitle)
+    const newTask = this.createTaskFromTitle(this.inputTaskTitle)
 
     if (this.currentTesk === null) {
       this.currentTesk = newTask
@@ -82,6 +82,10 @@ export class PomodoroState {
       this.tasks.push(newTask)
       this.inputTaskTitle = null
     }
+  }
+
+  deleteTask(id: number) {
+    removeFirst(this.tasks, (task) => task.id === id)
   }
 
   get time(): number {
