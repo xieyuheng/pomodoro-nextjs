@@ -1,7 +1,6 @@
 - extract `PomodoroTaskForm`
-
-- refactor `Pomodoro` structure
-- `PomodoroTaskCurrent` -- be able to edit
-- `PomodoroTaskItem` -- be able to edit
+- make `PomodoroTaskForm` general
+- `PomodoroTaskCurrent` -- use `PomodoroTaskForm`
+- `PomodoroTaskItem` -- use `PomodoroTaskForm`
 - be able to config `settings.modes`
 - `useLang` -- with `lang` -- to suppurt both English and Chinese
