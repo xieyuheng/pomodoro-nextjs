@@ -24,10 +24,17 @@ export default observer(function PomodoroModeButton({
       onClick={() => {
         callWithConfirm(() => state.changeMode(kind), {
           when: state.timer.isStarted && !state.timer.isFinished,
-          message: [
-            `A timer has been started in ${state.kind} mode,`,
-            `are you sure to change to ${kind} mode?`,
-          ].join("\n"),
+          message: state.lang.zh
+            ? [
+                `「${state.translateKind(state.kind)}」模式的计时器已经开始，`,
+                `确定要切换到「${state.translateKind(kind)}」模式吗？`,
+              ].join("\n")
+            : [
+                `A timer has been started in ${state.translateKind(
+                  state.kind
+                )} mode,`,
+                `are you sure to change to ${state.translateKind(kind)} mode?`,
+              ].join("\n"),
         })
       }}
     >

@@ -120,11 +120,15 @@ export class PomodoroState {
     }
   }
 
+  get appName(): string {
+    return this.lang.zh ? "专注小番茄" : "Pomodoro"
+  }
+
   async notify(): Promise<void> {
     if (Notification.permission === "granted") {
       const registration = await navigator.serviceWorker.ready
       const kind = this.translateKind(this.mode.kind)
-      registration.showNotification("Pomodoro Notifier", {
+      registration.showNotification(this.appName, {
         body: this.lang.zh ? `${kind} 结束。` : `${kind} finished.`,
       })
     }
@@ -203,7 +207,7 @@ export class PomodoroState {
     if (this.currentTesk) {
       title += ` ${this.currentTesk.title}`
     } else {
-      title += ` Pomodoro`
+      title += ` ${this.appName}`
     }
 
     return title
