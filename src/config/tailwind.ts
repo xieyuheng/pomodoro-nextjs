@@ -19,13 +19,5 @@ export const tailwindConfig = resolveConfig({
       ],
       logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
     },
-    extend: {
-      colors: {
-        gray: colors.stone,
-        focus: colors.red,
-        break: colors.sky,
-        recess: colors.violet,
-      },
-    },
   },
 })
