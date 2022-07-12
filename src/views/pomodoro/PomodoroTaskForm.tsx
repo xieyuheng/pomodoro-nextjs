@@ -45,7 +45,7 @@ export default observer(function PomodoroTaskForm({
         {onDelete && (
           <button
             className={classes(
-              "border-2 p-2 text-lg font-semibold md:text-xl",
+              "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
               `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
             )}
@@ -58,7 +58,7 @@ export default observer(function PomodoroTaskForm({
         {onCancel && (
           <button
             className={classes(
-              "border-2 p-2 text-lg font-semibold md:text-xl",
+              "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
               `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
             )}
@@ -71,7 +71,7 @@ export default observer(function PomodoroTaskForm({
         {onSave && (
           <button
             className={classes(
-              "border-2 p-2 text-lg font-semibold md:text-xl",
+              "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
               `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
             )}
