@@ -14,12 +14,13 @@ export default observer(function PomodoroModeButton({
   return (
     <button
       disabled={state.kind === kind}
-      className={classes("border-2 py-1 px-3", state.classes.transition, {
-        "border-${state.theme}-400 bg-${state.theme}-600 text-${state.theme}-200":
-          state.kind === kind,
-        "border-${state.theme}-500 bg-${state.theme}-500 text-${state.theme}-300":
-          state.kind !== kind,
-      })}
+      className={classes(
+        "border-2 py-1 px-3",
+        state.classes.transition,
+        state.kind === kind
+          ? `border-${state.theme}-400 bg-${state.theme}-600 text-${state.theme}-200`
+          : `border-${state.theme}-500 bg-${state.theme}-500 text-${state.theme}-300`
+      )}
       onClick={() => {
         callWithConfirm(() => state.changeMode(kind), {
           when: state.timer.isStarted && !state.timer.isFinished,
