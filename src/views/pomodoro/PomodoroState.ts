@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import { removeFirst } from "../../utils/remove-first"
-import { tailwind } from "../../config/tailwind"
+import { tailwindConfig } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
@@ -123,7 +123,7 @@ export class PomodoroState {
 
   get themeColor(): string {
     const kind = this.kind.toLowerCase()
-    return tailwind.theme.colors[kind][400]
+    return tailwindConfig.theme.colors[kind][400]
   }
 
   start(): void {
