@@ -19,7 +19,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
       </div>
 
       <button
-        className="flex items-center text-xl font-bold"
+        className="flex items-baseline text-xl font-bold"
         onClick={() => {
           if (!state.lang.zh) {
             state.lang.tag = "zh"
