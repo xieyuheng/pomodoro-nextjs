@@ -29,7 +29,7 @@ export class PomodoroState {
   inputTaskTitle: string | null = null
   settings: Settings = next.dev ? testingSettings : defaultSettings
   classes = {
-    transition: "transition duration-500 ease-out",
+    transition: "transition delay-0 duration-500 ease-out",
   }
 
   constructor() {

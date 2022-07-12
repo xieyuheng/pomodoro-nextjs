@@ -19,5 +19,9 @@ export const tailwindConfig = resolveConfig({
       ],
       logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
     },
+    transitionDelay: {
+      0: "0ms",
+      2000: "2000ms",
+    },
   },
 })
