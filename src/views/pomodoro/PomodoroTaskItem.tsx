@@ -23,8 +23,8 @@ export default observer(function PomodoroTaskItem({
         "flex flex-col border-2 p-3 hover:border-white md:py-4",
         "text-xl font-semibold",
         state.classes.transition,
-        `border-${state.theme}-200 bg-${state.theme}-100 text-${state.theme}-900`,
-        active && `text-${state.theme}-500`
+        `border-${state.theme}-200 bg-${state.theme}-100`,
+        active ? `text-${state.theme}-500` : `text-${state.theme}-900`
       )}
     >
       {task.editing ? (
