@@ -5,8 +5,14 @@ import IconPlus from "../../icons/IconPlus"
 
 export default observer(function PomodoroTaskForm({
   state,
+  onChange,
+  onCancel,
+  onSave,
 }: {
   state: State
+  onChange: () => void
+  onCancel: () => void
+  onSave: () => void
 }) {
   return (
     <div
@@ -27,9 +33,7 @@ export default observer(function PomodoroTaskForm({
         )}
         type="text"
         placeholder="Add a new task ~"
-        onChange={(event) => {
-          state.inputTaskTitle = event.target.value
-        }}
+        onChange={onChange}
       />
 
       <div className="flex justify-end space-x-2 pt-4">
@@ -39,9 +43,7 @@ export default observer(function PomodoroTaskForm({
             state.classes.transition,
             `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
           )}
-          onClick={() => {
-            state.editing = false
-          }}
+          onClick={onCancel}
         >
           CANCEL
         </button>
@@ -51,10 +53,7 @@ export default observer(function PomodoroTaskForm({
             state.classes.transition,
             `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
           )}
-          onClick={(event) => {
-            state.addTask()
-            state.editing = false
-          }}
+          onClick={onSave}
         >
           SAVE
         </button>

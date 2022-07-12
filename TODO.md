@@ -1,5 +1,3 @@
-- extract `PomodoroTaskForm`
-- make `PomodoroTaskForm` general
 - `PomodoroTaskCurrent` -- use `PomodoroTaskForm`
 - `PomodoroTaskItem` -- use `PomodoroTaskForm`
 - be able to config `settings.modes`

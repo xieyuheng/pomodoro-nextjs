@@ -10,7 +10,19 @@ export default observer(function PomodoroTaskInput({
   state: State
 }) {
   return state.editing ? (
-    <PomodoroTaskForm state={state} />
+    <PomodoroTaskForm
+      state={state}
+      onChange={(event) => {
+        state.inputTaskTitle = event.target.value
+      }}
+      onCancel={() => {
+        state.editing = false
+      }}
+      onSave={() => {
+        state.addTask()
+        state.editing = false
+      }}
+    />
   ) : (
     <button
       onClick={() => {
