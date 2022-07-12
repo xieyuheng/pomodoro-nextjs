@@ -13,6 +13,7 @@ export default observer(function PomodoroTaskInput({
     <div
       className={classes(
         "flex w-full flex-col border-2 p-3 md:py-4",
+        "text-xl font-semibold",
         state.classes.transition,
         `border-${state.theme}-200 bg-${state.theme}-100  text-${state.theme}-900`
       )}
