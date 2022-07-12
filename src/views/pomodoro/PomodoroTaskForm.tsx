@@ -15,9 +15,9 @@ export default observer(function PomodoroTaskForm({
   value?: string
   placeholder?: string
   onChange: (event: any) => void
-  onDelete?: (event: any) => void
-  onCancel?: (event: any) => void
-  onSave?: (event: any) => void
+  onDelete?: () => void
+  onCancel?: () => void
+  onSave?: () => void
 }) {
   return (
     <div>
@@ -34,6 +34,11 @@ export default observer(function PomodoroTaskForm({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            if (onSave) onSave()
+          }
+        }}
       />
 
       <div className="flex justify-end space-x-2 pt-4">
