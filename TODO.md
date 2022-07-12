@@ -1,3 +1,5 @@
+- extract `PomodoroTaskForm`
+
 - refactor `Pomodoro` structure
 - `PomodoroTaskCurrent` -- be able to edit
 - `PomodoroTaskItem` -- be able to edit

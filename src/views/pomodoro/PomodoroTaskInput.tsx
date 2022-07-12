@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import IconPlus from "../../icons/IconPlus"
 
-export default observer(function PomodoroTaskForm({ state }: { state: State }) {
+export default observer(function PomodoroTaskInput({ state }: { state: State }) {
   return state.editing ? (
     <div
       className={classes(
@@ -18,7 +18,8 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           "text-xl font-semibold",
           "focus:outline-none focus:ring",
           state.classes.transition,
-          `border-${state.theme}-200  bg-${state.theme}-100 text-${state.theme}-900 focus:ring-${state.theme}-200`
+          `border-${state.theme}-200 bg-${state.theme}-100 text-${state.theme}-900 focus:ring-${state.theme}-200`,
+          `placeholder-${state.theme}-400`
         )}
         type="text"
         placeholder="Add a new task ~"
@@ -32,7 +33,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           className={classes(
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
-            `border-${state.theme}-300  bg-${state.theme}-200 text-${state.theme}-600`
+            `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
           )}
           onClick={() => {
             state.editing = false
@@ -44,7 +45,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           className={classes(
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
-            `border-${state.theme}-300  bg-${state.theme}-200 text-${state.theme}-600`
+            `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
           )}
           onClick={(event) => {
             state.addTask()
@@ -64,7 +65,7 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
         "flex w-full flex-col border-2 border-dashed p-3 md:py-4",
         "items-center justify-center",
         state.classes.transition,
-        `border-${state.theme}-300  bg-${state.theme}-400  hover:bg-${state.theme}-500`
+        `border-${state.theme}-300 bg-${state.theme}-400 hover:bg-${state.theme}-500`
       )}
     >
       <IconPlus
