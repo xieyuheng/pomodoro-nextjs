@@ -1,5 +1,3 @@
-import { useState } from "react"
-import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTaskCurrent from "./PomodoroTaskCurrent"

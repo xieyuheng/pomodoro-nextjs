@@ -1,12 +1,10 @@
 import classNames from "classnames"
 import { Observer } from "mobx-react-lite"
-import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimer from "./PomodoroTimer"
 import PomodoroHeader from "./PomodoroHeader"
 import PomodoroTasks from "./PomodoroTasks"
 import Head from "next/head"
 import { useMount } from "ahooks"
-import { PomodoroState } from "./PomodoroState"
 import { autorun } from "mobx"
 import { usePomodoroState } from "./usePomodoroState"
 

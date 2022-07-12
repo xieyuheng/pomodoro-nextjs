@@ -1,10 +1,7 @@
-import { useState } from "react"
 import classNames from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import { Task } from "./Task"
 import IconPlus from "../../icons/IconPlus"
-import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
 
 export default observer(function PomodoroTaskForm({ state }: { state: State }) {
   return state.editing ? (
