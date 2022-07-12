@@ -1,4 +1,4 @@
-import {Lang} from "../models/Lang"
+import { Lang } from "../models/Lang"
 
 const theLang = new Lang()
 

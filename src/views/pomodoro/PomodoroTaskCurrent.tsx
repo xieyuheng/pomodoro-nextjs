@@ -42,7 +42,7 @@ export default observer(function PomodoroTaskCurrent({
           }}
           onSave={() => {
             if (!inputTitle) {
-              return alert("Input required ~")
+              return alert(state.lang.zh ? "输入不能为空" : "Input required")
             }
 
             task.title = inputTitle

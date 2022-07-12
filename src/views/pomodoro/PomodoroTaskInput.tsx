@@ -20,7 +20,7 @@ export default observer(function PomodoroTaskInput({
     >
       <PomodoroTaskForm
         state={state}
-        placeholder="Create a new task ~"
+        placeholder={state.lang.zh ? "新的任务" : "Create a new task"}
         onChange={(event) => {
           state.inputTaskTitle = event.target.value
         }}

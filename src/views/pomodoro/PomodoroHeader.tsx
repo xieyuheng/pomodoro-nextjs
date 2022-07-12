@@ -1,10 +1,9 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
+import IconTranslate from "../../icons/IconTranslate"
 
 export default observer(function PomodoroHeader({ state }: { state: State }) {
-  const lang = { zh: true, en: false }
-
   return (
     <div
       className={classes(
@@ -15,9 +14,24 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
       )}
     >
       <div className="text-3xl font-bold">
-        {lang.zh && "专注小番茄"}
-        {lang.en && "Pomodoro"}
+        {state.lang.zh && "专注小番茄"}
+        {state.lang.en && "Pomodoro"}
       </div>
+
+      <button
+        className="flex items-center text-xl font-bold"
+        onClick={() => {
+          if (!state.lang.zh) {
+            state.lang.tag = "zh"
+          } else {
+            state.lang.tag = "en"
+          }
+        }}
+      >
+        {state.lang.zh && "English"}
+        {state.lang.en && "汉语"}
+        <IconTranslate className="ml-2 h-5 w-5" />
+      </button>
     </div>
   )
 })

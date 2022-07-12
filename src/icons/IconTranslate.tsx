@@ -1,8 +1,4 @@
-export default function IconDotsVertical({
-  className,
-}: {
-  className?: string
-}) {
+export default function IconTranslate({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -15,7 +11,7 @@ export default function IconDotsVertical({
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
       />
     </svg>
   )

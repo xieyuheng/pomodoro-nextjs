@@ -1,2 +1,1 @@
-- use `hooks/useLang`
 - be able to config `settings.modes`

@@ -7,6 +7,8 @@ import { Mode, ModeKind } from "./models/Mode"
 import { Task } from "./models/Task"
 import { Settings, defaultSettings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
+import { useLang } from "../../hooks/useLang"
+import { Lang } from "../../models/Lang"
 
 export type PomodoroStateJson = {
   mode: Mode
@@ -28,13 +30,17 @@ export class PomodoroState {
   tasks: Array<Task> = []
   inputTaskTitle: string | null = null
   settings: Settings = next.dev ? testingSettings : defaultSettings
+
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
   }
 
+  lang: Lang = useLang()
+
   constructor() {
     this.mode = this.settings.modes.Focus
     this.timer = new Timer(this.mode.interval)
+
     makeAutoObservable(this)
   }
 

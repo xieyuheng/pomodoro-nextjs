@@ -51,7 +51,7 @@ export default observer(function PomodoroTaskForm({
             )}
             onClick={onDelete}
           >
-            DELETE
+            {state.lang.zh ? "删除" : "DELETE"}
           </button>
         )}
 
@@ -64,7 +64,7 @@ export default observer(function PomodoroTaskForm({
             )}
             onClick={onCancel}
           >
-            CANCEL
+            {state.lang.zh ? "取消" : "CANCEL"}
           </button>
         )}
 
@@ -77,7 +77,7 @@ export default observer(function PomodoroTaskForm({
             )}
             onClick={onSave}
           >
-            SAVE
+            {state.lang.zh ? "保存" : "SAVE"}
           </button>
         )}
       </div>
