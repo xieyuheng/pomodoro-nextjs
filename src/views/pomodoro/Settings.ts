@@ -1,9 +1,9 @@
-import { Focus, Break, Recess } from "./Mode"
+import { Mode } from "./Mode"
 
 type ModesSetting = {
-  Focus: Focus
-  Break: Break
-  Recess: Recess
+  Focus: Mode
+  Break: Mode
+  Recess: Mode
 }
 
 export class Settings {
@@ -16,9 +16,9 @@ export class Settings {
   static defaultSettings(): Settings {
     return new Settings({
       modes: {
-        Focus: new Focus(25 * 60),
-        Break: new Break(5 * 60),
-        Recess: new Recess(15 * 60),
+        Focus: { kind: "Focus", interval: 25 * 60 },
+        Break: { kind: "Break", interval: 5 * 60 },
+        Recess: { kind: "Recess", interval: 15 * 60 },
       },
     })
   }
@@ -26,9 +26,9 @@ export class Settings {
   static testingSettings(): Settings {
     return new Settings({
       modes: {
-        Focus: new Focus(5),
-        Break: new Break(2),
-        Recess: new Recess(3),
+        Focus: { kind: "Focus", interval: 5 },
+        Break: { kind: "Break", interval: 2 },
+        Recess: { kind: "Recess", interval: 3 },
       },
     })
   }

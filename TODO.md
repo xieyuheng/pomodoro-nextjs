@@ -1,4 +1,3 @@
-- `Mode` as interface instead of class
 - `Settings` as interface instead of class
 
 - `Timer.create`
