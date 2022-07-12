@@ -14,11 +14,11 @@ export default observer(function PomodoroTaskItemCount({
     <div className="flex space-x-0.5 pt-2">
       {Array.from({ length: task.count }, (_, i) => (
         <div
-          className={classes("h-2.5 w-2.5 border", state.classes.transition, {
-            "border-red-400 bg-red-600": state.kind === "Focus",
-            "border-sky-400 bg-sky-600": state.kind === "Break",
-            "border-violet-400 bg-violet-600": state.kind === "Recess",
-          })}
+          className={classes(
+            "h-2.5 w-2.5 border",
+            state.classes.transition,
+            `border-${state.theme}-400 bg-${state.theme}-600`
+          )}
           key={i}
         ></div>
       ))}

@@ -121,9 +121,19 @@ export class PomodoroState {
     this.timer.reset(this.mode.interval)
   }
 
+  get theme(): string {
+    switch (this.kind) {
+      case "Focus":
+        return "red"
+      case "Break":
+        return "sky"
+      case "Recess":
+        return "violet"
+    }
+  }
+
   get themeColor(): string {
-    const kind = this.kind.toLowerCase()
-    return tailwindConfig.theme.colors[kind][400]
+    return tailwindConfig.theme.colors[this.theme][400]
   }
 
   start(): void {

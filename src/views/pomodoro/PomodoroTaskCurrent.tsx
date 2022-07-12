@@ -17,11 +17,7 @@ export default observer(function PomodoroTaskCurrent({
       className={classes(
         "flex flex-col border-2 bg-white p-3 md:py-4",
         state.classes.transition,
-        {
-          "border-red-300 text-red-900": state.kind === "Focus",
-          "border-sky-300 text-sky-900": state.kind === "Break",
-          "border-violet-300 text-violet-900": state.kind === "Recess",
-        }
+        `border-${state.theme}-300 text-${state.theme}-900`
       )}
     >
       <div className={classes("flex items-start justify-between")}>

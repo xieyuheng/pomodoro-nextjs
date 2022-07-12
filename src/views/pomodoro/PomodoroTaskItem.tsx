@@ -20,17 +20,8 @@ export default observer(function PomodoroTaskItem({
       className={classes(
         "flex flex-col border-2 p-3 hover:border-white md:py-4",
         state.classes.transition,
-        {
-          "border-red-200  bg-red-100  text-red-900": state.kind === "Focus",
-          "border-sky-200  bg-sky-100  text-sky-900": state.kind === "Break",
-          "border-violet-200 bg-violet-100 text-violet-900":
-            state.kind === "Recess",
-        },
-        {
-          "text-red-500": state.kind === "Focus" && active,
-          "text-sky-500": state.kind === "Break" && active,
-          "text-violet-500": state.kind === "Recess" && active,
-        }
+        `border-${state.theme}-200  bg-${state.theme}-100  text-${state.theme}-900`,
+        `text-${state.theme}-500`
       )}
     >
       <div className={classes("flex items-start justify-between")}>

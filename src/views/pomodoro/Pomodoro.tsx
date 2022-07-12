@@ -21,11 +21,7 @@ export default function Pomodoro() {
           className={classes(
             "flex min-h-screen flex-col items-center",
             state.classes.transition,
-            {
-              "bg-red-400 text-red-100": state.kind === "Focus",
-              "bg-sky-400 text-sky-100": state.kind === "Break",
-              "bg-violet-400 text-violet-100": state.kind === "Recess",
-            }
+            `bg-${state.theme}-400 text-${state.theme}-100`
           )}
         >
           <Head>
