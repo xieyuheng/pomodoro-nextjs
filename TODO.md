@@ -1,3 +1,4 @@
+- refactor `Pomodoro` structure
 - `PomodoroTaskCurrent` -- be able to edit
 - `PomodoroTaskItem` -- be able to edit
 - be able to config `settings.modes`
