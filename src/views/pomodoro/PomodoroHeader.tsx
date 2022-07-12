@@ -30,6 +30,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
       >
         {state.lang.zh && "English"}
         {state.lang.en && "汉语"}
+
         <IconTranslate className="ml-2 h-5 w-5" />
       </button>
     </div>
