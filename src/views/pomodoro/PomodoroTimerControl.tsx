@@ -36,13 +36,10 @@ export default observer(function PomodoroTimerControl({
             name={lang.zh ? "重置" : "RESET"}
             onClick={() =>
               callWithConfirm(() => state.timer.reset(), {
-                message: lang.zh
-                  ? [`计时器已经开始了，`, `确定要重置吗？`].join("\n")
-                  : [
-                      `A timer has been started in ${state.kind} mode,`,
-                      `are you sure to reset it?`,
-                    ].join("\n"),
                 when: !state.timer.isFinished,
+                message: lang.zh
+                  ? "计时器已经开始了，确定要重置吗？"
+                  : "A timer has been started, are you sure to reset it?",
               })
             }
           />
