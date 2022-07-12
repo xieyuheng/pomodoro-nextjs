@@ -3,10 +3,10 @@ import { removeFirst } from "../../utils/remove-first"
 import { tailwindConfig } from "../../config/tailwind"
 import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
-import { Mode, ModeKind } from "./Mode"
-import { Task } from "./Task"
-import { Settings, defaultSettings, testingSettings } from "./Settings"
-import { Timer, TimerJson } from "./Timer"
+import { Mode, ModeKind } from "./models/Mode"
+import { Task } from "./models/Task"
+import { Settings, defaultSettings, testingSettings } from "./models/Settings"
+import { Timer, TimerJson } from "./models/Timer"
 
 export type PomodoroStateJson = {
   mode: Mode

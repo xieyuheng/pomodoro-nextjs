@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx"
-import { leftPad } from "../../utils/left-pad"
+import { leftPad } from "../../../utils/left-pad"
 
 type TimerId = ReturnType<typeof setInterval>
 

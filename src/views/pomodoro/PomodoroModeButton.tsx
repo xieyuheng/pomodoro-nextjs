@@ -1,7 +1,7 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import { ModeKind } from "./Mode"
+import { ModeKind } from "./models/Mode"
 import { callWithConfirm } from "../../utils/call-with-confirm"
 
 export default observer(function PomodoroModeButton({

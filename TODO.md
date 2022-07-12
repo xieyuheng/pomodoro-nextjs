@@ -1,2 +1,2 @@
-- `useLang` -- with `lang` -- to suppurt both English and Chinese
+- use `hooks/useLang`
 - be able to config `settings.modes`

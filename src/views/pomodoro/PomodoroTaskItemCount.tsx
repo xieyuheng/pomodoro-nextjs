@@ -1,7 +1,7 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import { Task } from "./Task"
+import { Task } from "./models/Task"
 
 export default observer(function PomodoroTaskItemCount({
   state,

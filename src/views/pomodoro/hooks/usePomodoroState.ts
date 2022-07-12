@@ -1,4 +1,4 @@
-import { PomodoroState } from "./PomodoroState"
+import { PomodoroState } from "../PomodoroState"
 
 export function usePomodoroState(): [
   PomodoroState,
