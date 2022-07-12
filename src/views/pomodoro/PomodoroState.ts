@@ -121,7 +121,7 @@ export class PomodoroState {
   }
 
   get appName(): string {
-    return this.lang.zh ? "专注小番茄" : "Pomodoro"
+    return this.lang.zh ? "番茄钟" : "Pomodoro"
   }
 
   async notify(): Promise<void> {

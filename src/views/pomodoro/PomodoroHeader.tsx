@@ -13,10 +13,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         `border-${state.theme}-500`
       )}
     >
-      <div className="text-3xl font-bold">
-        {state.lang.zh && "专注小番茄"}
-        {state.lang.en && "Pomodoro"}
-      </div>
+      <div className="text-3xl font-bold">{state.appName}</div>
 
       <button
         className="flex items-baseline text-xl font-bold"
