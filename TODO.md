@@ -1,4 +1,2 @@
-- `PomodoroTaskForm` -- `enter` run `onSave`
-
 - `useLang` -- with `lang` -- to suppurt both English and Chinese
 - be able to config `settings.modes`
