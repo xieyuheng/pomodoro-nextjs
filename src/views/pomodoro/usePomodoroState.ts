@@ -16,6 +16,7 @@ export function usePomodoroState(): [
     state = PomodoroState.create(JSON.parse(found))
     saveState = (state) => {
       localStorage.setItem(PomodoroState.name, JSON.stringify(state.json()))
+      console.log(state.json())
     }
   }
 
