@@ -1,5 +1,3 @@
-- `Settings` as interface instead of class
-
 - `Timer.create`
 - `Timer.json`
 

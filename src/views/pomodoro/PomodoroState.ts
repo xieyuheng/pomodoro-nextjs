@@ -5,7 +5,7 @@ import { next } from "../../config/next"
 import { emptySoundLoop } from "../../config/howler"
 import { Mode, ModeKind } from "./Mode"
 import { Task } from "./Task"
-import { Settings } from "./Settings"
+import { Settings, defaultSettings, testingSettings } from "./Settings"
 import { Timer } from "./Timer"
 
 type PomodoroStateJson = {
@@ -14,6 +14,7 @@ type PomodoroStateJson = {
   currentTesk: Task | null
   tasks: Array<Task>
   inputTaskTitle: string | null
+  settings: Settings
 }
 
 export class PomodoroState {
@@ -21,16 +22,10 @@ export class PomodoroState {
   timer: Timer
   playing = false
   editing = false
-
   currentTesk: Task | null = null
   tasks: Array<Task> = []
-
   inputTaskTitle: string | null = null
-
-  settings: Settings = next.dev
-    ? Settings.testingSettings()
-    : Settings.defaultSettings()
-
+  settings: Settings = next.dev ? testingSettings : defaultSettings
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
   }
@@ -48,6 +43,7 @@ export class PomodoroState {
       currentTesk: this.currentTesk,
       tasks: this.tasks,
       inputTaskTitle: this.inputTaskTitle,
+      settings: this.settings,
     }
   }
 
@@ -58,6 +54,7 @@ export class PomodoroState {
     state.currentTesk = json.currentTesk
     state.tasks = json.tasks
     state.inputTaskTitle = json.inputTaskTitle
+    state.settings = json.settings
     return state
   }
 

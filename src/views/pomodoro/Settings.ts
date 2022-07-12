@@ -6,30 +6,22 @@ type ModesSetting = {
   Recess: Mode
 }
 
-export class Settings {
+export interface Settings {
   modes: ModesSetting
+}
 
-  constructor(options: { modes: ModesSetting }) {
-    this.modes = options.modes
-  }
+export const defaultSettings: Settings = {
+  modes: {
+    Focus: { kind: "Focus", interval: 25 * 60 },
+    Break: { kind: "Break", interval: 5 * 60 },
+    Recess: { kind: "Recess", interval: 15 * 60 },
+  },
+}
 
-  static defaultSettings(): Settings {
-    return new Settings({
-      modes: {
-        Focus: { kind: "Focus", interval: 25 * 60 },
-        Break: { kind: "Break", interval: 5 * 60 },
-        Recess: { kind: "Recess", interval: 15 * 60 },
-      },
-    })
-  }
-
-  static testingSettings(): Settings {
-    return new Settings({
-      modes: {
-        Focus: { kind: "Focus", interval: 5 },
-        Break: { kind: "Break", interval: 2 },
-        Recess: { kind: "Recess", interval: 3 },
-      },
-    })
-  }
+export const testingSettings: Settings = {
+  modes: {
+    Focus: { kind: "Focus", interval: 5 },
+    Break: { kind: "Break", interval: 2 },
+    Recess: { kind: "Recess", interval: 3 },
+  },
 }
