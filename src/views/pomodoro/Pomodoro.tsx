@@ -6,9 +6,13 @@ import PomodoroHeader from "./PomodoroHeader"
 import PomodoroTasks from "./PomodoroTasks"
 import Head from "next/head"
 import { useMount } from "ahooks"
+import { usePomodoroState } from "./usePomodoroState"
+import { autorun } from "mobx"
 
 export default function Pomodoro() {
-  const state = new State()
+  const [state, saveState] = usePomodoroState()
+
+  autorun(() => saveState(state))
 
   useMount(() => {
     state.setupNotification()

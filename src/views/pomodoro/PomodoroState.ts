@@ -8,6 +8,14 @@ import { Task } from "./Task"
 import { Settings } from "./Settings"
 import { Timer } from "./Timer"
 
+type PomodoroStateJson = {
+  playing: boolean
+  editing: boolean
+  currentTesk: Task | null
+  tasks: Array<Task>
+  inputTaskTitle: string | null
+}
+
 export class PomodoroState {
   mode: Mode
   timer: Timer
@@ -31,6 +39,26 @@ export class PomodoroState {
     this.mode = this.settings.modes.Focus
     this.timer = new Timer(this.mode.interval)
     makeAutoObservable(this)
+  }
+
+  json(): PomodoroStateJson {
+    return {
+      playing: this.playing,
+      editing: this.editing,
+      currentTesk: this.currentTesk,
+      tasks: this.tasks,
+      inputTaskTitle: this.inputTaskTitle,
+    }
+  }
+
+  static create(json: PomodoroStateJson): PomodoroState {
+    const state = new PomodoroState()
+    state.playing = json.playing
+    state.editing = json.editing
+    state.currentTesk = json.currentTesk
+    state.tasks = json.tasks
+    state.inputTaskTitle = json.inputTaskTitle
+    return state
   }
 
   addTask() {
