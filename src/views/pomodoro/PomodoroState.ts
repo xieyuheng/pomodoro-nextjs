@@ -123,14 +123,26 @@ export class PomodoroState {
   async notify(): Promise<void> {
     if (Notification.permission === "granted") {
       const registration = await navigator.serviceWorker.ready
+      const kind = this.translateKind(this.mode.kind)
       registration.showNotification("Pomodoro Notifier", {
-        body: `${this.mode.kind} finished.`,
+        body: this.lang.zh ? `${kind} 结束。` : `${kind} finished.`,
       })
     }
   }
 
   get kind(): ModeKind {
     return this.mode.kind
+  }
+
+  translateKind(kind: ModeKind): string {
+    switch (kind) {
+      case "Focus":
+        return this.lang.zh ? "专注" : "Focus"
+      case "Break":
+        return this.lang.zh ? "短休息" : "Break"
+      case "Recess":
+        return this.lang.zh ? "长休息" : "Recess"
+    }
   }
 
   changeMode(kind: ModeKind): void {

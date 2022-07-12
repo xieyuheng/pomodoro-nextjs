@@ -7,11 +7,9 @@ import { callWithConfirm } from "../../utils/call-with-confirm"
 export default observer(function PomodoroModeButton({
   state,
   kind,
-  name,
 }: {
   state: State
   kind: ModeKind
-  name: string
 }) {
   return (
     <button
@@ -33,7 +31,7 @@ export default observer(function PomodoroModeButton({
         })
       }}
     >
-      {name}
+      {state.translateKind(kind)}
     </button>
   )
 })
