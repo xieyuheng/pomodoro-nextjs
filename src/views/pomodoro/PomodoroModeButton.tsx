@@ -15,7 +15,7 @@ export default observer(function PomodoroModeButton({
     <button
       disabled={state.kind === kind}
       className={classes(
-        "border-2 py-1 px-3",
+        "border-2 py-1 px-2",
         state.classes.transition,
         state.kind === kind
           ? `border-${state.theme}-400 bg-${state.theme}-600 text-${state.theme}-200`
