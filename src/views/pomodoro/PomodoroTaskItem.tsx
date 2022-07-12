@@ -21,17 +21,15 @@ export default observer(function PomodoroTaskItem({
         "flex flex-col border-2 p-3 hover:border-white md:py-4",
         state.classes.transition,
         {
-          "border-focus-200  bg-focus-100  text-focus-900":
-            state.kind === "Focus",
-          "border-break-200  bg-break-100  text-break-900":
-            state.kind === "Break",
-          "border-recess-200 bg-recess-100 text-recess-900":
+          "border-red-200  bg-red-100  text-red-900": state.kind === "Focus",
+          "border-sky-200  bg-sky-100  text-sky-900": state.kind === "Break",
+          "border-violet-200 bg-violet-100 text-violet-900":
             state.kind === "Recess",
         },
         {
-          "text-focus-500": state.kind === "Focus" && active,
-          "text-break-500": state.kind === "Break" && active,
-          "text-recess-500": state.kind === "Recess" && active,
+          "text-red-500": state.kind === "Focus" && active,
+          "text-sky-500": state.kind === "Break" && active,
+          "text-violet-500": state.kind === "Recess" && active,
         }
       )}
     >

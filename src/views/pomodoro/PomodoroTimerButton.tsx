@@ -17,11 +17,9 @@ export default observer(function PomodoroTimerButton({
         "border-2 px-4 py-2 text-2xl md:text-3xl",
         state.classes.transition,
         {
-          "border-focus-300 bg-focus-200 text-focus-600":
-            state.kind === "Focus",
-          "border-break-300 bg-break-200 text-break-600":
-            state.kind === "Break",
-          "border-recess-300 bg-recess-200 text-recess-600":
+          "border-red-300 bg-red-200 text-red-600": state.kind === "Focus",
+          "border-sky-300 bg-sky-200 text-sky-600": state.kind === "Break",
+          "border-violet-300 bg-violet-200 text-violet-600":
             state.kind === "Recess",
         }
       )}

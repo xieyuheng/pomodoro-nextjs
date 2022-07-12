@@ -22,9 +22,9 @@ export default function Pomodoro() {
             "flex min-h-screen flex-col items-center",
             state.classes.transition,
             {
-              "bg-focus-400 text-focus-100": state.kind === "Focus",
-              "bg-break-400 text-break-100": state.kind === "Break",
-              "bg-recess-400 text-recess-100": state.kind === "Recess",
+              "bg-red-400 text-red-100": state.kind === "Focus",
+              "bg-sky-400 text-sky-100": state.kind === "Break",
+              "bg-violet-400 text-violet-100": state.kind === "Recess",
             }
           )}
         >

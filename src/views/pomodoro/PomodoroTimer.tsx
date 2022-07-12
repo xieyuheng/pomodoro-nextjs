@@ -12,9 +12,9 @@ export default observer(function PomodoroTimer({ state }: { state: State }) {
         "h-64 md:h-80",
         state.classes.transition,
         {
-          "border-focus-600 bg-focus-500 bg-focus-400": state.kind === "Focus",
-          "border-break-600 bg-break-500 bg-break-400": state.kind === "Break",
-          "border-recess-600 bg-recess-500 bg-recess-400":
+          "border-red-600 bg-red-500 bg-red-400": state.kind === "Focus",
+          "border-sky-600 bg-sky-500 bg-sky-400": state.kind === "Break",
+          "border-violet-600 bg-violet-500 bg-violet-400":
             state.kind === "Recess",
         }
       )}

@@ -15,9 +15,9 @@ export default observer(function PomodoroTaskItemCount({
       {Array.from({ length: task.count }, (_, i) => (
         <div
           className={classes("h-2.5 w-2.5 border", state.classes.transition, {
-            "border-focus-400 bg-focus-600": state.kind === "Focus",
-            "border-break-400 bg-break-600": state.kind === "Break",
-            "border-recess-400 bg-recess-600": state.kind === "Recess",
+            "border-red-400 bg-red-600": state.kind === "Focus",
+            "border-sky-400 bg-sky-600": state.kind === "Break",
+            "border-violet-400 bg-violet-600": state.kind === "Recess",
           })}
           key={i}
         ></div>

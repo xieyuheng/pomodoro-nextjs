@@ -10,9 +10,9 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         "justify-between",
         state.classes.transition,
         {
-          "border-focus-500": state.kind === "Focus",
-          "border-break-500": state.kind === "Break",
-          "border-recess-500": state.kind === "Recess",
+          "border-red-500": state.kind === "Focus",
+          "border-sky-500": state.kind === "Break",
+          "border-violet-500": state.kind === "Recess",
         }
       )}
     >

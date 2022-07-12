@@ -18,9 +18,9 @@ export default observer(function PomodoroTaskCurrent({
         "flex flex-col border-2 bg-white p-3 md:py-4",
         state.classes.transition,
         {
-          "border-focus-300 text-focus-900": state.kind === "Focus",
-          "border-break-300 text-break-900": state.kind === "Break",
-          "border-recess-300 text-recess-900": state.kind === "Recess",
+          "border-red-300 text-red-900": state.kind === "Focus",
+          "border-sky-300 text-sky-900": state.kind === "Break",
+          "border-violet-300 text-violet-900": state.kind === "Recess",
         }
       )}
     >

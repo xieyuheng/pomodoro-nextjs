@@ -10,11 +10,9 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
         "flex w-full flex-col border-2 p-3 md:py-4",
         state.classes.transition,
         {
-          "border-focus-200  bg-focus-100  text-focus-900":
-            state.kind === "Focus",
-          "border-break-200  bg-break-100  text-break-900":
-            state.kind === "Break",
-          "border-recess-200 bg-recess-100 text-recess-900":
+          "border-red-200  bg-red-100  text-red-900": state.kind === "Focus",
+          "border-sky-200  bg-sky-100  text-sky-900": state.kind === "Break",
+          "border-violet-200 bg-violet-100 text-violet-900":
             state.kind === "Recess",
         }
       )}
@@ -26,11 +24,11 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
           "focus:outline-none focus:ring",
           state.classes.transition,
           {
-            "border-focus-200  bg-focus-100 text-focus-900 focus:ring-focus-200":
+            "border-red-200  bg-red-100 text-red-900 focus:ring-red-200":
               state.kind === "Focus",
-            "border-break-200  bg-break-100 text-break-900 focus:ring-break-200":
+            "border-sky-200  bg-sky-100 text-sky-900 focus:ring-sky-200":
               state.kind === "Break",
-            "border-recess-200 bg-recess-100 text-recess-900 focus:ring-recess-200":
+            "border-violet-200 bg-violet-100 text-violet-900 focus:ring-violet-200":
               state.kind === "Recess",
           }
         )}
@@ -47,11 +45,9 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
-              "border-focus-300  bg-focus-200 text-focus-600":
-                state.kind === "Focus",
-              "border-break-300  bg-break-200 text-break-600":
-                state.kind === "Break",
-              "border-recess-300 bg-recess-200 text-recess-600":
+              "border-red-300  bg-red-200 text-red-600": state.kind === "Focus",
+              "border-sky-300  bg-sky-200 text-sky-600": state.kind === "Break",
+              "border-violet-300 bg-violet-200 text-violet-600":
                 state.kind === "Recess",
             }
           )}
@@ -66,11 +62,9 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
             "border-2 p-2 text-xl font-semibold",
             state.classes.transition,
             {
-              "border-focus-300  bg-focus-200 text-focus-600":
-                state.kind === "Focus",
-              "border-break-300  bg-break-200 text-break-600":
-                state.kind === "Break",
-              "border-recess-300 bg-recess-200 text-recess-600":
+              "border-red-300  bg-red-200 text-red-600": state.kind === "Focus",
+              "border-sky-300  bg-sky-200 text-sky-600": state.kind === "Break",
+              "border-violet-300 bg-violet-200 text-violet-600":
                 state.kind === "Recess",
             }
           )}
@@ -93,20 +87,20 @@ export default observer(function PomodoroTaskForm({ state }: { state: State }) {
         "items-center justify-center",
         state.classes.transition,
         {
-          "border-focus-300  bg-focus-400  hover:bg-focus-500":
+          "border-red-300  bg-red-400  hover:bg-red-500":
             state.kind === "Focus",
-          "border-break-300  bg-break-400  hover:bg-break-500  ":
+          "border-sky-300  bg-sky-400  hover:bg-sky-500  ":
             state.kind === "Break",
-          "border-recess-300 bg-recess-400 hover:bg-recess-500 ":
+          "border-violet-300 bg-violet-400 hover:bg-violet-500 ":
             state.kind === "Recess",
         }
       )}
     >
       <IconPlus
         className={classes("h-10 w-10", state.classes.transition, {
-          "text-focus-300": state.kind === "Focus",
-          "text-break-300": state.kind === "Break",
-          "text-recess-300": state.kind === "Recess",
+          "text-red-300": state.kind === "Focus",
+          "text-sky-300": state.kind === "Break",
+          "text-violet-300": state.kind === "Recess",
         })}
       />
     </button>
