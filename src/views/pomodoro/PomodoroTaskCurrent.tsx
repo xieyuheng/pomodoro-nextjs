@@ -41,6 +41,10 @@ export default observer(function PomodoroTaskCurrent({
             task.editing = false
           }}
           onSave={() => {
+            if (!inputTitle) {
+              return alert("Input required ~")
+            }
+
             task.title = inputTitle
             task.editing = false
           }}

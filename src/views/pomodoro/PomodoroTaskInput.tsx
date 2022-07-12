@@ -29,8 +29,12 @@ export default observer(function PomodoroTaskInput({
           state.editing = false
         }}
         onSave={() => {
-          state.createTask()
-          state.editing = false
+          if (!state.inputTaskTitle) {
+            state.editing = false
+          } else {
+            state.createTask()
+            state.editing = false
+          }
         }}
       />
     </div>
