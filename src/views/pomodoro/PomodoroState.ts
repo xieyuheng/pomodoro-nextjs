@@ -220,18 +220,18 @@ export class PomodoroState {
   }
 
   formatTitle(): string | null {
-    let title = ""
+    const parts = []
 
     if (this.timer.isStarted) {
-      title += `${this.timer.formatTime()}`
+      parts.push(`${this.timer.formatTime()}`)
     }
 
     if (this.currentTesk) {
-      title += ` ${this.currentTesk.title}`
+      parts.push(`${this.currentTesk.title}`)
     } else {
-      title += ` ${this.appName}`
+      parts.push(`${this.appName}`)
     }
 
-    return title
+    return parts.join(" | ")
   }
 }
