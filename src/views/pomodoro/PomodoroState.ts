@@ -227,9 +227,9 @@ export class PomodoroState {
     }
 
     if (this.currentTesk) {
-      title += ` | ${this.currentTesk.title}`
+      title += ` ${this.currentTesk.title}`
     } else {
-      title += ` | ${this.appName}`
+      title += ` ${this.appName}`
     }
 
     return title
