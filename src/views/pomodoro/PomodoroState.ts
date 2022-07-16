@@ -44,6 +44,23 @@ export class PomodoroState {
     makeAutoObservable(this)
   }
 
+  private refreshIds(): void {
+    const ids: Set<number> = new Set()
+
+    const tasks = this.currentTesk
+      ? [this.currentTesk, ...this.tasks]
+      : this.tasks
+
+    for (const task of tasks) {
+      if (ids.has(task.id)) {
+        const newId = Math.max(...Array.from(ids)) + 1
+        task.id = newId
+      }
+
+      ids.add(task.id)
+    }
+  }
+
   json(): PomodoroStateJson {
     return {
       mode: this.mode,
@@ -67,11 +84,16 @@ export class PomodoroState {
     state.tasks = json.tasks
     state.inputTaskTitle = json.inputTaskTitle
     state.settings = json.settings
+    state.refreshIds()
     return state
   }
 
   private createTaskFromTitle(title: string = ""): Task {
-    const ids = this.tasks.map((task) => task.id)
+    const tasks = this.currentTesk
+      ? [this.currentTesk, ...this.tasks]
+      : this.tasks
+
+    const ids = tasks.map((task) => task.id)
     const newId = ids.length === 0 ? 0 : Math.max(...ids) + 1
     return { id: newId, title, count: 0 }
   }
