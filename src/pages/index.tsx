@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>🍅 Pomodoro</title>
+        <title>Pomodoro</title>
         <meta name="description" content="🍅 A Pomodoro timer." />
       </Head>
 
