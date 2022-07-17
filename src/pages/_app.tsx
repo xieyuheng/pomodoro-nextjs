@@ -5,6 +5,8 @@ import "../lib/mobx"
 import { tailwindConfig } from "../lib/tailwind"
 import "../lib/service-worker"
 
+import { setup, strict, voidSheet } from "twind"
+
 declare global {
   var tailwind: any
 }
@@ -13,12 +15,17 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
-        src="https://cdn.tailwindcss.com"
+        type="module"
+        src="https://cdn.skypack.dev/twind/shim"
         onLoad={() => {
-          const colors = require("tailwindcss/colors")
-          window.tailwind.config = tailwindConfig
+          setup({
+            mode: strict, // throw errors for invalid rules (default: warn)
+            // hash: true, // hash all generated class names (default: false)
+            theme: tailwindConfig.theme,
+          })
         }}
       />
+
       <Component {...pageProps} />
     </>
   )
