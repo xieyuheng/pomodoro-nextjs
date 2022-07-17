@@ -4,6 +4,7 @@ import { leftPad } from "../../../utils/left-pad"
 type TimerId = ReturnType<typeof setInterval>
 
 export type TimerJson = {
+  version?: number
   time: number
   interval: number
 }
@@ -19,22 +20,31 @@ export class Timer {
 
   json(): TimerJson {
     return {
+      version: 1,
       time: this.time,
       interval: this.interval,
     }
   }
 
   static create(json: TimerJson): Timer {
-    const { interval } = json
-    const timer = new Timer(interval)
-    timer.time = json.time
+    const timer = new Timer(
+      json.version === 1 ? json.interval : json.interval * 1000
+    )
+    timer.time = json.version === 1 ? json.time : json.time * 1000
     return timer
   }
 
   start(options: { onFinished: () => void }): void {
+    let t0 = performance.now()
+    let t1 = performance.now()
+    let d = 0
+
     this.id = setInterval(() => {
       if (this.time > 0) {
-        this.time--
+        t1 = performance.now()
+        d = t1 - t0
+        t0 = performance.now()
+        this.time -= d
       } else {
         this.stop()
         options.onFinished()
@@ -80,8 +90,9 @@ export class Timer {
 }
 
 function formatTime(time: number): string {
-  const minutes = Math.floor(time / 60)
-  const seconds = time % 60
+  const t = Math.ceil(time / 1000)
+  const minutes = Math.floor(t / 60)
+  const seconds = t % 60
 
   const mm = leftPad(minutes.toString(), 2, "0")
   const ss = leftPad(seconds.toString(), 2, "0")
