@@ -181,11 +181,9 @@ export class PomodoroState {
       case "Focus":
         return "red"
       case "Break":
-        // return "sky"
-        return "blue"
+        return "sky"
       case "Recess":
-        // return "violet"
-        return "purple"
+        return "violet"
     }
   }
 
