@@ -1,4 +1,3 @@
-- use free redis as backend
 - design a login process based on redis
 - store user info in redis
 - be able to config `settings.modes`
