@@ -1,3 +1,7 @@
-- design a login process based on redis
-- store user info in redis
+- `EmailRegister`
+- `EmailLogin`
+
+- `User`
+
+- be able to send email to users
 - be able to config `settings.modes`

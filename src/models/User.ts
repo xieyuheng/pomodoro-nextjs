@@ -1,20 +1,22 @@
 import { Entity, Schema } from "redis-om"
 import { client, connect } from "../lib/redis"
 
-export class User extends Entity {}
-
-export interface User {
-  user: string
+export type UserJson = {
+  name: string
+  email: string
 }
 
-const UserSchema = new Schema(User, {
-  name: { type: "string" },
-})
+export interface User extends UserJson {}
 
-export async function createUser(): Promise<string> {
-  await connect()
-  const users = client.fetchRepository(UserSchema)
-  const user = users.createEntity({ name: "Xie Yuheng" })
-  const id = await users.save(user)
-  return id
+export class User extends Entity {
+  static schema = new Schema(User, {
+    name: { type: "string" },
+    email: { type: "string" },
+  })
+
+  static async create(user: UserJson): Promise<User> {
+    await connect()
+    const repository = client.fetchRepository(User.schema)
+    return await repository.createAndSave(user)
+  }
 }

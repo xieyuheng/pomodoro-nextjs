@@ -1,7 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { createUser } from "../../models/User"
+import { User } from "../../models/User"
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-  const id = await createUser()
-  res.status(200).json({ id })
+  const user = await User.create({
+    name: "Xie Yuheng",
+    email: "xyheme@gmail.com",
+  })
+
+  res.status(200).json({ id: user.entityId })
 }
