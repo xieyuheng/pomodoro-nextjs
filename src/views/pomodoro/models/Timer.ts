@@ -4,7 +4,6 @@ import { leftPad } from "../../../utils/left-pad"
 type TimerId = ReturnType<typeof setInterval>
 
 export type TimerJson = {
-  version?: number
   time: number
   interval: number
 }
@@ -20,17 +19,14 @@ export class Timer {
 
   json(): TimerJson {
     return {
-      version: 1,
       time: this.time,
       interval: this.interval,
     }
   }
 
   static create(json: TimerJson): Timer {
-    const timer = new Timer(
-      json.version === 1 ? json.interval : json.interval * 1000
-    )
-    timer.time = json.version === 1 ? json.time : json.time * 1000
+    const timer = new Timer(json.interval)
+    timer.time = json.time
     return timer
   }
 
