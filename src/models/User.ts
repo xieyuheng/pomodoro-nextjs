@@ -11,7 +11,7 @@ export interface User extends UserJson {}
 
 export class User extends Entity {
   static schema = new Schema(User, {
-    username: { type: "string" },    
+    username: { type: "string" },
     name: { type: "string" },
     email: { type: "string" },
   })
