@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Pomodoro</title>
         <meta name="description" content="🍅 A Pomodoro timer." />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
