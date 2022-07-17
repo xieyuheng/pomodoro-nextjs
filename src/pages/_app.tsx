@@ -1,9 +1,9 @@
 import type { AppProps } from "next/app"
 import Script from "next/script"
 import "../styles/index.css"
-import "../config/mobx"
-import { tailwindConfig } from "../config/tailwind"
-import "../config/service-worker"
+import "../lib/mobx"
+import { tailwindConfig } from "../lib/tailwind"
+import "../lib/service-worker"
 
 declare global {
   var tailwind: any
