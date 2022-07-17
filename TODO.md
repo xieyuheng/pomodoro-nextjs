@@ -1,5 +1,3 @@
-- use tailwind `safelist`
-
 - `Timer` -- use `Performance` instead of `setInterval`
 
   - https://stackoverflow.com/questions/55324033/setinterval-timer-be-more-slower-when-go-another-chrome-tab
