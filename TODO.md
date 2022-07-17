@@ -1,7 +1,7 @@
 - try headlessui in `/register` page
 - setup `/login` route
 
-- setup `layouts/page-layout`
+- extract `layouts/page-layout` from `views/pomodoro`
 
 - nav to `/register` and `/login` in header
 
