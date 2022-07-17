@@ -1,4 +1,4 @@
-- setup `/register` route
+- try headlessui in `/register` page
 - setup `/login` route
 
 - setup `layouts/page-layout`
