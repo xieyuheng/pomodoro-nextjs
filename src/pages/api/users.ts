@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { createUser } from "../../lib/redis"
+import { createUser } from "../../models/User"
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const id = await createUser()
