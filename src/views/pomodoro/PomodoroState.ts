@@ -11,6 +11,7 @@ import { useLang } from "../../hooks/useLang"
 import { Lang } from "../../models/Lang"
 
 export type PomodoroStateJson = {
+  version?: number
   mode: Mode
   timer: TimerJson
   playing: boolean
@@ -63,6 +64,7 @@ export class PomodoroState {
 
   json(): PomodoroStateJson {
     return {
+      version: 1,
       mode: this.mode,
       timer: this.timer.json(),
       playing: this.playing,

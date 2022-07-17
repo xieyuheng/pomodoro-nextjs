@@ -8,10 +8,15 @@ export function usePomodoroState(): [
     localStorage.setItem("PomodoroState", JSON.stringify(state.json()))
   }
 
-  const found = window.localStorage.getItem("PomodoroState")
+  const found = localStorage.getItem("PomodoroState")
+  const stateJson = found ? JSON.parse(found) : undefined
 
-  const state = found
-    ? PomodoroState.create(JSON.parse(found))
+  if (stateJson.version !== 1) {
+    localStorage.removeItem("PomodoroState")
+  }
+
+  const state = stateJson?.version
+    ? PomodoroState.create(stateJson)
     : new PomodoroState()
 
   return [state, saveState]
