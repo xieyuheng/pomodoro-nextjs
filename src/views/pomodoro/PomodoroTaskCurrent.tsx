@@ -3,7 +3,7 @@ import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import { Task } from "./models/Task"
-import IconDotsVertical from "../../icons/IconDotsVertical"
+import { DotsVerticalIcon } from "@heroicons/react/outline"
 import PomodoroTaskItemCount from "./PomodoroTaskItemCount"
 import PomodoroTaskForm from "./PomodoroTaskForm"
 
@@ -62,7 +62,7 @@ export default observer(function PomodoroTaskCurrent({
               task.editing = true
             }}
           >
-            <IconDotsVertical className="h-6 w-6" />
+            <DotsVerticalIcon className="h-6 w-6" />
           </button>
         </div>
       )}

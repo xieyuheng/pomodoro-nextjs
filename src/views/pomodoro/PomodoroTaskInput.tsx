@@ -1,7 +1,7 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import IconPlus from "../../icons/IconPlus"
+import { PlusIcon } from "@heroicons/react/outline"
 import PomodoroTaskForm from "./PomodoroTaskForm"
 
 export default observer(function PomodoroTaskInput({
@@ -50,7 +50,7 @@ export default observer(function PomodoroTaskInput({
         `border-${state.theme}-300 bg-${state.theme}-400 hover:bg-${state.theme}-500`
       )}
     >
-      <IconPlus
+      <PlusIcon
         className={classes(
           "h-10 w-10",
           state.classes.transition,

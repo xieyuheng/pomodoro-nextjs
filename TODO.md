@@ -1,4 +1,5 @@
 - try headlessui in `/register` page
+
 - setup `/login` route
 
 - extract `layouts/page-layout` from `views/pomodoro`

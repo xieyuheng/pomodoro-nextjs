@@ -1,7 +1,7 @@
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
-import IconTranslate from "../../icons/IconTranslate"
+import { TranslateIcon } from "@heroicons/react/outline"
 
 export default observer(function PomodoroHeader({ state }: { state: State }) {
   return (
@@ -28,7 +28,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         {state.lang.zh && "English"}
         {state.lang.en && "汉语"}
 
-        <IconTranslate className="ml-2 h-5 w-5" />
+        <TranslateIcon className="ml-2 h-5 w-5" />
       </button>
     </div>
   )
