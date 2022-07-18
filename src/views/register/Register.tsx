@@ -10,7 +10,18 @@ export default function Register() {
     <Observer>
       {() => (
         <div>
-          Register
+          <Menu>
+            <Menu.Button>Show</Menu.Button>
+
+            <Menu.Items>
+              <Menu.Item>
+                <div>Item 1</div>
+              </Menu.Item>
+              <Menu.Item>
+                <div>Item 2</div>
+              </Menu.Item>
+            </Menu.Items>
+          </Menu>
         </div>
       )}
     </Observer>

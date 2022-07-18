@@ -1,3 +1,5 @@
+- use headless `ListBox` to handle lang choice
+
 - try headlessui in `/register` page
 
 - setup `/login` route
