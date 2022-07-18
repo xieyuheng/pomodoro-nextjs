@@ -11,7 +11,7 @@ export function usePomodoroState(): [
   const found = localStorage.getItem("PomodoroState")
   const stateJson = found ? JSON.parse(found) : undefined
 
-  if (stateJson.version !== 1) {
+  if (stateJson?.version !== 1) {
     localStorage.removeItem("PomodoroState")
   }
 
