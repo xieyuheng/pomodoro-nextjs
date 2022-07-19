@@ -22,12 +22,12 @@ export default function Pomodoro() {
           className={classes(
             "flex min-h-screen flex-col items-center",
             state.classes.transition,
-            `bg-${state.theme}-400 text-${state.theme}-100`
+            `bg-${state.theme.name}-400 text-${state.theme.name}-100`
           )}
         >
           <Head>
             {state.formatTitle() && <title>{state.formatTitle()}</title>}
-            <meta name="theme-color" content={state.themeColor} />
+            <meta name="theme-color" content={state.theme.color} />
           </Head>
 
           <PomodoroHeader state={state} />

@@ -16,7 +16,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         "flex w-full items-center border-b px-4 pt-3 pb-2 md:py-4",
         "justify-between",
         state.classes.transition,
-        `border-${state.theme}-500`
+        `border-${state.theme.name}-500`
       )}
     >
       <div className="text-3xl font-bold">{state.appName}</div>
@@ -44,7 +44,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
           <Listbox.Options
             className={classes(
               "absolute top-8 right-0 min-w-max border-2",
-              `bg-${state.theme}-400 border-${state.theme}-300`
+              `bg-${state.theme.name}-400 border-${state.theme.name}-300`
             )}
           >
             {state.lang.tags.map((tag) => (
@@ -53,7 +53,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
                   <div
                     className={classes(
                       "flex min-w-max items-center p-2",
-                      active && `bg-${state.theme}-500`
+                      active && `bg-${state.theme.name}-500`
                     )}
                   >
                     {state.lang.findTagName(tag)}

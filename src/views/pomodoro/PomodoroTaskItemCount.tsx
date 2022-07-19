@@ -17,7 +17,7 @@ export default observer(function PomodoroTaskItemCount({
           className={classes(
             "h-2.5 w-2.5 border",
             state.classes.transition,
-            `border-${state.theme}-400 bg-${state.theme}-600`
+            `border-${state.theme.name}-400 bg-${state.theme.name}-600`
           )}
           key={i}
         ></div>

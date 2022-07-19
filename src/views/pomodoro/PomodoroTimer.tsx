@@ -11,7 +11,7 @@ export default observer(function PomodoroTimer({ state }: { state: State }) {
         "flex flex-col items-center justify-between border-4 py-2 px-2 md:px-6",
         "h-64 md:h-80",
         state.classes.transition,
-        `border-${state.theme}-600 bg-${state.theme}-500 bg-${state.theme}-400`
+        `border-${state.theme.name}-600 bg-${state.theme.name}-500 bg-${state.theme.name}-400`
       )}
     >
       <PomodoroModebar state={state} />

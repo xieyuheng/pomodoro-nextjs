@@ -16,7 +16,7 @@ export default observer(function PomodoroTimerButton({
       className={classes(
         "border-2 px-4 py-2 text-2xl md:text-3xl",
         state.classes.transition,
-        `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+        `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`
       )}
       onClick={onClick}
     >

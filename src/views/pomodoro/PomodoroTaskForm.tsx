@@ -27,8 +27,8 @@ export default observer(function PomodoroTaskForm({
           "flex w-full flex-col border-b-2 bg-inherit p-3",
           "focus:outline-none focus:ring",
           state.classes.transition,
-          `border-${state.theme}-200 text-${state.theme}-900 focus:ring-${state.theme}-200`,
-          `placeholder-${state.theme}-400`
+          `border-${state.theme.name}-200 text-${state.theme.name}-900 focus:ring-${state.theme.name}-200`,
+          `placeholder-${state.theme.name}-400`
         )}
         type="text"
         value={value}
@@ -47,7 +47,7 @@ export default observer(function PomodoroTaskForm({
             className={classes(
               "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
-              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+              `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`
             )}
             onClick={onDelete}
           >
@@ -60,7 +60,7 @@ export default observer(function PomodoroTaskForm({
             className={classes(
               "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
-              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+              `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`
             )}
             onClick={onCancel}
           >
@@ -73,7 +73,7 @@ export default observer(function PomodoroTaskForm({
             className={classes(
               "border-2 py-1 px-2 text-lg font-semibold md:text-xl",
               state.classes.transition,
-              `border-${state.theme}-300 bg-${state.theme}-200 text-${state.theme}-600`
+              `border-${state.theme.name}-300 bg-${state.theme.name}-200 text-${state.theme.name}-600`
             )}
             onClick={onSave}
           >

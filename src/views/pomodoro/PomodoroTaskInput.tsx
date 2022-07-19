@@ -15,7 +15,7 @@ export default observer(function PomodoroTaskInput({
         "flex w-full flex-col border-2 p-3 md:py-4",
         "text-xl font-semibold",
         state.classes.transition,
-        `border-${state.theme}-200 bg-${state.theme}-100  text-${state.theme}-900`
+        `border-${state.theme.name}-200 bg-${state.theme.name}-100  text-${state.theme.name}-900`
       )}
     >
       <PomodoroTaskForm
@@ -47,14 +47,14 @@ export default observer(function PomodoroTaskInput({
         "flex w-full flex-col border-2 border-dashed p-3 md:py-4",
         "items-center justify-center",
         state.classes.transition,
-        `border-${state.theme}-300 bg-${state.theme}-400 hover:bg-${state.theme}-500`
+        `border-${state.theme.name}-300 bg-${state.theme.name}-400 hover:bg-${state.theme.name}-500`
       )}
     >
       <PlusIcon
         className={classes(
           "h-10 w-10",
           state.classes.transition,
-          `text-${state.theme}-300`
+          `text-${state.theme.name}-300`
         )}
       />
     </button>

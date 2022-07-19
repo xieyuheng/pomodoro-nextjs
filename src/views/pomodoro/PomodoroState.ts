@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx"
 import { removeFirst } from "../../utils/remove-first"
-import { tailwindConfig } from "../../lib/tailwind"
 import { next } from "../../lib/next"
 import { emptySoundLoop } from "../../lib/howler"
 import { Mode, ModeKind } from "./models/Mode"
@@ -8,6 +7,7 @@ import { Task } from "./models/Task"
 import { Settings, defaultSettings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
 import { lang } from "../../states/lang"
+import { theme } from "../../states/theme"
 
 export type PomodoroStateJson = {
   version?: number
@@ -36,6 +36,7 @@ export class PomodoroState {
   }
 
   lang = lang
+  theme = theme
 
   constructor() {
     this.mode = this.settings.modes.Focus
@@ -174,10 +175,11 @@ export class PomodoroState {
 
   changeMode(kind: ModeKind): void {
     this.mode = this.settings.modes[kind]
+    this.theme.name = this.themeName
     this.timer.reset(this.mode.interval)
   }
 
-  get theme(): string {
+  get themeName(): string {
     switch (this.kind) {
       case "Focus":
         return "red"
@@ -186,10 +188,6 @@ export class PomodoroState {
       case "Recess":
         return "violet"
     }
-  }
-
-  get themeColor(): string {
-    return tailwindConfig.theme.colors[this.theme][400]
   }
 
   start(): void {

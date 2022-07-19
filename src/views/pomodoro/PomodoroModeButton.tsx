@@ -18,8 +18,8 @@ export default observer(function PomodoroModeButton({
         "flex items-baseline border-2 py-1 px-2",
         state.classes.transition,
         state.kind === kind
-          ? `border-${state.theme}-400 bg-${state.theme}-600 text-${state.theme}-200`
-          : `border-${state.theme}-500 bg-${state.theme}-500 text-${state.theme}-300`
+          ? `border-${state.theme.name}-400 bg-${state.theme.name}-600 text-${state.theme.name}-200`
+          : `border-${state.theme.name}-500 bg-${state.theme.name}-500 text-${state.theme.name}-300`
       )}
       onClick={() => {
         callWithConfirm(() => state.changeMode(kind), {
