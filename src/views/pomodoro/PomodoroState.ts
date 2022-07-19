@@ -167,9 +167,9 @@ export class PomodoroState {
       case "Focus":
         return this.lang.zh ? "专注" : "Focus"
       case "Break":
-        return this.lang.zh ? "短休息" : "Break"
+        return this.lang.zh ? "短休" : "Break"
       case "Recess":
-        return this.lang.zh ? "长休息" : "Recess"
+        return this.lang.zh ? "长息" : "Recess"
     }
   }
 
