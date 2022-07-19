@@ -5,7 +5,9 @@ import Link from "next/link"
 export default observer(function PageLayoutLogo({ state }: { state: State }) {
   return (
     <Link href="/">
-      <a className="text-3xl font-bold hover:underline">{state.appName}</a>
+      <a className="text-2xl font-bold hover:underline md:text-3xl">
+        {state.appName}
+      </a>
     </Link>
   )
 })
