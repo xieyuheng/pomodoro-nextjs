@@ -16,7 +16,7 @@ export default observer(function PageLayoutLang({ state }: { state: State }) {
       value={state.lang.tag}
       onChange={(tag) => (state.lang.tag = tag)}
     >
-      <Listbox.Button className="flex items-center font-bold">
+      <Listbox.Button className="flex items-center font-semibold">
         {state.lang.tagName}
         <TranslateIcon className="ml-1.5 h-5 w-5" />
         <SelectorIcon className="h-5 w-5" />

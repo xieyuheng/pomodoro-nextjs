@@ -10,7 +10,7 @@ export default observer(function PomodoroTimerControl({
   state: State
 }) {
   return (
-    <div className="flex justify-between py-2 px-2 font-bold md:py-4 md:px-6">
+    <div className="flex justify-between py-2 px-2 font-semibold md:py-4 md:px-6">
       <div className="flex space-x-2">
         {!state.timer.isRunning && !state.timer.isFinished && (
           <PomodoroTimerButton
