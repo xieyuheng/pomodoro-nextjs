@@ -43,7 +43,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
         >
           <Listbox.Options
             className={classes(
-              "absolute top-8 right-0 border-2 min-w-max",
+              "absolute top-8 right-0 min-w-max border-2",
               `bg-${state.theme}-400 border-${state.theme}-300`
             )}
           >

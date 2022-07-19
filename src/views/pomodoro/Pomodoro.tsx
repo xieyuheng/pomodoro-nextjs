@@ -7,6 +7,7 @@ import Head from "next/head"
 import { useMount } from "ahooks"
 import { autorun } from "mobx"
 import { usePomodoroState } from "./hooks/usePomodoroState"
+import PageLayout from "../../layouts/page-layout/PageLayout"
 
 export default function Pomodoro() {
   const [state, saveState] = usePomodoroState()
@@ -17,6 +18,7 @@ export default function Pomodoro() {
   return (
     <Observer>
       {() => (
+
         <div
           className={classes(
             "flex min-h-screen flex-col items-center",

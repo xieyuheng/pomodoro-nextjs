@@ -6,7 +6,7 @@ export class Lang {
   tags = ["zh", "en"]
 
   constructor() {
-    const tag = window.localStorage.getItem("Lang")
+    const tag = localStorage.getItem("Lang")
     this.tag = tag || "en"
 
     makeAutoObservable(this)
