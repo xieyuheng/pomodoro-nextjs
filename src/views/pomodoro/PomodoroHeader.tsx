@@ -1,13 +1,13 @@
 import { Fragment } from "react"
+import classes from "classnames"
+import { observer } from "mobx-react-lite"
+import { PomodoroState as State } from "./PomodoroState"
 import { Listbox, Transition } from "@headlessui/react"
 import {
   TranslateIcon,
   CheckIcon,
   SelectorIcon,
 } from "@heroicons/react/outline"
-import classes from "classnames"
-import { observer } from "mobx-react-lite"
-import { PomodoroState as State } from "./PomodoroState"
 
 export default observer(function PomodoroHeader({ state }: { state: State }) {
   return (
@@ -35,9 +35,12 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
 
         <Transition
           as={Fragment}
-          leave="transition ease-in duration-150"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+          enter="transition duration-100 ease-out"
+          enterFrom="transform scale-95 opacity-0"
+          enterTo="transform scale-100 opacity-100"
+          leave="transition duration-75 ease-out"
+          leaveFrom="transform scale-100 opacity-100"
+          leaveTo="transform scale-95 opacity-0"
         >
           <Listbox.Options
             className={classes(
