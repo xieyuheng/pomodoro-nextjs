@@ -1,5 +1,3 @@
-- fix 404
-
 - `views/register/RegisterForm`
 
 - `models/EmailRegister`
