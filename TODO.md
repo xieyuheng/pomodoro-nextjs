@@ -1,4 +1,4 @@
-- `PageLayoutHeader` use `PageLayoutMenu`
+- `PageLayoutLang`
 - `PageLayoutMenu` -- headlessui `Menu`
 - `PageLayoutMenu` -- nav to `/register` and `/login`
 
