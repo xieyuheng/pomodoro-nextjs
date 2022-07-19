@@ -26,7 +26,7 @@ export default function PageLayout({ children }: { children: ReactElement }) {
           >
             <PageLayoutHeader state={state} />
 
-            <div className="md:max-w-2xl mt-6 w-full space-y-2 px-4">
+            <div className="mt-6 w-full space-y-2 px-4 md:max-w-2xl">
               {children}
             </div>
           </div>

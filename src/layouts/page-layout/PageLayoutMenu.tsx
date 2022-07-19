@@ -7,7 +7,7 @@ import { MenuIcon } from "@heroicons/react/outline"
 export default observer(function PageLayoutMenu({ state }: { state: State }) {
   return (
     <div>
-      <MenuIcon className="w-5 h-5" />
+      <MenuIcon className="h-5 w-5" />
     </div>
   )
 })
