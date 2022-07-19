@@ -5,7 +5,7 @@ import PageLayoutHeader from "./PageLayoutHeader"
 import Head from "next/head"
 import { PageLayoutState as State } from "./PageLayoutState"
 
-export default function PageLayout({ children }: { children: ReactElement }) {
+export default function PageLayout({ children }: { children: ReactNode }) {
   const state = new State()
 
   return (
