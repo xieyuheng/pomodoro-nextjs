@@ -1,9 +1,5 @@
 - nav to `/register` and `/login` in header
 
-- `RegisterState`
-
-- `LoginState`
-
 - `RegisterForm`
 - `EmailRegister`
 
