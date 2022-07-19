@@ -12,10 +12,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: fontFamily(),
-    transitionDelay: {
-      0: "0ms",
-      2000: "2000ms",
-    },
+    transitionDelay: { 0: "0ms", 2000: "2000ms" },
+    textDecorationThickness: { 6: "6px" },
   },
 }
 

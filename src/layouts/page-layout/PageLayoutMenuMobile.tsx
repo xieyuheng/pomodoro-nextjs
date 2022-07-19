@@ -28,7 +28,8 @@ export default observer(function PageLayoutMenuMobile({
               <XIcon
                 className={classes(
                   "h-10 w-10 text-right",
-                  active && "border-2"
+                  active && `border-4 border-${state.theme.name}-200`,
+                  active && `text-${state.theme.name}-200`
                 )}
               />
             )}
@@ -42,7 +43,8 @@ export default observer(function PageLayoutMenuMobile({
                 href="/register"
                 className={classes(
                   "flex justify-center p-2 font-semibold",
-                  active && "underline"
+                  active && "underline decoration-6",
+                  active && `text-${state.theme.name}-200`
                 )}
               >
                 {state.lang.zh && "注册"}
@@ -57,7 +59,8 @@ export default observer(function PageLayoutMenuMobile({
                 href="/login"
                 className={classes(
                   "flex justify-center p-2 font-semibold",
-                  active && "underline"
+                  active && "underline decoration-6",
+                  active && `text-${state.theme.name}-200`
                 )}
               >
                 {state.lang.zh && "登录"}
