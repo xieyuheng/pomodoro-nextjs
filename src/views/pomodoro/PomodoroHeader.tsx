@@ -44,7 +44,7 @@ export default observer(function PomodoroHeader({ state }: { state: State }) {
           <Listbox.Options
             className={classes(
               "absolute top-8 right-0 border-2",
-              `border-${state.theme}-300`
+              `bg-${state.theme}-400 border-${state.theme}-300`
             )}
           >
             {state.lang.tags.map((tag) => (
