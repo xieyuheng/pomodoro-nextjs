@@ -1,12 +1,15 @@
 - `PageLayoutMenu` -- headlessui `Menu`
 - `PageLayoutMenu` -- nav to `/register` and `/login`
 
-- `RegisterForm`
-- `EmailRegister`
+- `views/register/RegisterForm`
 
-- `User`
+- `models/EmailRegister`
 
-- `EmailLogin`
+- `models/User`
+
+- `models/EmailLogin`
+
+- `views/login/LoginForm`
 
 - be able to send email to users
   - https://nodemailer.com/about
