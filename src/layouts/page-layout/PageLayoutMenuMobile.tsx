@@ -58,7 +58,7 @@ export default observer(function PageLayoutMenuMobile({
                   )}
                 >
                   {state.lang.zh && "注册"}
-                  {state.lang.en && "REGISTER"}
+                  {state.lang.en && "Register"}
                 </Link>
               )}
             </Menu.Item>
@@ -74,7 +74,7 @@ export default observer(function PageLayoutMenuMobile({
                   )}
                 >
                   {state.lang.zh && "登录"}
-                  {state.lang.en && "LOGIN"}
+                  {state.lang.en && "Login"}
                 </Link>
               )}
             </Menu.Item>

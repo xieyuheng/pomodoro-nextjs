@@ -10,12 +10,12 @@ export default observer(function PageLayoutLure({ state }: { state: State }) {
     <div className="flex space-x-1 text-xl font-semibold">
       <Link href="/register" className="hover:underline">
         {state.lang.zh && "注册"}
-        {state.lang.en && "REGISTER"}
+        {state.lang.en && "Register"}
       </Link>
       <div>/</div>
       <Link href="/login" className="hover:underline">
         {state.lang.zh && "登录"}
-        {state.lang.en && "LOGIN"}
+        {state.lang.en && "Login"}
       </Link>
     </div>
   )
