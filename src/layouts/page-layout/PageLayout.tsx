@@ -1,4 +1,4 @@
-import type { ReactNode, ReactElement } from "react"
+import type { ReactNode } from "react"
 import classes from "classnames"
 import { Observer } from "mobx-react-lite"
 import PageLayoutHeader from "./PageLayoutHeader"
