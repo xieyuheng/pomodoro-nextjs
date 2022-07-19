@@ -18,7 +18,7 @@ export default observer(function PageLayoutMenuMobile({
 
       <Menu.Items
         className={classes(
-          "fixed top-0 right-0 h-screen w-screen border-4 p-4",
+          "fixed top-0 right-0 h-screen w-screen border-8 p-4",
           `bg-${state.theme.name}-400 border-${state.theme.name}-300`
         )}
       >
