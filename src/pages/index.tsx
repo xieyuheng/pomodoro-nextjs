@@ -5,9 +5,5 @@ const Pomodoro = dynamic(() => import("../views/pomodoro/Pomodoro"), {
 })
 
 export default function Home() {
-  return (
-    <div>
-      <Pomodoro />
-    </div>
-  )
+  return <Pomodoro />
 }

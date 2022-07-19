@@ -1,3 +1,4 @@
+- use `PageLayout` in `register`
 - setup `/login` route
 - nav to `/register` and `/login` in header
 

@@ -1,32 +1,36 @@
-import type { ReactNode } from "react"
+import type { ReactNode, ReactElement } from "react"
 import classes from "classnames"
 import { Observer } from "mobx-react-lite"
 import PageLayoutHeader from "./PageLayoutHeader"
 import Head from "next/head"
 import { PageLayoutState as State } from "./PageLayoutState"
 
-export default function PageLayout({ children }: { children: ReactNode }) {
+export default function PageLayout({ children }: { children: ReactElement }) {
   const state = new State()
 
   return (
     <Observer>
       {() => (
-        <div
-          className={classes(
-            "flex min-h-screen flex-col items-center",
-            state.classes.transition,
-            `bg-${state.theme.name}-400 text-${state.theme.name}-100`
-          )}
-        >
+        <>
           <Head>
             {state.formatTitle() && <title>{state.formatTitle()}</title>}
             <meta name="theme-color" content={state.theme.color} />
           </Head>
 
-          <PageLayoutHeader state={state} />
+          <div
+            className={classes(
+              "flex min-h-screen flex-col items-center",
+              state.classes.transition,
+              `bg-${state.theme.name}-400 text-${state.theme.name}-100`
+            )}
+          >
+            <PageLayoutHeader state={state} />
 
-          {children}
-        </div>
+            <div className="md:max-w-2xl mt-6 w-full space-y-2 px-4">
+              {children}
+            </div>
+          </div>
+        </>
       )}
     </Observer>
   )
