@@ -57,7 +57,7 @@ export class Timer {
   }
 
   get isFinished(): boolean {
-    return this.time === 0
+    return this.time < 1000
   }
 
   stop(): void {

@@ -10,6 +10,7 @@ export default function Pomodoro() {
   const [state, saveState] = usePomodoroState()
 
   autorun(() => saveState(state))
+
   useMount(() => state.setupNotification())
 
   return (
