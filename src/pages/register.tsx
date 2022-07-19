@@ -5,9 +5,5 @@ const Register = dynamic(() => import("../views/register/Register"), {
 })
 
 export default function Home() {
-  return (
-    <div>
-      <Register />
-    </div>
-  )
+  return <Register />
 }

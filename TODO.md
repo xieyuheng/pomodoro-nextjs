@@ -1,10 +1,15 @@
-- use `PageLayout` in `register`
-- setup `/login` route
 - nav to `/register` and `/login` in header
 
+- `RegisterState`
+
+- `LoginState`
+
+- `RegisterForm`
 - `EmailRegister`
-- `EmailLogin`
+
 - `User`
+
+- `EmailLogin`
 
 - be able to send email to users
   - https://nodemailer.com/about
