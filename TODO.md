@@ -1,5 +1,4 @@
-- `PageLayoutMenu` -- headlessui `Menu`
-- `PageLayoutMenu` -- nav to `/register` and `/login`
+- fix 404
 
 - `views/register/RegisterForm`
 
@@ -10,6 +9,8 @@
 - `models/EmailLogin`
 
 - `views/login/LoginForm`
+
+- `PageLayoutHeader` show `PageLayoutMenu` if there is `user`
 
 - be able to send email to users
   - https://nodemailer.com/about
