@@ -19,10 +19,10 @@ export default observer(function PageLayoutMenuMobile({
 
       <Transition
         as={Fragment}
-        enter="transition duration-450"
+        enter="transition duration-300"
         enterFrom="transform opacity-0 translate-x-6 rotate-45"
         enterTo="transform opacity-100 rotate-0"
-        leave="transition duration-350"
+        leave="transition duration-300"
         leaveFrom="transform opacity-100"
         leaveTo="transform opacity-0 translate-x-6"
       >
