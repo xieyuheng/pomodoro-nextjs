@@ -1,4 +1,4 @@
-import { Theme } from "../models/Theme"
+import { Theme } from "../states/Theme"
 import { autorun } from "mobx"
 
 export const theme = new Theme()

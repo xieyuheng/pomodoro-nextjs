@@ -1,5 +1,3 @@
-- rename reactive state classes from `models/` to `states/`
-
 - `views/register/RegisterForm`
 - `models/EmailRegister`
 - `models/User`

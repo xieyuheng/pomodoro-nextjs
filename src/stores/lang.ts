@@ -1,4 +1,4 @@
-import { Lang } from "../models/Lang"
+import { Lang } from "../states/Lang"
 import { autorun } from "mobx"
 
 function createLang() {
