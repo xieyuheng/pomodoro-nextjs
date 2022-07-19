@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx"
-import { lang } from "../../states/lang"
-import { theme } from "../../states/theme"
+import { lang } from "../../stores/lang"
+import { theme } from "../../stores/theme"
 
 export class RegisterState {
   lang = lang

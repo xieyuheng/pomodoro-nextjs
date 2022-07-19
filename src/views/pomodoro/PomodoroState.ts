@@ -6,8 +6,8 @@ import { Mode, ModeKind } from "./models/Mode"
 import { Task } from "./models/Task"
 import { Settings, defaultSettings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
-import { lang } from "../../states/lang"
-import { theme } from "../../states/theme"
+import { lang } from "../../stores/lang"
+import { theme } from "../../stores/theme"
 
 export type PomodoroStateJson = {
   version?: number

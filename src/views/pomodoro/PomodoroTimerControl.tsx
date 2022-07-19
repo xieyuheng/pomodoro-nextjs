@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimerButton from "./PomodoroTimerButton"
 import { callWithConfirm } from "../../utils/call-with-confirm"
-import { lang } from "../../states/lang"
+import { lang } from "../../stores/lang"
 
 export default observer(function PomodoroTimerControl({
   state,
