@@ -18,7 +18,6 @@ export default function Pomodoro() {
   return (
     <Observer>
       {() => (
-
         <div
           className={classes(
             "flex min-h-screen flex-col items-center",

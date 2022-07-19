@@ -2,15 +2,13 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimerButton from "./PomodoroTimerButton"
 import { callWithConfirm } from "../../utils/call-with-confirm"
-import { useLang } from "../../hooks/useLang"
+import { lang } from "../../states/lang"
 
 export default observer(function PomodoroTimerControl({
   state,
 }: {
   state: State
 }) {
-  const lang = useLang()
-
   return (
     <div className="flex justify-between py-2 px-2 font-bold md:py-4 md:px-6">
       <div className="flex space-x-2">

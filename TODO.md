@@ -1,6 +1,6 @@
+- move logic about `localStorage` from `Lang` to `useLang`
 - extract `theme` as a global state
 - extract `layouts/page-layout` from `views/pomodoro`
-- move logic about `localStorage` from `Lang` to `useLang`
 - setup `/login` route
 - nav to `/register` and `/login` in header
 - `EmailRegister`

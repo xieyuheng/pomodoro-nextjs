@@ -7,8 +7,7 @@ import { Mode, ModeKind } from "./models/Mode"
 import { Task } from "./models/Task"
 import { Settings, defaultSettings, testingSettings } from "./models/Settings"
 import { Timer, TimerJson } from "./models/Timer"
-import { useLang } from "../../hooks/useLang"
-import { Lang } from "../../models/Lang"
+import { lang } from "../../states/lang"
 
 export type PomodoroStateJson = {
   version?: number
@@ -36,7 +35,7 @@ export class PomodoroState {
     transition: "transition delay-0 duration-500 ease-out",
   }
 
-  lang: Lang = useLang()
+  lang = lang
 
   constructor() {
     this.mode = this.settings.modes.Focus
