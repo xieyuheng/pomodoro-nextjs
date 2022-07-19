@@ -1,6 +1,6 @@
-import { Fragment } from "react"
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
+import PageLayoutLogo from "./PageLayoutLogo"
 import { PageLayoutState as State } from "./PageLayoutState"
 import { Listbox, Transition } from "@headlessui/react"
 import {
@@ -19,7 +19,7 @@ export default observer(function PageLayoutHeader({ state }: { state: State }) {
         `border-${state.theme.name}-500`
       )}
     >
-      <div className="text-3xl font-bold">{state.appName}</div>
+      <PageLayoutLogo state={state} />
 
       <Listbox
         as="div"

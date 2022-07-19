@@ -1,4 +1,6 @@
-- nav to `/register` and `/login` in header
+- `PageLayoutHeader` use `PageLayoutMenu`
+- `PageLayoutMenu` -- headlessui `Menu`
+- `PageLayoutMenu` -- nav to `/register` and `/login`
 
 - `RegisterForm`
 - `EmailRegister`
