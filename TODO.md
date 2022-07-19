@@ -1,10 +1,6 @@
-- use headless `ListBox` to handle lang choice
-
-- try headlessui in `/register` page
+- extract `layouts/page-layout` from `views/pomodoro`
 
 - setup `/login` route
-
-- extract `layouts/page-layout` from `views/pomodoro`
 
 - nav to `/register` and `/login` in header
 

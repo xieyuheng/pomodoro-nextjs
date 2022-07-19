@@ -3,6 +3,8 @@ import { makeAutoObservable, autorun } from "mobx"
 export class Lang {
   tag: string
 
+  tags = ["zh", "en"]
+
   constructor() {
     const tag = window.localStorage.getItem("Lang")
     this.tag = tag || "en"
@@ -18,5 +20,20 @@ export class Lang {
 
   get en(): boolean {
     return !this.zh
+  }
+
+  findTagName(tag: string): string {
+    switch (tag) {
+      case "zh":
+        return "中文"
+      case "en":
+        return "English"
+      default:
+        return "English"
+    }
+  }
+
+  get tagName(): string {
+    return this.findTagName(this.tag)
   }
 }
