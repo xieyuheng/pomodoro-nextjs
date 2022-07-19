@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
-import { PomodoroState as State } from "./PomodoroState"
+import { PageLayoutState as State } from "./PageLayoutState"
 import { Listbox, Transition } from "@headlessui/react"
 import {
   TranslateIcon,
@@ -9,7 +9,7 @@ import {
   SelectorIcon,
 } from "@heroicons/react/outline"
 
-export default observer(function PomodoroHeader({ state }: { state: State }) {
+export default observer(function PageLayoutHeader({ state }: { state: State }) {
   return (
     <div
       className={classes(

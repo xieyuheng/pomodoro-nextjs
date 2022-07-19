@@ -31,12 +31,12 @@ export class PomodoroState {
   inputTaskTitle: string | null = null
   settings: Settings = next.dev ? testingSettings : defaultSettings
 
+  lang = lang
+  theme = theme
+
   classes = {
     transition: "transition delay-0 duration-500 ease-out",
   }
-
-  lang = lang
-  theme = theme
 
   constructor() {
     this.mode = this.settings.modes.Focus
@@ -218,7 +218,7 @@ export class PomodoroState {
     this.currentTesk = task
   }
 
-  formatTitle(): string | null {
+  formatTitle(): string {
     const parts = []
 
     if (this.timer.isStarted) {

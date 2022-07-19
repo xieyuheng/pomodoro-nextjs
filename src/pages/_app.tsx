@@ -1,9 +1,12 @@
 import type { AppProps } from "next/app"
-import Script from "next/script"
-import Head from "next/head"
+import dynamic from "next/dynamic"
 import "../styles/index.css"
 import "../lib/mobx"
 import "../lib/service-worker"
+
+const PageLayout = dynamic(() => import("../layouts/page-layout/PageLayout"), {
+  ssr: false,
+})
 
 declare global {
   var tailwind: any
@@ -11,11 +14,8 @@ declare global {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Pomodoro</title>
-      </Head>
+    <PageLayout>
       <Component {...pageProps} />
-    </>
+    </PageLayout>
   )
 }
