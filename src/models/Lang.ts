@@ -1,17 +1,10 @@
-import { makeAutoObservable, autorun } from "mobx"
+import { makeAutoObservable } from "mobx"
 
 export class Lang {
-  tag: string
-
   tags = ["zh", "en"]
 
-  constructor() {
-    const tag = localStorage.getItem("Lang")
-    this.tag = tag || "en"
-
+  constructor(public tag: string) {
     makeAutoObservable(this)
-
-    autorun(() => localStorage.setItem("Lang", this.tag))
   }
 
   get zh(): boolean {
