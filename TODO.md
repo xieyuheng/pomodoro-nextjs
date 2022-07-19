@@ -1,5 +1,4 @@
 - extract `states/theme`
-- extract `models/Theme` -- with `color` and `name`?
 
 - extract `layouts/page-layout` from `views/pomodoro`
 - setup `/login` route
