@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx"
 import { tailwindConfig } from "../lib/tailwind"
 
 export class Theme {
-  constructor(public name: string) {
+  constructor(public name: string = "red") {
     makeAutoObservable(this)
   }
 

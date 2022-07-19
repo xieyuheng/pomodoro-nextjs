@@ -1,5 +1,3 @@
-- extract `states/theme`
-
 - extract `layouts/page-layout` from `views/pomodoro`
 - setup `/login` route
 - nav to `/register` and `/login` in header
