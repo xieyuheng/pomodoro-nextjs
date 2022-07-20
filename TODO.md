@@ -1,5 +1,4 @@
 - `views/register/RegisterForm`
-- `models/EmailRegister`
 - `models/User`
 - `models/EmailLogin`
 - `views/login/LoginForm`

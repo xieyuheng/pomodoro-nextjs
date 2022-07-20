@@ -16,9 +16,9 @@ export class User extends Entity {
     email: { type: "string" },
   })
 
-  static async create(user: UserJson): Promise<User> {
+  static async create(json: UserJson): Promise<User> {
     await connect()
     const repository = client.fetchRepository(User.schema)
-    return await repository.createAndSave(user)
+    return await repository.createAndSave(json)
   }
 }
