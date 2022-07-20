@@ -1,7 +1,7 @@
-- `views/register/RegisterForm`
+- `views/register/RegisterStart` -- `handleSubmit`
 - `models/User`
 - `models/EmailLogin`
-- `views/login/LoginForm`
+- `views/login/LoginStart`
 - `PageLayoutHeader` show `PageLayoutMenu` if there is `user`
 - be able to send email to users
   - https://nodemailer.com/about

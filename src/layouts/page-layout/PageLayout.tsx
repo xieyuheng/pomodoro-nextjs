@@ -19,14 +19,14 @@ export default function PageLayout({ children }: { children: ReactNode }) {
 
           <div
             className={classes(
-              "flex min-h-screen flex-col items-center",
+              "flex h-screen flex-col items-center",
               state.classes.transition,
               `bg-${state.theme.name}-400 text-${state.theme.name}-100`
             )}
           >
             <PageLayoutHeader state={state} />
 
-            <div className="mt-6 w-full space-y-2 px-4 md:max-w-2xl">
+            <div className="mt-6 h-full w-full space-y-2 px-4 md:max-w-2xl">
               {children}
             </div>
           </div>

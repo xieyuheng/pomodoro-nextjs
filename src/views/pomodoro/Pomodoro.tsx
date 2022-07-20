@@ -4,6 +4,7 @@ import PomodoroTasks from "./PomodoroTasks"
 import Head from "next/head"
 import { useMount } from "ahooks"
 import { autorun } from "mobx"
+import { Observer } from "mobx-react-lite"
 import { usePomodoroState } from "./hooks/usePomodoroState"
 
 export default function Pomodoro() {
@@ -14,14 +15,18 @@ export default function Pomodoro() {
   useMount(() => state.setupNotification())
 
   return (
-    <>
-      <Head>
-        <title>{state.formatTitle()}</title>
-        <meta name="theme-color" content={state.theme.color} />
-      </Head>
+    <Observer>
+      {() => (
+        <>
+          <Head>
+            <title>{state.formatTitle()}</title>
+            <meta name="theme-color" content={state.theme.color} />
+          </Head>
 
-      <PomodoroTimer state={state} />
-      <PomodoroTasks state={state} />
-    </>
+          <PomodoroTimer state={state} />
+          <PomodoroTasks state={state} />
+        </>
+      )}
+    </Observer>
   )
 }
