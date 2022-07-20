@@ -19,7 +19,7 @@ export default function PageLayout({ children }: { children: ReactNode }) {
 
           <div
             className={classes(
-              "flex h-screen flex-col items-center",
+              "flex h-screen min-h-screen flex-col items-center",
               state.classes.transition,
               `bg-${state.theme.name}-400 text-${state.theme.name}-100`
             )}
