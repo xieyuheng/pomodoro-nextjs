@@ -4,10 +4,7 @@ import Link from "../../components/Link"
 
 export default observer(function PageLayoutLogo({ state }: { state: State }) {
   return (
-    <Link
-      href="/"
-      className="font-logo text-2xl font-bold hover:underline md:text-3xl"
-    >
+    <Link href="/" className="font-logo text-3xl font-bold hover:underline">
       {state.appName}
     </Link>
   )

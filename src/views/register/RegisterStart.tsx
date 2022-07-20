@@ -10,7 +10,7 @@ export default observer(function RegisterStart({ state }: { state: State }) {
       method="post"
       className="flex flex-col space-y-2 text-xl"
     >
-      <div className="font-logo text-2xl font-semibold md:text-3xl">
+      <div className="font-logo text-3xl font-semibold">
         {state.lang.zh && <div>注册</div>}
         {state.lang.en && <div>Register</div>}
       </div>
