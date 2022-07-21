@@ -20,7 +20,7 @@ export default function Register() {
             </div>
           )}
           {state.verifying && (
-            <div className="mt-4 flex h-full flex-col items-center md:mt-10">
+            <div className="mt-12 flex h-full flex-col items-center md:mt-10">
               <RegisterVerifying state={state} verifying={state.verifying} />
             </div>
           )}

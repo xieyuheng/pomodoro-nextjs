@@ -46,12 +46,22 @@ export default observer(function RegisterVerifying({
         </div>
 
         <div className="py-2 text-lg">
-          <p className="border-4 border-gray-200 bg-gray-100 py-1 px-2 font-black">
+          <p
+            className={classes(
+              "border-4 py-1 px-2 font-black",
+              `border-${state.theme.name}-300 bg-${state.theme.name}-500`
+            )}
+          >
             {verifying.confirmation_code}
           </p>
         </div>
 
-        <button className="my-2 font-sans font-bold text-gray-400 hover:text-gray-900">
+        <button
+          className={classes(
+            "my-2 font-sans font-bold",
+            `text-${state.theme.name}-50 hover:text-${state.theme.name}-200`
+          )}
+        >
           {state.lang.zh && <div>撤销</div>}
           {state.lang.en && <div>REVOKE</div>}
         </button>
