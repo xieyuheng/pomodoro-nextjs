@@ -1,4 +1,4 @@
-- `views/register/RegisterStart` -- `handleSubmit` -- jump to `RegisterVerifying`
+- `views/register/RegisterStart` -- jump to `RegisterVerifying`
 - `views/register/RegisterVerifying` -- show `email` and `confirmation_code`
 - `views/register/RegisterEmailConfirmationSuccess` -- static page to show success email Confirmation
 

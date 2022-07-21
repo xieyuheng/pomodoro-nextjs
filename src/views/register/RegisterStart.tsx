@@ -1,15 +1,16 @@
+import * as React from "react"
 import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { RegisterState as State } from "./RegisterState"
 import Link from "../../components/Link"
 import FormInput from "../../components/FormInput"
 import FormButton from "../../components/FormButton"
+import ty from "@xieyuheng/ty"
 
 export default observer(function RegisterStart({ state }: { state: State }) {
   return (
     <form
-      action="/api/register"
-      method="post"
+      onSubmit={(event) => handleSubmit(event, state)}
       className="flex w-full flex-col space-y-2 text-xl sm:w-auto"
     >
       <div className="font-logo text-3xl font-semibold">
@@ -94,3 +95,29 @@ export default observer(function RegisterStart({ state }: { state: State }) {
     </form>
   )
 })
+
+async function handleSubmit(
+  event: React.FormEvent<HTMLFormElement>,
+  state: State
+) {
+  event.preventDefault()
+
+  const target = event.target as typeof event.target & {
+    username: { value: string }
+    name: { value: string }
+    email: { value: string }
+  }
+
+  const username = target.username.value
+  const name = target.name.value
+  const email = target.email.value
+
+  const response = await fetch("/api/register", {
+    method: "POST",
+    body: JSON.stringify({ username, name, email }),
+  })
+
+  const result = await response.json()
+
+  console.log(result)
+}

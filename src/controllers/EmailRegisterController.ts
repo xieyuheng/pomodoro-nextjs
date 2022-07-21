@@ -14,7 +14,7 @@ export class EmailRegisterController {
     })
 
     const json = {
-      ...scheme.validate(this.req.body),
+      ...scheme.validate(JSON.parse(this.req.body)),
       verification_token: crypto.randomBytes(32).toString("hex"),
       confirmation_token: crypto.randomBytes(32).toString("hex"),
       confirmation_code: crypto.randomBytes(3).toString("hex"),
