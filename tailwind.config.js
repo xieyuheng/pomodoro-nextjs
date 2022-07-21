@@ -22,7 +22,7 @@ function fontFamily() {
     sans: ["Linux Biolinum O", "sans-serif"],
     serif: ["Linux Libertine O", "serif"],
     mono: ["Fira Code", "monospace"],
-    logo: ["Linux Libertine O", "serif"],
+    logo: ["Linux Biolinum O", "sans-serif"],
     // logo: ["Bodoni Moda", "serif"],
   }
 }
@@ -42,7 +42,12 @@ function fontFamilyWithChinese() {
       "LXGW WenKai Larger",
       "monospace",
     ],
-    logo: ["Linux Libertine O", "LXGW WenKai", "serif"],
+    logo: [
+      "Linux Biolinum O",
+      "LXGW New Clear Gothic",
+      "LXGW Clear Gothic",
+      "sans-serif",
+    ],
     // logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
   }
 }
