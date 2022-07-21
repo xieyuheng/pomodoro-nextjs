@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite"
 import { RegisterState as State } from "./RegisterState"
 import Link from "../../components/Link"
 import FormInput from "../../components/FormInput"
+import FormButton from "../../components/FormButton"
 
 export default observer(function RegisterStart({ state }: { state: State }) {
   return (
@@ -62,18 +63,12 @@ export default observer(function RegisterStart({ state }: { state: State }) {
         <hr className="border-t border-white" />
       </div>
 
-      <div className="flex flex-col">
-        <button
-          className={classes(
-            "rounded-sm border-2 py-3 font-sans font-bold text-white",
-            `border-${state.theme.name}-200 hover:bg-${state.theme.name}-500`
-          )}
-          type="submit"
-        >
+      <FormButton>
+        <div>
           {state.lang.zh && <div>注册</div>}
           {state.lang.en && <div>Register</div>}
-        </button>
-      </div>
+        </div>
+      </FormButton>
 
       <div className="flex justify-end">
         <div className="text-xl">
