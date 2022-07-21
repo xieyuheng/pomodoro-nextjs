@@ -5,6 +5,7 @@ import { autorun } from "mobx"
 import { Observer } from "mobx-react-lite"
 import { RegisterState as State } from "./RegisterState"
 import RegisterStart from "./RegisterStart"
+import RegisterVerifying from "./RegisterVerifying"
 
 export default function Register() {
   const state = new State()
@@ -12,9 +13,18 @@ export default function Register() {
   return (
     <Observer>
       {() => (
-        <div className="mt-4 flex h-full flex-col items-center md:mt-10">
-          <RegisterStart state={state} />
-        </div>
+        <>
+          {!state.verifying && (
+            <div className="mt-4 flex h-full flex-col items-center md:mt-10">
+              <RegisterStart state={state} />
+            </div>
+          )}
+          {state.verifying && (
+            <div className="mt-4 flex h-full flex-col items-center md:mt-10">
+              <RegisterVerifying state={state} />
+            </div>
+          )}
+        </>
       )}
     </Observer>
   )

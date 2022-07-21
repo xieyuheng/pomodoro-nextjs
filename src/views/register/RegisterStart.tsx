@@ -117,7 +117,5 @@ async function handleSubmit(
     body: JSON.stringify({ username, name, email }),
   })
 
-  const result = await response.json()
-
-  console.log(result)
+  state.verifying = await response.json()
 }
