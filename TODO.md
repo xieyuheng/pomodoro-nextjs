@@ -1,4 +1,5 @@
-- `views/register/RegisterVerifying` -- show `email` and `confirmation_code`
+- `views/register/RegisterVerifying` -- fix styles
+- use nuxtjs instead of nextjs
 - `views/register/RegisterEmailConfirmationSuccess` -- static page to show success email Confirmation
 
 - `models/User`
