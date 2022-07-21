@@ -8,7 +8,7 @@ export default observer(function RegisterStart({ state }: { state: State }) {
     <form
       action="/api/register"
       method="post"
-      className="flex flex-col space-y-2 text-xl"
+      className="flex w-full flex-col space-y-2 text-xl sm:w-auto"
     >
       <div className="font-logo text-3xl font-semibold">
         {state.lang.zh && <div>注册</div>}

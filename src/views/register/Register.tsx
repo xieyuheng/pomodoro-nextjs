@@ -12,7 +12,7 @@ export default function Register() {
   return (
     <Observer>
       {() => (
-        <div className="md:mt-10 mt-4 flex flex-col items-center">
+        <div className="mt-4 flex h-full flex-col items-center md:mt-10">
           <RegisterStart state={state} />
         </div>
       )}
