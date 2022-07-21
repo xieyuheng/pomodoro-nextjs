@@ -1,19 +1,7 @@
 import { makeAutoObservable } from "mobx"
 import { lang } from "../../stores/lang"
 import { theme } from "../../stores/theme"
-
-interface Verifying {
-  email: string
-  confirmation_code: string
-  verification_token: string
-}
-
-function verifyingLinks(verifying: Verifying) {
-  return {
-    verify: `/register/${verifying.verification_token}/verify`,
-    revoke: `/register/${verifying.verification_token}/revoke`,
-  }
-}
+import { Verifying, VerifyingJson } from "./Verifying"
 
 export class RegisterState {
   lang = lang
@@ -23,5 +11,9 @@ export class RegisterState {
 
   constructor() {
     makeAutoObservable(this)
+  }
+
+  verify(json: VerifyingJson) {
+    this.verifying = new Verifying(json)
   }
 }
