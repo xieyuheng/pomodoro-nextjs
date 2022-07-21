@@ -2,6 +2,7 @@ import classes from "classnames"
 import { observer } from "mobx-react-lite"
 import { RegisterState as State } from "./RegisterState"
 import Link from "../../components/Link"
+import FormInput from "../../components/FormInput"
 
 export default observer(function RegisterStart({ state }: { state: State }) {
   return (
@@ -15,72 +16,47 @@ export default observer(function RegisterStart({ state }: { state: State }) {
         {state.lang.en && <div>Register</div>}
       </div>
 
-      <div className="flex flex-col">
-        <label htmlFor="username" className="py-2 font-sans">
-          {state.lang.zh && <div>用户名</div>}
-          {state.lang.en && <div>Username</div>}
-        </label>
+      <FormInput
+        name="username"
+        required
+        label={
+          <div>
+            {state.lang.zh && <div>用户名</div>}
+            {state.lang.en && <div>Username</div>}
+          </div>
+        }
+      />
 
-        <input
-          id="username"
-          name="username"
-          className={classes(
-            "w-full rounded-sm border-2 p-3 font-bold",
-            `border-${state.theme.name}-200 text-${state.theme.name}-900`
-          )}
-          type="text"
-          maxLength={32}
-          spellCheck="false"
-          required
-        />
-      </div>
+      <FormInput
+        name="name"
+        required
+        label={
+          <div>
+            {state.lang.zh && <div>名字</div>}
+            {state.lang.en && <div>Name</div>}
+          </div>
+        }
+      />
 
-      <div className="flex flex-col">
-        <label htmlFor="name" className="py-2 font-sans">
-          {state.lang.zh && <div>名字</div>}
-          {state.lang.en && <div>Name</div>}
-        </label>
-
-        <input
-          id="name"
-          name="name"
-          className={classes(
-            "w-full rounded-sm border-2 p-3 font-bold",
-            `border-${state.theme.name}-200 text-${state.theme.name}-900`
-          )}
-          type="text"
-          maxLength={32}
-          spellCheck="false"
-          required
-        />
-      </div>
-
-      <div className="flex flex-col">
-        <label htmlFor="email" className="py-2 font-sans">
-          {state.lang.zh && <div>电子邮箱</div>}
-          {state.lang.en && <div>Email</div>}
-        </label>
-
-        <input
-          id="email"
-          name="email"
-          className={classes(
-            "w-full rounded-sm border-2 p-3 font-bold",
-            `border-${state.theme.name}-200 text-${state.theme.name}-900`
-          )}
-          type="email"
-          maxLength={32}
-          spellCheck="false"
-          required
-        />
-
-        <div className="py-1 text-base text-white">
-          {state.lang.zh && <div>您的邮箱地址不会被公开</div>}
-          {state.lang.en && (
-            <div>Your email address will be kept private. </div>
-          )}
-        </div>
-      </div>
+      <FormInput
+        name="email"
+        type="email"
+        required
+        label={
+          <div>
+            {state.lang.zh && <div>电子邮箱</div>}
+            {state.lang.en && <div>Email</div>}
+          </div>
+        }
+        footer={
+          <div className="py-1 text-base text-white">
+            {state.lang.zh && <div>您的邮箱地址不会被公开</div>}
+            {state.lang.en && (
+              <div>Your email address will be kept private. </div>
+            )}
+          </div>
+        }
+      />
 
       <div className="flex flex-col justify-center py-4">
         <hr className="border-t border-white" />
