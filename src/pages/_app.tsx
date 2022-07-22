@@ -2,7 +2,7 @@ import type { AppProps } from "next/app"
 import dynamic from "next/dynamic"
 import "../styles/index.css"
 import "../lib/mobx"
-import "../lib/service-worker"
+import "../lib/register-service-worker"
 
 const PageLayout = dynamic(() => import("../layouts/page-layout/PageLayout"), {
   ssr: false,
