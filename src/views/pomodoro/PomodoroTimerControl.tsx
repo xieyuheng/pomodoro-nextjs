@@ -2,7 +2,6 @@ import { observer } from "mobx-react-lite"
 import { PomodoroState as State } from "./PomodoroState"
 import PomodoroTimerButton from "./PomodoroTimerButton"
 import { callWithConfirm } from "../../utils/call-with-confirm"
-import { lang } from "../../stores/lang"
 
 export default observer(function PomodoroTimerControl({
   state,
@@ -15,7 +14,7 @@ export default observer(function PomodoroTimerControl({
         {!state.timer.isRunning && !state.timer.isFinished && (
           <PomodoroTimerButton
             state={state}
-            name={lang.zh ? "开始" : "START"}
+            name={state.lang.zh ? "开始" : "START"}
             onClick={() => state.start()}
           />
         )}
@@ -23,7 +22,7 @@ export default observer(function PomodoroTimerControl({
         {state.timer.isRunning && (
           <PomodoroTimerButton
             state={state}
-            name={lang.zh ? "暂停" : "STOP"}
+            name={state.lang.zh ? "暂停" : "STOP"}
             onClick={() => state.timer.stop()}
           />
         )}
@@ -31,11 +30,11 @@ export default observer(function PomodoroTimerControl({
         {state.timer.isStarted && (
           <PomodoroTimerButton
             state={state}
-            name={lang.zh ? "重置" : "RESET"}
+            name={state.lang.zh ? "重置" : "RESET"}
             onClick={() =>
               callWithConfirm(() => state.timer.reset(), {
                 when: !state.timer.isFinished,
-                message: lang.zh
+                message: state.lang.zh
                   ? "计时器已经开始了，确定要重置吗？"
                   : "A timer has been started, are you sure to reset it?",
               })
